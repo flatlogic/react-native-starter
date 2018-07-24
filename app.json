@@ -1,0 +1,35 @@
+{
+  "expo": {
+    "name": "React Native Starter Lite",
+    "description": "OS version of React Native Starter",
+    "slug": "react-native-starter-lite",
+    "githubUrl": "https://github.com/flatlogic/react-native-starter",
+    "primaryColor": "#555CC4",
+    "privacy": "public",
+    "sdkVersion": "28.0.0",
+    "platforms": ["ios", "android"],
+    "version": "1.0.1",
+    "orientation": "portrait",
+    "icon": "./assets/images/icon.png",
+    "assetBundlePatterns": [
+      "assets/*"
+    ],
+    "splash": {
+      "image": "./assets/images/background.png",
+      "resizeMode": "cover",
+      "backgroundColor": "#ffffff"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.reactnativestarter.lite"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "android": {
+      "package": "com.reactnativestarter.lite",
+      "versionCode": 2,
+      "playStoreUrl": "https://play.google.com/store/apps/details?id=com.reactnativestarter.lite"
+    }
+  }
+}

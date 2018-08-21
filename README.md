@@ -1,7 +1,7 @@
 # React Native Starter
-A powerful starter project that bootstraps development of your mobile application. Check out live demo on [App Store](https://play.google.com/store/apps/details?id=com.reactnativestarter.lite), [Google Play](https://play.google.com/store/apps/details?id=com.reactnativestarter.lite) or [Expo](https://expo.io/@flatlogic/react-native-starter-lite/builds).
+A powerful react native starter project that bootstraps development of your mobile application. React Native Starter is a mobile application template with lots of built-in components like sidebar, navigation, form elements, etc - all you need to start building your mobile app faster. Check out live demo on [App Store](https://play.google.com/store/apps/details?id=com.reactnativestarter.lite), [Google Play](https://play.google.com/store/apps/details?id=com.reactnativestarter.lite) or [Expo](https://expo.io/@flatlogic/react-native-starter-lite/builds).
 
-![Insanely Beautiful Picture](https://i.imgur.com/vcz4bU6.png)
+![React Native Starter](https://i.imgur.com/vcz4bU6.png)
 
 <a href='https://play.google.com/store/apps/details?id=com.reactnativestarter.lite&pcampaignid=Github-OS-Repo'><img width="200" alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png'/></a>
 <a href='https://play.google.com/store/apps/details?id=com.reactnativestarter.lite&pcampaignid=Github-OS-Repo'><img width="200" alt='Download on App Store' src='https://i.imgur.com/7IxtMV0.png'/></a>
@@ -41,7 +41,7 @@ If you find any problems, please [open an issue](https://github.com/flatlogic/re
 
 ## Want more?
 
-We have a premium version of this template that saves you even more time and money and comes with this advanced features:
+We have a premium version of this mobile application template that saves you even more time and money and comes with advanced features:
 - Premium RED color scheme
 - More than 5 additional screens (such as chat, profile, product item, etc.)
 - Contains an extended charting library to visualize all the data you need

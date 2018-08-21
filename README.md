@@ -50,6 +50,14 @@ We have a premium version of this mobile application template that saves you eve
 
 Read more and purchase it at https://reactnativestarter.com
 
+## How can I support developers?
+- Star our GitHub repo :star:
+- [Tweet about it](https://twitter.com/intent/tweet?text=Amazing%20Mobile%20Application%20Template%20built%20with%20React%20Native!&url=https://github.com/flatlogic/react-native-starter&via=flatlogic).
+- Create pull requests, submit bugs, suggest new features or documentation updates :wrench:
+- Follow [@flatlogic on Twitter](https://twitter.com/flatlogic).
+- Subscribe to React Native Starter newsletter at [reactnativestarter.com](https://reactnativestarter.com/)
+- Like our page on [Facebook](https://www.facebook.com/flatlogic/) :thumbsup:
+
 ## License
 
 [MIT License](LICENSE)

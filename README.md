@@ -1,5 +1,5 @@
 # React Native Starter
-A powerful react native starter project that bootstraps development of your mobile application. React Native Starter is a mobile application template with lots of built-in components like sidebar, navigation, form elements, etc - all you need to start building your mobile app faster. Check out live demo on [App Store](https://play.google.com/store/apps/details?id=com.reactnativestarter.lite), [Google Play](https://play.google.com/store/apps/details?id=com.reactnativestarter.lite) or [Expo](https://expo.io/@flatlogic/react-native-starter-lite/builds).
+A powerful react native starter template that bootstraps development of your mobile application. React Native Starter is a mobile application template with lots of built-in components like sidebar, navigation, form elements, etc - all you need to start building your mobile app faster. Check out live demo on [App Store](https://play.google.com/store/apps/details?id=com.reactnativestarter.lite), [Google Play](https://play.google.com/store/apps/details?id=com.reactnativestarter.lite) or [Expo](https://expo.io/@flatlogic/react-native-starter-lite/builds).
 
 ![React Native Starter](https://i.imgur.com/vcz4bU6.png)
 

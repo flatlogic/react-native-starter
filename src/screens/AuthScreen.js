@@ -3,13 +3,14 @@ import {
   StyleSheet,
   View,
   Text,
-  Image,
   Animated,
   Keyboard,
   Platform,
   KeyboardAvoidingView,
   LayoutAnimation,
   TouchableOpacity,
+  ImageBackground,
+  Dimensions,
 } from 'react-native';
 
 import { Fonts, Colors } from '../constants';
@@ -77,11 +78,11 @@ export default class AuthScreen extends React.Component {
 
     return (
       <View style={[styles.container, { paddingBottom: this.state.isKeyboardVisible ? 220 : 0 }]}>
-        <Image
+        <ImageBackground
           source={require('../../assets/images/background.png')}
           style={styles.backgroundImage}
           resizeMode="cover"
-        />
+        >
 
         <View style={[styles.section, { paddingTop: 30 }]}>
           <Animated.Image
@@ -164,6 +165,7 @@ export default class AuthScreen extends React.Component {
             )}
           </Animated.View>
         </Animated.View>
+        </ImageBackground>
       </View>
     );
   }
@@ -174,14 +176,11 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'space-around',
-    paddingHorizontal: 30,
   },
   backgroundImage: {
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    right: 0,
-    bottom: 0,
+    width: Dimensions.get('window').width,
+    height: Dimensions.get('window').height,
+    paddingHorizontal: 30,
   },
   section: {
     flex: 1,

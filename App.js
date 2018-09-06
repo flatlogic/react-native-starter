@@ -13,6 +13,7 @@ export default class App extends React.Component {
   };
 
   componentDidMount() {
+    console.disableYellowBox = true;
     UIManager.setLayoutAnimationEnabledExperimental && UIManager.setLayoutAnimationEnabledExperimental(true);
   }
 

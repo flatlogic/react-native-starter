@@ -31,7 +31,15 @@ yarn install
 
 #### 2. Open RNS with Expo
 
-Install Expo XDE (https://expo.io/tools), open your cloned project there and press "Open on Device".
+First, you need to install Expo CLI (if you don't have it yet). You can do it by running the following command in terminal:
+```
+npm install expo-cli --global
+```
+
+Then you can start the project by going to the project's folder and running there:
+```
+expo start
+```
 
 That's it! Cool, right?
 

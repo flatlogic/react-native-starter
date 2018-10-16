@@ -21,6 +21,6 @@ export default compose(
   lifecycle({
     componentDidMount() {
       this.props.loadImages();
-    }
-  })
+    },
+  }),
 )(GalleryScreen);

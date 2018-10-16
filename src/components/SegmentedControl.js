@@ -40,7 +40,9 @@ class RNSSegmentedControl extends React.Component {
   }
 }
 
-function Segment({ isSelected, onPress, selectionColor, value, type }) {
+function Segment({
+  isSelected, onPress, selectionColor, value, type,
+}) {
   let selectedButtonStyle;
   if (isSelected) {
     selectedButtonStyle = { borderColor: selectionColor };

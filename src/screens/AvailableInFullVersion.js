@@ -14,11 +14,11 @@ import { Button } from '../components';
 export default function AvailableInFullVersionScreen(props) {
   const rnsUrl = 'https://reactnativestarter.com';
   const handleClick = () => {
-    Linking.canOpenURL(rnsUrl).then(supported => {
+    Linking.canOpenURL(rnsUrl).then((supported) => {
       if (supported) {
         Linking.openURL(rnsUrl);
       } else {
-        console.log("Don't know how to open URI: " + rnsUrl);
+        console.log(`Don't know how to open URI: ${rnsUrl}`);
       }
     });
   };
@@ -59,7 +59,7 @@ export default function AvailableInFullVersionScreen(props) {
         />
       </View>
     </ImageBackground>
-  )
+  );
 }
 
 const styles = StyleSheet.create({
@@ -90,5 +90,5 @@ const styles = StyleSheet.create({
   button: {
     alignSelf: 'stretch',
     marginBottom: 20,
-  }
+  },
 });

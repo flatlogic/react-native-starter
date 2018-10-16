@@ -17,9 +17,8 @@ export default function NavigatorView({ dispatch, navigatorState, authState }) {
         }
       />
     );
-  } else {
-    return <AuthScreen />;
   }
+  return <AuthScreen />;
 }
 
 NavigatorView.propTypes = {

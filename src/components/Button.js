@@ -171,7 +171,7 @@ RNSButton.propTypes = {
 
 const HEIGHT = 40;
 const HEIGHT_SMALL = 30;
-const HEIGHT_LARGE= 50;
+const HEIGHT_LARGE = 50;
 
 const styles = StyleSheet.create({
   container: {

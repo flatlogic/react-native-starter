@@ -63,7 +63,8 @@ export default class GridsScreen extends React.Component {
     return (
       <View
         key={rowData.item[0].id}
-        style={styles.itemOneRow}>
+        style={styles.itemOneRow}
+      >
         {cellViews}
       </View>
     );
@@ -131,17 +132,17 @@ export default class GridsScreen extends React.Component {
 
     return (
       <View style={styles.container}>
-        <View style={{height: 50}}>
+        <View style={{ height: 50 }}>
           <RadioGroup
-              selectedIndex={this.props.tabIndex}
-              items={this.props.tabs}
-              onChange={this.props.gridStateActions.switchTab}
-              underline
-            />
+            selectedIndex={this.props.tabIndex}
+            items={this.props.tabs}
+            onChange={this.props.gridStateActions.switchTab}
+            underline
+          />
         </View>
         <FlatList
           keyExtractor={item => item.id || item[0] && item[0].id}
-          style={{ backgroundColor: Colors.white, paddingHorizontal: 15, }}
+          style={{ backgroundColor: Colors.white, paddingHorizontal: 15 }}
           data={groupedData}
           renderItem={this._getRenderItemFunction()}
         />

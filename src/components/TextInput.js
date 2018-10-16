@@ -17,7 +17,7 @@ class RNSTextInput extends React.Component {
   };
 
   static defaultProps = {
-    type: 'primary'
+    type: 'primary',
   };
 
   render() {

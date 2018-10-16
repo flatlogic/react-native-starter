@@ -58,14 +58,14 @@ class RNSDropDown extends React.Component {
             height: 3,
           },
           shadowRadius: 5,
-          shadowOpacity: 1.0
+          shadowOpacity: 1.0,
         }}
         adjustFrame={(params) => {
           params.left = 0;
           params.right = 0;
           return params;
         }}
-        renderRow={(text) => (
+        renderRow={text => (
           <View style={{ paddingHorizontal: 20, paddingVertical: 10 }}>
             <Text style={{ color: this.props.color }}>{text}</Text>
           </View>

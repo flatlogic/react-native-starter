@@ -26,7 +26,7 @@ export function Text(props) {
     ...applyGeneralStyles(props),
   ];
 
-  return <RNText {...props} style={finalStyle} />
+  return <RNText {...props} style={finalStyle} />;
 }
 
 export function Title(props) {
@@ -36,7 +36,7 @@ export function Title(props) {
     ...applyGeneralStyles(props),
   ];
 
-  return <RNText {...props} style={finalStyle} />
+  return <RNText {...props} style={finalStyle} />;
 }
 
 export function Caption(props) {
@@ -46,7 +46,7 @@ export function Caption(props) {
     ...applyGeneralStyles(props),
   ];
 
-  return <RNText {...props} style={finalStyle} />
+  return <RNText {...props} style={finalStyle} />;
 }
 
 const styles = StyleSheet.create({
@@ -75,5 +75,5 @@ const styles = StyleSheet.create({
   },
   white: {
     color: Colors.white,
-  }
+  },
 });

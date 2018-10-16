@@ -30,7 +30,7 @@ export function loadItems(day) {
   return (dispatch, getState) => {
     if (getState().calendar.items.length > 0) return;
 
-    let items = {};
+    const items = {};
 
     for (let i = -15; i < 85; i++) {
       const time = day.timestamp + i * 24 * 60 * 60 * 1000;

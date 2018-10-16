@@ -158,36 +158,36 @@ export default function ComponentsScreen(props) {
         <Text style={styles.componentSectionHeader}>Icons</Text>
 
         <View style={styles.demoIconsContainer}>
-          <Icon style={styles.demoIcon} name="basecamp" size={25} color={'#5759CB'} />
-          <Icon style={styles.demoIcon} name="note" size={25} color={'#5759CB'} />
-          <Icon style={styles.demoIcon} name="flashlight" size={25} color={'#5759CB'} />
-          <Icon style={styles.demoIcon} name="app-store" size={25} color={'#5759CB'} />
-          <Icon style={styles.demoIcon} name="baidu" size={25} color={'#5759CB'} />
-          <Icon style={styles.demoIcon} name="facebook" size={25} color={'#5759CB'} />
+          <Icon style={styles.demoIcon} name="basecamp" size={25} color="#5759CB" />
+          <Icon style={styles.demoIcon} name="note" size={25} color="#5759CB" />
+          <Icon style={styles.demoIcon} name="flashlight" size={25} color="#5759CB" />
+          <Icon style={styles.demoIcon} name="app-store" size={25} color="#5759CB" />
+          <Icon style={styles.demoIcon} name="baidu" size={25} color="#5759CB" />
+          <Icon style={styles.demoIcon} name="facebook" size={25} color="#5759CB" />
         </View>
         <View style={styles.demoIconsContainer}>
-          <Icon style={[styles.demoIcon, { opacity: 0.5 }]} name="bookmark" size={25} color={'#5759CB'} />
-          <Icon style={[styles.demoIcon, { opacity: 0.5 }]} name="chat" size={25} color={'#5759CB'} />
-          <Icon style={[styles.demoIcon, { opacity: 0.5 }]} name="behance" size={25} color={'#5759CB'} />
-          <Icon style={[styles.demoIcon, { opacity: 0.5 }]} name="calendar" size={25} color={'#5759CB'} />
-          <Icon style={[styles.demoIcon, { opacity: 0.5 }]} name="camera" size={25} color={'#5759CB'} />
-          <Icon style={[styles.demoIcon, { opacity: 0.5 }]} name="flattr" size={25} color={'#5759CB'} />
+          <Icon style={[styles.demoIcon, { opacity: 0.5 }]} name="bookmark" size={25} color="#5759CB" />
+          <Icon style={[styles.demoIcon, { opacity: 0.5 }]} name="chat" size={25} color="#5759CB" />
+          <Icon style={[styles.demoIcon, { opacity: 0.5 }]} name="behance" size={25} color="#5759CB" />
+          <Icon style={[styles.demoIcon, { opacity: 0.5 }]} name="calendar" size={25} color="#5759CB" />
+          <Icon style={[styles.demoIcon, { opacity: 0.5 }]} name="camera" size={25} color="#5759CB" />
+          <Icon style={[styles.demoIcon, { opacity: 0.5 }]} name="flattr" size={25} color="#5759CB" />
         </View>
         <View style={styles.demoIconsContainer}>
-          <Icon style={styles.demoIcon} name="colours" size={25} color={'#EF1F78'} />
-          <Icon style={styles.demoIcon} name="compass" size={25} color={'#EF1F78'} />
-          <Icon style={styles.demoIcon} name="credit" size={25} color={'#EF1F78'} />
-          <Icon style={styles.demoIcon} name="cycle" size={25} color={'#EF1F78'} />
-          <Icon style={styles.demoIcon} name="database" size={25} color={'#EF1F78'} />
-          <Icon style={styles.demoIcon} name="flickr" size={25} color={'#EF1F78'} />
+          <Icon style={styles.demoIcon} name="colours" size={25} color="#EF1F78" />
+          <Icon style={styles.demoIcon} name="compass" size={25} color="#EF1F78" />
+          <Icon style={styles.demoIcon} name="credit" size={25} color="#EF1F78" />
+          <Icon style={styles.demoIcon} name="cycle" size={25} color="#EF1F78" />
+          <Icon style={styles.demoIcon} name="database" size={25} color="#EF1F78" />
+          <Icon style={styles.demoIcon} name="flickr" size={25} color="#EF1F78" />
         </View>
         <View style={styles.demoIconsContainer}>
-          <Icon style={[styles.demoIcon, { opacity: 0.5 }]} name="documents" size={25} color={'#EF1F78'} />
-          <Icon style={[styles.demoIcon, { opacity: 0.5 }]} name="download" size={25} color={'#EF1F78'} />
-          <Icon style={[styles.demoIcon, { opacity: 0.5 }]} name="dribbble" size={25} color={'#EF1F78'} />
-          <Icon style={[styles.demoIcon, { opacity: 0.5 }]} name="drop" size={25} color={'#EF1F78'} />
-          <Icon style={[styles.demoIcon, { opacity: 0.5 }]} name="erase" size={25} color={'#EF1F78'} />
-          <Icon style={[styles.demoIcon, { opacity: 0.5 }]} name="foursquare" size={25} color={'#EF1F78'} />
+          <Icon style={[styles.demoIcon, { opacity: 0.5 }]} name="documents" size={25} color="#EF1F78" />
+          <Icon style={[styles.demoIcon, { opacity: 0.5 }]} name="download" size={25} color="#EF1F78" />
+          <Icon style={[styles.demoIcon, { opacity: 0.5 }]} name="dribbble" size={25} color="#EF1F78" />
+          <Icon style={[styles.demoIcon, { opacity: 0.5 }]} name="drop" size={25} color="#EF1F78" />
+          <Icon style={[styles.demoIcon, { opacity: 0.5 }]} name="erase" size={25} color="#EF1F78" />
+          <Icon style={[styles.demoIcon, { opacity: 0.5 }]} name="foursquare" size={25} color="#EF1F78" />
         </View>
 
         <Button

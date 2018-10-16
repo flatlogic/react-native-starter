@@ -19,11 +19,11 @@ import {
 export default function HomeScreen({ isExtended, setIsExtended }) {
   const rnsUrl = 'https://reactnativestarter.com';
   const handleClick = () => {
-    Linking.canOpenURL(rnsUrl).then(supported => {
+    Linking.canOpenURL(rnsUrl).then((supported) => {
       if (supported) {
         Linking.openURL(rnsUrl);
       } else {
-        console.log("Don't know how to open URI: " + rnsUrl);
+        console.log(`Don't know how to open URI: ${rnsUrl}`);
       }
     });
   };
@@ -48,7 +48,7 @@ export default function HomeScreen({ isExtended, setIsExtended }) {
             <View style={{ flexDirection: 'row' }}>
               <Text white bold size={50} style={styles.price}>{isExtended ? '$199.95' : '$49.95'}</Text>
             </View>
-            <TouchableOpacity style={styles.priceLink} onPress={() => isExtended ? setIsExtended(false) : setIsExtended(true)}>
+            <TouchableOpacity style={styles.priceLink} onPress={() => (isExtended ? setIsExtended(false) : setIsExtended(true))}>
               <Text white size={14}>{isExtended ? 'Multiple Applications License' : 'Single Application License'}</Text>
             </TouchableOpacity>
           </View>

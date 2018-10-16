@@ -30,13 +30,13 @@ const RootStackNavigator = StackNavigator(
       screen: AvailableInFullVersion,
       navigationOptions: {
         header: null,
-      }
+      },
     },
     Gallery: {
       screen: GalleryScreen,
       navigationOptions: {
         title: 'Gallery',
-      }
+      },
     },
     Article: {
       screen: AvailableInFullVersion,
@@ -61,15 +61,12 @@ const RootStackNavigator = StackNavigator(
       navigationOptions: {
         header: null,
       },
-    }
+    },
   },
   {
     navigationOptions: ({ navigation }) => ({
       title: (typeof navigation.state.params === 'object' && navigation.state.params.title)
         ? navigation.state.params.title : navigation.state.params,
-      headerTitleStyle: {
-        fontFamily: Fonts.primaryLight,
-      },
       headerStyle: {
         backgroundColor: '#577AD9',
       },

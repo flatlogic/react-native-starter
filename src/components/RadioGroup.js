@@ -9,7 +9,9 @@ import {
 
 import { Colors } from '../constants';
 
-export default function RNSRadioGroup({ items, selectedIndex, onChange, style, underline }) {
+export default function RNSRadioGroup({
+  items, selectedIndex, onChange, style, underline,
+}) {
   return (
     <View style={[styles.container, underline && styles.underline, style && style]}>
       { items && items.map((item, index) => {
@@ -29,12 +31,15 @@ export default function RNSRadioGroup({ items, selectedIndex, onChange, style, u
             style={[styles.item, underline && styles.itemUnderline, isActive && activeStyle]}
           >
             <Text
-              style={[ styles.text, underline && styles.textUnderline, isActive && activeTextStyle ]}
+              style={[styles.text, underline && styles.textUnderline, isActive && activeTextStyle]}
             >
               {item.value || item}
             </Text>
             { underline && isActive && (
-              <View style={{ height: 5, borderBottomColor: Colors.primary, borderBottomWidth: 3, position: 'absolute' }} />
+              <View style={{
+ height: 5, borderBottomColor: Colors.primary, borderBottomWidth: 3, position: 'absolute',
+}}
+              />
             )}
           </TouchableOpacity>
         );

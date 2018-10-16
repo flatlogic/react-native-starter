@@ -22,19 +22,19 @@ export function loggedIn(userData) {
     payload: userData,
   };
 }
-  
+
 export function skipLogin() {
   return {
     type: SKIPPED_LOGIN,
   };
 }
-  
+
 export function passedWalkthrough() {
   return {
     type: PASSED_WALKTHROUGH,
   };
 }
-  
+
 export function loggedOut() {
   return {
     type: LOGGED_OUT,
@@ -43,41 +43,41 @@ export function loggedOut() {
 
 // Reducer
 export default function AuthStateReducer(state = initialState, action = {}) {
-    switch (action.type) {
-        case LOGGED_IN:
-          return Object.assign({}, state, {
-            hasPassedWalkthrough: state.hasPassedWalkthrough,
-            isLoggedIn: true,
-            id: action.data.id,
-            name: action.data.name,
-            userToken: action.data.userToken,
-          });
-        case SKIPPED_LOGIN:
-          return Object.assign({}, state, {
-            isLoggedIn: false,
-            hasSkippedLogin: true,
-            id: null,
-            name: null,
-            hasPassedWalkthrough: state.hasPassedWalkthrough,
-          });
-        case PASSED_WALKTHROUGH:
-          return Object.assign({}, state, {
-            isLoggedIn: false,
-            hasSkippedLogin: false,
-            id: null,
-            name: null,
-            hasPassedWalkthrough: true,
-          });
-        case LOGGED_OUT:
-          return Object.assign({}, state, {
-            isLoggedIn: false,
-            hasSkippedLogin: false,
-            loggedOut: true,
-            hasPassedWalkthrough: state.hasPassedWalkthrough,
-            id: null,
-            name: null,
-          });
-        default:
-          return state;
-      }
+  switch (action.type) {
+    case LOGGED_IN:
+      return Object.assign({}, state, {
+        hasPassedWalkthrough: state.hasPassedWalkthrough,
+        isLoggedIn: true,
+        id: action.data.id,
+        name: action.data.name,
+        userToken: action.data.userToken,
+      });
+    case SKIPPED_LOGIN:
+      return Object.assign({}, state, {
+        isLoggedIn: false,
+        hasSkippedLogin: true,
+        id: null,
+        name: null,
+        hasPassedWalkthrough: state.hasPassedWalkthrough,
+      });
+    case PASSED_WALKTHROUGH:
+      return Object.assign({}, state, {
+        isLoggedIn: false,
+        hasSkippedLogin: false,
+        id: null,
+        name: null,
+        hasPassedWalkthrough: true,
+      });
+    case LOGGED_OUT:
+      return Object.assign({}, state, {
+        isLoggedIn: false,
+        hasSkippedLogin: false,
+        loggedOut: true,
+        hasPassedWalkthrough: state.hasPassedWalkthrough,
+        id: null,
+        name: null,
+      });
+    default:
+      return state;
+  }
 }

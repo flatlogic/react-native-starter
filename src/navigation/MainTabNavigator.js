@@ -20,7 +20,6 @@ const iconComponents = require('../../assets/images/tabbar/components.png');
 const hederBackground = require('../../assets/images/topBarBg.png');
 
 
-
 const styles = StyleSheet.create({
   tabBarItemContainer: {
     flex: 1,
@@ -73,7 +72,8 @@ export default TabNavigator(
           <View style={styles.headerContainer}>
             <Image
               style={styles.headerImage}
-              source={hederBackground} />
+              source={hederBackground}
+            />
             <Text style={styles.headerCaption}>Calendar</Text>
           </View>
         ),
@@ -86,7 +86,8 @@ export default TabNavigator(
           <View style={styles.headerContainer}>
             <Image
               style={styles.headerImage}
-              source={hederBackground} />
+              source={hederBackground}
+            />
             <Text style={styles.headerCaption}>Grids</Text>
           </View>
         ),
@@ -99,7 +100,8 @@ export default TabNavigator(
           <View style={styles.headerContainer}>
             <Image
               style={styles.headerImage}
-              source={hederBackground} />
+              source={hederBackground}
+            />
             <Text style={styles.headerCaption}>Pages</Text>
           </View>
         ),
@@ -112,12 +114,13 @@ export default TabNavigator(
           <View style={styles.headerContainer}>
             <Image
               style={styles.headerImage}
-              source={hederBackground} />
+              source={hederBackground}
+            />
             <Text style={styles.headerCaption}>Components</Text>
           </View>
         ),
       },
-    }
+    },
   },
   {
     navigationOptions: ({ navigation }) => ({
@@ -151,7 +154,7 @@ export default TabNavigator(
             <Image
               resizeMode="contain"
               source={iconSource}
-              style={[ styles.tabBarIcon, focused && styles.tabBarIconFocused ]}
+              style={[styles.tabBarIcon, focused && styles.tabBarIconFocused]}
             />
           </View>
         );
@@ -170,7 +173,7 @@ export default TabNavigator(
       },
       labelStyle: {
         color: Colors.grey,
-      }
+      },
     },
   },
 );

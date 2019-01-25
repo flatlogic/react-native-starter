@@ -6,14 +6,12 @@
     "githubUrl": "https://github.com/flatlogic/react-native-starter",
     "primaryColor": "#555CC4",
     "privacy": "public",
-    "sdkVersion": "30.0.0",
+    "sdkVersion": "32.0.0",
     "platforms": ["ios", "android"],
     "version": "1.0.3",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "assetBundlePatterns": [
-      "assets/**/**"
-    ],
+    "assetBundlePatterns": ["assets/**/**"],
     "splash": {
       "image": "./assets/images/background.png",
       "resizeMode": "cover",

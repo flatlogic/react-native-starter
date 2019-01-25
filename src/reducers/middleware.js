@@ -6,5 +6,5 @@ import loggerMiddleware from './middleware/loggerMiddleware';
 export default [
   promiseMiddleware,
   thunkMiddleware,
-  loggerMiddleware,
+  // loggerMiddleware,
 ];

@@ -20,16 +20,13 @@
     ]
   },
   "dependencies": {
-    "@ercpereda/react-native-accordion": "^2.0.6",
-    "@expo/samples": "2.1.1",
-    "add": "^2.0.6",
-    "expo": "^30.0.0",
+    "expo": "^32.0.0",
     "lodash": "^4.17.5",
     "moment": "^2.20.1",
     "prop-types": "^15.6.0",
-    "react": "16.3.1",
+    "react": "16.5.0",
     "react-mixin": "4",
-    "react-native": "https://github.com/expo/react-native/archive/sdk-30.0.0.tar.gz",
+    "react-native": "https://github.com/expo/react-native/archive/sdk-32.0.0.tar.gz",
     "react-native-calendars": "^1.17.4",
     "react-native-gifted-chat": "^0.4.3",
     "react-native-image-progress": "^1.0.1",
@@ -64,7 +61,7 @@
     "eslint-plugin-react": "^7.6.1",
     "flow-bin": "^0.61.0",
     "jest": "^21.2.1",
-    "jest-expo": "^30.0.0",
+    "jest-expo": "^32.0.0",
     "plop": "^2.0.0",
     "prettier": "1.16.1",
     "react-test-renderer": "^16.2.0"

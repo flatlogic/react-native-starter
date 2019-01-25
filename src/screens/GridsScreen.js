@@ -10,9 +10,9 @@ import {
   Image,
   Dimensions,
 } from 'react-native';
-import { Colors, Fonts } from '../constants';
+import {Colors, Fonts} from '../constants';
 
-import { RadioGroup, GridRow } from '../components';
+import {RadioGroup, GridRow} from '../components';
 
 export default class GridsScreen extends React.Component {
   constructor(props) {
@@ -32,56 +32,57 @@ export default class GridsScreen extends React.Component {
   }
 
   _getRenderItemFunction() {
-    return [this.renderRowOne, this.renderRowTwo, this.renderRowThree][this.props.tabIndex];
+    return [this.renderRowOne, this.renderRowTwo, this.renderRowThree][
+      this.props.tabIndex
+    ];
   }
 
   _openArticle(article) {
-    this.props.navigate({ routeName: 'Article', params: { ...article } });
+    this.props.navigation.navigate({
+      routeName: 'Article',
+      params: {...article},
+    });
   }
 
   renderRowOne(rowData) {
     const cellViews = rowData.item.map(item => (
-      <TouchableOpacity
-        key={item.id}
-        onPress={() => this._openArticle(item)}
-      >
+      <TouchableOpacity key={item.id} onPress={() => this._openArticle(item)}>
         <View style={styles.itemOneContainer}>
           <View style={styles.itemOneImageContainer}>
-            <Image
-              style={styles.itemOneImage}
-              source={{ uri: item.image }}
-            />
+            <Image style={styles.itemOneImage} source={{uri: item.image}} />
           </View>
           <View style={styles.itemOneContent}>
-            <Text style={styles.itemOneTitle} numberOfLines={1}>{item.title}</Text>
-            <Text style={styles.itemOneSubTitle} styleName="collapsible" numberOfLines={3}>{item.subtitle}</Text>
-            <Text style={styles.itemOnePrice} numberOfLines={1}>{item.price}</Text>
+            <Text style={styles.itemOneTitle} numberOfLines={1}>
+              {item.title}
+            </Text>
+            <Text
+              style={styles.itemOneSubTitle}
+              styleName="collapsible"
+              numberOfLines={3}>
+              {item.subtitle}
+            </Text>
+            <Text style={styles.itemOnePrice} numberOfLines={1}>
+              {item.price}
+            </Text>
           </View>
         </View>
       </TouchableOpacity>
     ));
     return (
-      <View
-        key={rowData.item[0].id}
-        style={styles.itemOneRow}
-      >
+      <View key={rowData.item[0].id} style={styles.itemOneRow}>
         {cellViews}
       </View>
     );
   }
 
-  renderRowTwo({ item }) {
+  renderRowTwo({item}) {
     return (
       <TouchableOpacity
         key={item.id}
         style={styles.itemTwoContainer}
-        onPress={() => this._openArticle(item)}
-      >
+        onPress={() => this._openArticle(item)}>
         <View style={styles.itemTwoContent}>
-          <Image
-            style={styles.itemTwoImage}
-            source={{ uri: item.image }}
-          />
+          <Image style={styles.itemTwoImage} source={{uri: item.image}} />
           <View style={styles.itemTwoOverlay} />
           <Text style={styles.itemTwoTitle}>{item.title}</Text>
           <Text style={styles.itemTwoSubTitle}>{item.subtitle}</Text>
@@ -91,30 +92,34 @@ export default class GridsScreen extends React.Component {
     );
   }
 
-  renderRowThree({ item }) {
+  renderRowThree({item}) {
     return (
       <TouchableOpacity
         key={item.id}
         style={styles.itemThreeContainer}
-        onPress={() => this._openArticle(item)}
-      >
+        onPress={() => this._openArticle(item)}>
         <View style={styles.itemThreeSubContainer}>
-          <Image
-            source={{ uri: item.image }}
-            style={styles.itemThreeImage}
-          />
+          <Image source={{uri: item.image}} style={styles.itemThreeImage} />
           <View style={styles.itemThreeContent}>
             <Text style={styles.itemThreeBrand}>{item.brand}</Text>
             <View>
               <Text style={styles.itemThreeTitle}>{item.title}</Text>
-              <Text style={styles.itemThreeSubtitle} numberOfLines={1}>{item.subtitle}</Text>
+              <Text style={styles.itemThreeSubtitle} numberOfLines={1}>
+                {item.subtitle}
+              </Text>
             </View>
             <View style={styles.itemThreeMetaContainer}>
-              { item.badge && (
+              {item.badge && (
                 <View
-                  style={[styles.badge, item.badge === 'NEW' && { backgroundColor: Colors.green }]}
-                >
-                  <Text style={{ fontSize: 10, color: Colors.white }} styleName="bright">{item.badge}</Text>
+                  style={[
+                    styles.badge,
+                    item.badge === 'NEW' && {backgroundColor: Colors.green},
+                  ]}>
+                  <Text
+                    style={{fontSize: 10, color: Colors.white}}
+                    styleName="bright">
+                    {item.badge}
+                  </Text>
                 </View>
               )}
               <Text style={styles.itemThreePrice}>{item.price}</Text>
@@ -127,12 +132,14 @@ export default class GridsScreen extends React.Component {
   }
 
   render() {
-    const groupedData = this.props.tabIndex === 0 ?
-      GridRow.groupByRows(this.props.data, 2) : this.props.data;
+    const groupedData =
+      this.props.tabIndex === 0
+        ? GridRow.groupByRows(this.props.data, 2)
+        : this.props.data;
 
     return (
       <View style={styles.container}>
-        <View style={{ height: 50 }}>
+        <View style={{height: 50}}>
           <RadioGroup
             selectedIndex={this.props.tabIndex}
             items={this.props.tabs}
@@ -141,8 +148,8 @@ export default class GridsScreen extends React.Component {
           />
         </View>
         <FlatList
-          keyExtractor={item => item.id || item[0] && item[0].id}
-          style={{ backgroundColor: Colors.white, paddingHorizontal: 15 }}
+          keyExtractor={item => item.id || (item[0] && item[0].id)}
+          style={{backgroundColor: Colors.white, paddingHorizontal: 15}}
           data={groupedData}
           renderItem={this._getRenderItemFunction()}
         />
@@ -162,7 +169,7 @@ const styles = StyleSheet.create({
   },
   itemOneContainer: {
     flex: 1,
-    width: (Dimensions.get('window').width / 2 - 40),
+    width: Dimensions.get('window').width / 2 - 40,
   },
   itemOneImageContainer: {
     borderRadius: 3,
@@ -170,7 +177,7 @@ const styles = StyleSheet.create({
   },
   itemOneImage: {
     height: 200,
-    width: (Dimensions.get('window').width / 2 - 40),
+    width: Dimensions.get('window').width / 2 - 40,
   },
   itemOneTitle: {
     fontFamily: Fonts.primaryRegular,

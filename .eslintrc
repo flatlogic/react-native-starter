@@ -1,31 +1,5 @@
 {
-  "extends": ["airbnb"],
-  "plugins": [
-    "react",
-    "jsx-a11y",
-    "import"
-  ],
-  "parser": "babel-eslint",
-  "rules": {
-    "react/jsx-filename-extension": ["error", { "extensions": [".js", ".jsx"] }],
-    "no-use-before-define": "off",
-    "function-paren-newline": "off",
-    "global-require": 0,
-    "import/prefer-default-export": "off",
-    "class-methods-use-this": "off",
-    "import/no-named-as-default": "off",
-    "import/no-named-as-default-member": "off",
-    "max-len": ["error", { "code": 120 }],
-    "react/no-unused-prop-types": "off",
-    "import/no-unresolved": "off",
-    "react/no-unescaped-entities": "off",
-    "no-underscore-dangle": "off",
-    "import/extensions": "off",
-    "react/prop-types": "off",
-    "no-return-assign": "off",
-    "operator-linebreak": "off",
-    "react/jsx-one-expression-per-line": "off",
-    "react/destructuring-assignment": "off",
-    "react/require-default-props": "off"
-  }
+    "extends": ["prettier"],
+    "plugins": ["react", "jsx-a11y", "import"],
+    "parser": "babel-eslint"
 }

@@ -6,22 +6,13 @@ import AuthScreen from '../containers/AuthScreen';
 import AppNavigator from './RootNavigation';
 
 export default function NavigatorView({ dispatch, navigatorState, authState }) {
-  if (authState.isLoggedIn || authState.hasSkippedLogin) {
-    return (
-      <AppNavigator
-        navigation={
-          addNavigationHelpers({
-            dispatch,
-            state: navigatorState,
-          })
-        }
-      />
-    );
-  }
-  return <AuthScreen />;
+    if (authState.isLoggedIn || authState.hasSkippedLogin) {
+        return <AppNavigator />;
+    }
+    return <AuthScreen />;
 }
 
 NavigatorView.propTypes = {
-  dispatch: PropTypes.func.isRequired,
-  navigatorState: PropTypes.shape({}).isRequired,
+    dispatch: PropTypes.func.isRequired,
+    navigatorState: PropTypes.shape({}).isRequired,
 };

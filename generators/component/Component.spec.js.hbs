@@ -1,0 +1,15 @@
+/* eslint-disable no-undef */
+import React from 'react';
+import { shallow } from 'enzyme';
+
+import {
+  {{properCase name }},
+} from '../index';
+
+describe('{{properCase name }} Component', () => {
+  it('renders as expected', () => {
+  const wrapper = shallow(
+    <{{properCase name }} />,
+  );
+  expect(wrapper).toMatchSnapshot();
+});

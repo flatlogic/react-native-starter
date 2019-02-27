@@ -1,0 +1,28 @@
+// @flow
+type {{properCase name }}StateType = {};
+
+type ActionType = {
+  type: string,
+  payload?: any,
+};
+
+export const initialState: {{properCase name }}StateType = {};
+
+export const ACTION = '{{properCase name }}State/ACTION';
+
+export function actionCreator(): ActionType {
+  return {
+    type: ACTION,
+  };
+}
+
+export default function {{properCase name }}StateReducer(state: {{properCase name }}StateType = initialState, action: ActionType): {{properCase name }}StateType {
+  switch (action.type) {
+    case ACTION:
+      return {
+        ...state,
+      };
+    default:
+      return state;
+  }
+}

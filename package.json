@@ -1,0 +1,119 @@
+{
+  "name": "react-native-starter",
+  "version": "2.0.0",
+  "private": false,
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "test": "jest",
+    "test:update": "jest -u",
+    "test:coverage": "jest --coverage",
+    "run:ios": "react-native run-ios",
+    "run:android": "react-native run-android",
+    "lint": "./node_modules/eslint/bin/eslint.js src",
+    "lint:fix": "./node_modules/eslint/bin/eslint.js src --fix",
+    "flow": "./node_modules/flow-bin/cli.js",
+    "e2e:build": "detox build --configuration ios.sim.debug",
+    "e2e:test": "detox test --configuration ios.sim.debug"
+  },
+  "dependencies": {
+    "i18n-js": "^3.2.1",
+    "lodash": "^4.17.11",
+    "moment": "^2.24.0",
+    "react": "16.6.3",
+    "react-native": "0.58.5",
+    "react-native-calendars": "^1.22.0",
+    "react-native-gesture-handler": "^1.0.16",
+    "react-native-gifted-chat": "^0.7.2",
+    "react-native-lightbox": "^0.8.0",
+    "react-native-linear-gradient": "^2.5.3",
+    "react-native-localize": "^1.0.4",
+    "react-native-modal": "^9.0.0",
+    "react-native-modal-datetime-picker": "^6.0.0",
+    "react-native-modal-dropdown": "^0.6.2",
+    "react-native-paper": "^2.12.0",
+    "react-native-ui-lib": "^3.18.0",
+    "react-native-vector-icons": "^6.3.0",
+    "react-navigation": "^3.3.2",
+    "react-navigation-header-buttons": "^2.1.2",
+    "react-navigation-material-bottom-tabs": "^1.0.0",
+    "react-redux": "^6.0.1",
+    "recompose": "^0.30.0",
+    "redux": "^4.0.1",
+    "redux-logger": "^3.0.6",
+    "redux-persist": "^5.10.0",
+    "redux-promise": "^0.6.0",
+    "redux-thunk": "^2.3.0",
+    "victory-native": "^31.0.0"
+  },
+  "devDependencies": {
+    "@babel/preset-flow": "^7.0.0",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-eslint": "^10.0.1",
+    "babel-jest": "24.1.0",
+    "danger": "^7.0.2",
+    "detox": "^9.1.2",
+    "enzyme": "^3.7.0",
+    "enzyme-adapter-react-16": "^1.7.0",
+    "eslint": "^5.9.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-prettier": "^3.6.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.2",
+    "eslint-plugin-react": "^7.11.1",
+    "flow-bin": "0.78.0",
+    "jest": "24.1.0",
+    "jsdom": "13.0.0",
+    "jsdom-global": "3.0.2",
+    "metro-react-native-babel-preset": "0.52.0",
+    "plop": "^2.2.0",
+    "prettier": "^1.16.1",
+    "react-addons-test-utils": "^15.6.2",
+    "react-dom": "^16.6.3",
+    "react-test-renderer": "16.6.3",
+    "sinon": "^7.1.1"
+  },
+  "jest": {
+    "preset": "react-native",
+    "transform": {
+      "^.+\\.js$": "<rootDir>/node_modules/react-native/jest/preprocessor.js"
+    },
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx}",
+      "!**/node_modules/**",
+      "!android/**",
+      "!ios/**",
+      "!assets/**"
+    ],
+    "coverageDirectory": "jest_coverage",
+    "setupFiles": [
+      "./jest-setup.js"
+    ],
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "/e2e/"
+    ]
+  },
+  "rnpm": {
+    "assets": [
+      "./assets/fonts/"
+    ]
+  },
+  "detox": {
+    "configurations": {
+      "ios.sim.debug": {
+        "binaryPath": "ios/build/Build/Products/Debug-iphonesimulator/fitness.app",
+        "build": "xcodebuild -UseModernBuildSystem=NO -project ios/fitness.xcodeproj -scheme fitness -configuration Debug -sdk iphonesimulator -derivedDataPath ios/build",
+        "type": "ios.simulator",
+        "name": "iPhone XS"
+      },
+      "ios.sim.release": {
+        "binaryPath": "ios/build/Build/Products/Release-iphonesimulator/fitness.app",
+        "build": "xcodebuild -UseModernBuildSystem=NO -project ios/fitness.xcodeproj -scheme fitness -configuration Release -sdk iphonesimulator -derivedDataPath ios/build",
+        "type": "ios.simulator",
+        "name": "iPhone 7"
+      }
+    },
+    "test-runner": "jest"
+  }
+}

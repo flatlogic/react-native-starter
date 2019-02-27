@@ -102,14 +102,14 @@
   "detox": {
     "configurations": {
       "ios.sim.debug": {
-        "binaryPath": "ios/build/Build/Products/Debug-iphonesimulator/fitness.app",
-        "build": "xcodebuild -UseModernBuildSystem=NO -project ios/fitness.xcodeproj -scheme fitness -configuration Debug -sdk iphonesimulator -derivedDataPath ios/build",
+        "binaryPath": "ios/build/Build/Products/Debug-iphonesimulator/ReactNativeStarter.app",
+        "build": "xcodebuild -UseModernBuildSystem=NO -project ios/ReactNativeStarter.xcodeproj -scheme ReactNativeStarter -configuration Debug -sdk iphonesimulator -derivedDataPath ios/build",
         "type": "ios.simulator",
         "name": "iPhone XS"
       },
       "ios.sim.release": {
-        "binaryPath": "ios/build/Build/Products/Release-iphonesimulator/fitness.app",
-        "build": "xcodebuild -UseModernBuildSystem=NO -project ios/fitness.xcodeproj -scheme fitness -configuration Release -sdk iphonesimulator -derivedDataPath ios/build",
+        "binaryPath": "ios/build/Build/Products/Release-iphonesimulator/ReactNativeStarter.app",
+        "build": "xcodebuild -UseModernBuildSystem=NO -project ios/ReactNativeStarter.xcodeproj -scheme ReactNativeStarter -configuration Release -sdk iphonesimulator -derivedDataPath ios/build",
         "type": "ios.simulator",
         "name": "iPhone 7"
       }

@@ -1,10 +1,7 @@
-import { connect } from 'react-redux';
 import { compose, lifecycle } from 'recompose';
 import { Platform, UIManager } from 'react-native';
 
 import AppView from './AppView';
-
-import { updateStore } from './AppState';
 
 export default compose(
   lifecycle({

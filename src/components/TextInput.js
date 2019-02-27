@@ -1,43 +1,30 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { View, Platform, StyleSheet, TextInput } from 'react-native';
 
 import { fonts, colors } from '../styles';
 
-class RNSTextInput extends React.Component {
-  static propTypes = {
-    type: PropTypes.oneOf(['primary', 'secondary', 'bordered']),
-    style: PropTypes.number,
-    placeholderTextColor: PropTypes.string,
-  };
+const RNSTextInput = props => {
+  const finalStyle = [
+    styles.default,
+    props.type === 'bordered' && styles.bordered,
+    props.dark && styles.dark,
+    props.style && props.style,
+  ];
 
-  static defaultProps = {
-    type: 'primary',
-  };
-
-  render() {
-    const finalStyle = [
-      styles.default,
-      this.props.type === 'bordered' && styles.bordered,
-      this.props.dark && styles.dark,
-      this.props.style && this.props.style,
-    ];
-
-    return (
-      <View style={{ alignSelf: 'stretch', flexDirection: 'column' }}>
-        <TextInput
-          placeholderTextColor={this.props.placeholderTextColor || colors.white}
-          underlineColorAndroid="white"
-          {...this.props}
-          style={finalStyle}
-        />
-        {Platform.OS === 'ios' && (
-          <View style={{ height: 0.5, backgroundColor: 'white' }} />
-        )}
-      </View>
-    );
-  }
-}
+  return (
+    <View style={{ alignSelf: 'stretch', flexDirection: 'column' }}>
+      <TextInput
+        placeholderTextColor={props.placeholderTextColor || colors.white}
+        underlineColorAndroid="white"
+        {...props}
+        style={finalStyle}
+      />
+      {Platform.OS === 'ios' && (
+        <View style={{ height: 0.5, backgroundColor: 'white' }} />
+      )}
+    </View>
+  );
+};
 
 const HEIGHT = 40;
 

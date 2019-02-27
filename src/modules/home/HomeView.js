@@ -2,28 +2,24 @@ import React from 'react';
 import {
   StyleSheet,
   View,
-  Platform,
-  Image,
   TouchableOpacity,
-  Linking,
   ImageBackground,
 } from 'react-native';
 
 import { fonts, colors } from '../../styles';
-import Button from '../../components/Button';
-import { Text, Title } from '../../components/StyledText';
+import { Text } from '../../components/StyledText';
 
 export default function HomeScreen({ isExtended, setIsExtended }) {
-  const rnsUrl = 'https://reactnativestarter.com';
-  const handleClick = () => {
-    Linking.canOpenURL(rnsUrl).then(supported => {
-      if (supported) {
-        Linking.openURL(rnsUrl);
-      } else {
-        console.log(`Don't know how to open URI: ${rnsUrl}`);
-      }
-    });
-  };
+  // const rnsUrl = 'https://reactnativestarter.com';
+  // const handleClick = () => {
+  //   Linking.canOpenURL(rnsUrl).then(supported => {
+  //     if (supported) {
+  //       Linking.openURL(rnsUrl);
+  //     } else {
+  //       console.log(`Don't know how to open URI: ${rnsUrl}`);
+  //     }
+  //   });
+  // };
 
   return (
     <View style={styles.container}>

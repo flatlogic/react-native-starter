@@ -6,7 +6,6 @@ import {
   Text,
   FlatList,
   TouchableOpacity,
-  ImageBackground,
   Image,
   Dimensions,
 } from 'react-native';
@@ -15,11 +14,10 @@ import { colors, fonts } from '../../styles';
 import { RadioGroup, GridRow } from '../../components';
 
 export default class GridsScreen extends React.Component {
-  _getRenderItemFunction = () => {
-    return [this.renderRowOne, this.renderRowTwo, this.renderRowThree][
+  _getRenderItemFunction = () =>
+    [this.renderRowOne, this.renderRowTwo, this.renderRowThree][
       this.props.tabIndex
     ];
-  };
 
   _openArticle = article => {
     this.props.navigation.navigate({
@@ -60,65 +58,61 @@ export default class GridsScreen extends React.Component {
     );
   };
 
-  renderRowTwo = ({ item }) => {
-    return (
-      <TouchableOpacity
-        key={item.id}
-        style={styles.itemTwoContainer}
-        onPress={() => this._openArticle(item)}
-      >
-        <View style={styles.itemTwoContent}>
-          <Image style={styles.itemTwoImage} source={{ uri: item.image }} />
-          <View style={styles.itemTwoOverlay} />
-          <Text style={styles.itemTwoTitle}>{item.title}</Text>
-          <Text style={styles.itemTwoSubTitle}>{item.subtitle}</Text>
-          <Text style={styles.itemTwoPrice}>{item.price}</Text>
-        </View>
-      </TouchableOpacity>
-    );
-  };
+  renderRowTwo = ({ item }) => (
+    <TouchableOpacity
+      key={item.id}
+      style={styles.itemTwoContainer}
+      onPress={() => this._openArticle(item)}
+    >
+      <View style={styles.itemTwoContent}>
+        <Image style={styles.itemTwoImage} source={{ uri: item.image }} />
+        <View style={styles.itemTwoOverlay} />
+        <Text style={styles.itemTwoTitle}>{item.title}</Text>
+        <Text style={styles.itemTwoSubTitle}>{item.subtitle}</Text>
+        <Text style={styles.itemTwoPrice}>{item.price}</Text>
+      </View>
+    </TouchableOpacity>
+  );
 
-  renderRowThree = ({ item }) => {
-    return (
-      <TouchableOpacity
-        key={item.id}
-        style={styles.itemThreeContainer}
-        onPress={() => this._openArticle(item)}
-      >
-        <View style={styles.itemThreeSubContainer}>
-          <Image source={{ uri: item.image }} style={styles.itemThreeImage} />
-          <View style={styles.itemThreeContent}>
-            <Text style={styles.itemThreeBrand}>{item.brand}</Text>
-            <View>
-              <Text style={styles.itemThreeTitle}>{item.title}</Text>
-              <Text style={styles.itemThreeSubtitle} numberOfLines={1}>
-                {item.subtitle}
-              </Text>
-            </View>
-            <View style={styles.itemThreeMetaContainer}>
-              {item.badge && (
-                <View
-                  style={[
-                    styles.badge,
-                    item.badge === 'NEW' && { backgroundColor: colors.green },
-                  ]}
+  renderRowThree = ({ item }) => (
+    <TouchableOpacity
+      key={item.id}
+      style={styles.itemThreeContainer}
+      onPress={() => this._openArticle(item)}
+    >
+      <View style={styles.itemThreeSubContainer}>
+        <Image source={{ uri: item.image }} style={styles.itemThreeImage} />
+        <View style={styles.itemThreeContent}>
+          <Text style={styles.itemThreeBrand}>{item.brand}</Text>
+          <View>
+            <Text style={styles.itemThreeTitle}>{item.title}</Text>
+            <Text style={styles.itemThreeSubtitle} numberOfLines={1}>
+              {item.subtitle}
+            </Text>
+          </View>
+          <View style={styles.itemThreeMetaContainer}>
+            {item.badge && (
+              <View
+                style={[
+                  styles.badge,
+                  item.badge === 'NEW' && { backgroundColor: colors.green },
+                ]}
+              >
+                <Text
+                  style={{ fontSize: 10, color: colors.white }}
+                  styleName="bright"
                 >
-                  <Text
-                    style={{ fontSize: 10, color: colors.white }}
-                    styleName="bright"
-                  >
-                    {item.badge}
-                  </Text>
-                </View>
-              )}
-              <Text style={styles.itemThreePrice}>{item.price}</Text>
-            </View>
+                  {item.badge}
+                </Text>
+              </View>
+            )}
+            <Text style={styles.itemThreePrice}>{item.price}</Text>
           </View>
         </View>
-        <View style={styles.itemThreeHr} />
-      </TouchableOpacity>
-    );
-  };
+      </View>
+      <View style={styles.itemThreeHr} />
+    </TouchableOpacity>
+  );
 
   render() {
     const groupedData =

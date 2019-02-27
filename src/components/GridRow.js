@@ -1,6 +1,5 @@
-import PropTypes from 'prop-types';
 import React, { Children } from 'react';
-import { View, ViewPropTypes } from 'react-native';
+import { View } from 'react-native';
 import _ from 'lodash';
 
 /**
@@ -30,11 +29,6 @@ class GridRow extends React.Component {
     );
   }
 }
-
-GridRow.propTypes = {
-  columns: PropTypes.number.isRequired,
-  ...ViewPropTypes,
-};
 
 /* eslint-disable no-param-reassign */
 /**

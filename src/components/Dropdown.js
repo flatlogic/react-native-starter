@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import ModalDropdown from 'react-native-modal-dropdown';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
@@ -8,15 +7,6 @@ import { View, Text } from 'react-native';
 import { colors } from '../styles';
 
 class RNSDropDown extends React.Component {
-  static propTypes = {
-    placeholder: PropTypes.string,
-    items: PropTypes.arrayOf(PropTypes.string).isRequired,
-    onSelect: PropTypes.func.isRequired,
-    selectedIndex: PropTypes.number.isRequired,
-    color: PropTypes.string,
-    borderColor: PropTypes.string,
-  };
-
   static defaultProps = {
     placeholder: 'Please Select...',
     selectedIndex: -1,
@@ -58,7 +48,9 @@ class RNSDropDown extends React.Component {
           shadowOpacity: 1.0,
         }}
         adjustFrame={params => {
+          // eslint-disable-next-line no-param-reassign
           params.left = 0;
+          // eslint-disable-next-line no-param-reassign
           params.right = 0;
           return params;
         }}

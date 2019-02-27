@@ -1,13 +1,5 @@
 import React from 'react';
-import {
-  StyleSheet,
-  View,
-  Platform,
-  Text,
-  TouchableOpacity,
-  Image,
-} from 'react-native';
-import Icon from 'react-native-vector-icons/Entypo';
+import { StyleSheet, View, Text, TouchableOpacity, Image } from 'react-native';
 
 import { colors, fonts } from '../../styles';
 

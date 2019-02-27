@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 import { TouchableOpacity, View, Text } from 'react-native';
 
@@ -63,16 +62,6 @@ export default function RNSRadioGroup({
     </View>
   );
 }
-
-RNSRadioGroup.propTypes = {
-  items: PropTypes.arrayOf(PropTypes.string).isRequired,
-  secondary: PropTypes.bool,
-  rounded: PropTypes.bool,
-  underline: PropTypes.bool,
-  onChange: PropTypes.func.isRequired,
-  selectedIndex: PropTypes.number.isRequired,
-  style: PropTypes.oneOfType([PropTypes.number, PropTypes.object]),
-};
 
 const styles = {
   container: {

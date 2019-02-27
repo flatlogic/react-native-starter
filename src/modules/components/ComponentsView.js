@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, View, Platform, Text, ScrollView } from 'react-native';
+import { StyleSheet, View, Text, ScrollView } from 'react-native';
 
 import Icon from 'react-native-vector-icons/Entypo';
 import { colors, fonts } from '../../styles';
@@ -51,41 +51,41 @@ export default function ComponentsScreen(props) {
             style={styles.demoButton}
             primary
             caption="Button"
-            onPress={this.buttonClicked}
+            onPress={() => {}}
           />
           <Button
             style={styles.demoButton}
             secondary
             caption="Button"
-            onPress={this.buttonClicked}
+            onPress={() => {}}
           />
           <Button
             style={styles.demoButton}
             primary
             rounded
             caption="Button"
-            onPress={this.buttonClicked}
+            onPress={() => {}}
           />
           <Button
             style={styles.demoButton}
             secondary
             rounded
             caption="Button"
-            onPress={this.buttonClicked}
+            onPress={() => {}}
           />
           <Button
             style={styles.demoButton}
             primary
             bordered
             caption="Button"
-            onPress={this.buttonClicked}
+            onPress={() => {}}
           />
           <Button
             style={styles.demoButton}
             secondary
             bordered
             caption="Button"
-            onPress={this.buttonClicked}
+            onPress={() => {}}
           />
           <Button
             style={styles.demoButton}
@@ -93,7 +93,7 @@ export default function ComponentsScreen(props) {
             bordered
             rounded
             caption="Button"
-            onPress={this.buttonClicked}
+            onPress={() => {}}
           />
           <Button
             style={styles.demoButton}
@@ -101,7 +101,7 @@ export default function ComponentsScreen(props) {
             bordered
             rounded
             caption="Button"
-            onPress={this.buttonClicked}
+            onPress={() => {}}
           />
         </View>
       </View>
@@ -114,7 +114,7 @@ export default function ComponentsScreen(props) {
             style={styles.demoButton}
             action
             bgColor="#958FDA"
-            onPress={this.buttonClicked}
+            onPress={() => {}}
           >
             <Text>
               <Icon name="chevron-thin-right" size={20} color="white" />
@@ -124,7 +124,7 @@ export default function ComponentsScreen(props) {
             style={styles.demoActionButton}
             action
             bgColor="#4F44C1"
-            onPress={this.buttonClicked}
+            onPress={() => {}}
           >
             <Text>
               <Icon name="controller-paus" size={20} color="white" />
@@ -134,7 +134,7 @@ export default function ComponentsScreen(props) {
             style={styles.demoActionButton}
             action
             bgColor="#3CD4A0"
-            onPress={this.buttonClicked}
+            onPress={() => {}}
           >
             <Text>
               <Icon name="magnifying-glass" size={20} color="white" />
@@ -144,7 +144,7 @@ export default function ComponentsScreen(props) {
             style={styles.demoActionButton}
             action
             bgColor="#EF1F78"
-            onPress={this.buttonClicked}
+            onPress={() => {}}
           >
             <Text>
               <Icon name="paper-plane" size={20} color="white" />
@@ -154,7 +154,7 @@ export default function ComponentsScreen(props) {
             style={styles.demoActionButton}
             action
             bgColor="#52B1F4"
-            onPress={this.buttonClicked}
+            onPress={() => {}}
           >
             <Text>
               <Icon name="flash" size={20} color="white" />
@@ -164,7 +164,7 @@ export default function ComponentsScreen(props) {
             style={styles.demoActionButton}
             action
             bgColor="#19D4E6"
-            onPress={this.buttonClicked}
+            onPress={() => {}}
           >
             <Text>
               <Icon name="reply-all" size={20} color="white" />

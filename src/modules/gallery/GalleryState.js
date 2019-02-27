@@ -100,7 +100,7 @@ function clearImages() {
   return { type: CLEAR_IMAGES };
 }
 
-export function loadImages(page = 0) {
+export function loadImages() {
   return dispatch => {
     dispatch(startImagesLoading());
     // Connect to the API here

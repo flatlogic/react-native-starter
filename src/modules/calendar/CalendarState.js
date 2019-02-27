@@ -1,23 +1,9 @@
-const START_ITEMS_LOADING = 'CalendarState/START_ITEMS_LOADING';
 const ITEMS_LOADED = 'CalendarState/ITEMS_LOADED';
-const LOADING_FAILED = 'CalendarState/LOADING_FAILED';
-
-function startItemsLoading() {
-  return {
-    type: START_ITEMS_LOADING,
-  };
-}
 
 function itemsLoaded(items) {
   return {
     type: ITEMS_LOADED,
     items,
-  };
-}
-
-function itemsLoadingFailed() {
-  return {
-    type: LOADING_FAILED,
   };
 }
 
@@ -33,13 +19,13 @@ export function loadItems(day) {
 
     const items = {};
 
-    for (let i = -15; i < 85; i++) {
+    for (let i = -15; i < 85; i += 1) {
       const time = day.timestamp + i * 24 * 60 * 60 * 1000;
       const strTime = new Date(time).toISOString().split('T')[0];
       if (!items[strTime]) {
         items[strTime] = [];
         const numItems = randomNumber(0, 5);
-        for (let j = 0; j < numItems; j++) {
+        for (let j = 0; j < numItems; j += 1) {
           items[strTime].push({
             name: `Meeting with ${names[randomNumber(0, 4)]}`,
             time: `${randomNumber(0, 24)}:${randomNumber(0, 60)}`,
@@ -67,10 +53,6 @@ const defaultState = {
 
 export default function CalendarStateReducer(state = defaultState, action) {
   switch (action.type) {
-    case START_ITEMS_LOADING:
-      return Object.assign({}, state, {
-        isLoading: true,
-      });
     case ITEMS_LOADED:
       return Object.assign({}, state, {
         isLoading: true,

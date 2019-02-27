@@ -1,14 +1,11 @@
+/* eslint-disable class-methods-use-this */
 import React from 'react';
-import { StyleSheet, View, Platform, Text } from 'react-native';
+import { StyleSheet, View, Text } from 'react-native';
 import { Agenda } from 'react-native-calendars';
 
 import { colors, fonts } from '../../styles';
 
 class CalendarScreen extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   rowHasChanged(r1, r2) {
     return r1.name !== r2.name;
   }

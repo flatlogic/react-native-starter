@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import LinearGradient from 'react-native-linear-gradient';
 import {
   Image,
@@ -135,29 +134,6 @@ export default function RNSButton(props) {
     </TouchableOpacity>
   );
 }
-
-RNSButton.propTypes = {
-  primary: PropTypes.bool,
-  secondary: PropTypes.bool,
-  bordered: PropTypes.bool,
-  rounded: PropTypes.bool,
-  small: PropTypes.bool,
-  icon: PropTypes.number,
-  caption: PropTypes.string,
-  onPress: PropTypes.func,
-  style: PropTypes.oneOfType([
-    PropTypes.number,
-    PropTypes.arrayOf(PropTypes.any),
-    PropTypes.shape({}),
-  ]),
-  children: PropTypes.element,
-  bgColor: PropTypes.string,
-  textColor: PropTypes.string,
-  bgGradientStart: PropTypes.string,
-  bgGradientEnd: PropTypes.string,
-  action: PropTypes.bool,
-  loading: PropTypes.bool,
-};
 
 const HEIGHT = 40;
 const HEIGHT_SMALL = 30;

@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, View, Text, Image, FlatList } from 'react-native';
+import { StyleSheet, View, Image, FlatList } from 'react-native';
 import Lightbox from 'react-native-lightbox';
 
 import { colors } from '../../styles';
@@ -10,7 +10,6 @@ export default function GalleryScreen(props) {
     item.id ? `${item.id}` : `${item[0] && item[0].id}`;
 
   const _renderItem = ({ item, index }) => {
-    console.log(item);
     if (index === 0) {
       return (
         <Lightbox key={item[0].id}>

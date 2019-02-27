@@ -4,7 +4,6 @@
  */
 
 import React from 'react';
-import PropTypes from 'prop-types';
 import {
   Text,
   StyleSheet,
@@ -13,26 +12,19 @@ import {
   Platform,
 } from 'react-native';
 
-class RNSSegmentedControl extends React.Component {
-  static defaultProps = {
-    type: 'default',
-    selectionColor: 'white',
-  };
-
-  render() {
-    const segments = this.props.values.map((value, index) => (
-      <Segment
-        type={this.props.type}
-        key={value}
-        value={value}
-        isSelected={index === this.props.selectedIndex}
-        selectionColor={this.props.selectionColor}
-        onPress={() => this.props.onChange(index)}
-      />
-    ));
-    return <View style={[styles.container, this.props.style]}>{segments}</View>;
-  }
-}
+const RNSSegmentedControl = props => {
+  const segments = props.values.map((value, index) => (
+    <Segment
+      type={props.type}
+      key={value}
+      value={value}
+      isSelected={index === props.selectedIndex}
+      selectionColor={props.selectionColor}
+      onPress={() => props.onChange(index)}
+    />
+  ));
+  return <View style={[styles.container, props.style]}>{segments}</View>;
+};
 
 function Segment({ isSelected, onPress, selectionColor, value, type }) {
   let selectedButtonStyle;
@@ -66,14 +58,6 @@ function Segment({ isSelected, onPress, selectionColor, value, type }) {
     </TouchableOpacity>
   );
 }
-
-Segment.propTypes = {
-  value: PropTypes.string,
-  isSelected: PropTypes.bool,
-  onPress: PropTypes.func,
-  selectionColor: PropTypes.string,
-  type: PropTypes.string,
-};
 
 const HEIGHT = 32;
 

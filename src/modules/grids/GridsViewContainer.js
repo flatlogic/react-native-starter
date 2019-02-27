@@ -1,4 +1,3 @@
-import { connect } from 'react-redux';
 import { compose, withState } from 'recompose';
 
 import GridView from './GridsView';

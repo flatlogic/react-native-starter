@@ -1,4 +1,7 @@
 # React Native Starter 🚀
+
+*You're viewing the new and updated version of React Native Starter, previous version van be found under the [v1 branch](https://github.com/flatlogic/react-native-starter/tree/v1)*
+
 A powerful react native starter template that bootstraps development of your mobile application. React Native Starter is a mobile application template with lots of built-in components like sidebar, navigation, form elements, etc - all you need to start building your mobile app faster. Check out live demo on [App Store](https://play.google.com/store/apps/details?id=com.reactnativestarter.lite), [Google Play](https://play.google.com/store/apps/details?id=com.reactnativestarter.lite).
 
 ![React Native Starter](https://i.imgur.com/vcz4bU6.png)

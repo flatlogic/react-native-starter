@@ -42,6 +42,10 @@ yarn run:android
 
 That's it! Cool, right?
 
+## Documentation
+
+Our handy documentation can be found on official RNS website: https://docs.reactnativestarter.com 
+
 ## Contributing
 
 If you find any problems, please [open an issue](https://github.com/flatlogic/react-native-starter/issues/new) or submit a fix as a pull request.

@@ -10,8 +10,8 @@ export default compose(
     state => ({
       items: state.calendar.items,
     }),
-    dispatch => ({
-      loadItems: items => dispatch(loadItems(items)),
-    }),
+    {
+      loadItems,
+    },
   ),
 )(CalendarScreen);

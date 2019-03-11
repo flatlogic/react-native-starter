@@ -70,7 +70,10 @@ export default function PagesScreen(props) {
           />
           <Text style={styles.itemText}>Calendar</Text>
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => {}} style={styles.item}>
+        <TouchableOpacity
+          onPress={() => props.navigation.navigate({ routeName: 'Auth' })}
+          style={styles.item}
+        >
           <Image
             resizeMode="contain"
             source={profileIcon}

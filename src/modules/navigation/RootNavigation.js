@@ -13,7 +13,12 @@ import GalleryScreen from '../gallery/GalleryViewContainer';
 // import MessagesScreen from '../containers/chat/MessagesScreen';
 // import ChartsScreen from '../containers/ChartsScreen';
 
-import AvailableInFullVersion from '../availableInFullVersion/AvailableInFullVersionViewContainer';
+import ProfileScreen from '../profile/ProfileViewContainer';
+import ArticleScreen from '../article/ArticleViewContainer';
+import ChatScreen from '../chat/ChatViewContainer';
+import MessagesScreen from '../chat/MessagesViewContainer';
+import ChartsScreen from '../charts/ChartsViewContainer';
+import AuthScreen from '../auth/AuthViewContainer';
 
 import { colors, fonts } from '../../styles';
 
@@ -36,9 +41,9 @@ const stackNavigator = createStackNavigator(
       }),
     },
     Profile: {
-      screen: AvailableInFullVersion,
+      screen: ProfileScreen,
       navigationOptions: {
-        header: null,
+        title: 'Profile',
       },
     },
     Gallery: {
@@ -48,25 +53,31 @@ const stackNavigator = createStackNavigator(
       },
     },
     Article: {
-      screen: AvailableInFullVersion,
+      screen: ArticleScreen,
       navigationOptions: {
-        header: null,
+        title: 'Article',
       },
     },
     Chat: {
-      screen: AvailableInFullVersion,
+      screen: ChatScreen,
       navigationOptions: {
-        header: null,
+        title: 'Chat',
       },
     },
     Messages: {
-      screen: AvailableInFullVersion,
+      screen: MessagesScreen,
       navigationOptions: {
-        header: null,
+        title: 'Messages',
       },
     },
     Charts: {
-      screen: AvailableInFullVersion,
+      screen: ChartsScreen,
+      navigationOptions: {
+        title: 'Charts',
+      },
+    },
+    Auth: {
+      screen: AuthScreen,
       navigationOptions: {
         header: null,
       },

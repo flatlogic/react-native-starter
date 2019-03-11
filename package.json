@@ -16,6 +16,7 @@
     "e2e:test": "detox test --configuration ios.sim.debug"
   },
   "dependencies": {
+    "@exponent/react-native-action-sheet": "^0.3.0",
     "i18n-js": "^3.2.1",
     "lodash": "^4.17.11",
     "moment": "^2.24.0",
@@ -27,10 +28,14 @@
     "react-native-lightbox": "^0.8.0",
     "react-native-linear-gradient": "^2.5.3",
     "react-native-localize": "^1.0.4",
+    "react-native-maps": "^0.23.0",
     "react-native-modal": "^9.0.0",
     "react-native-modal-datetime-picker": "^6.0.0",
     "react-native-modal-dropdown": "^0.6.2",
+    "react-native-nav": "^2.0.2",
     "react-native-paper": "^2.12.0",
+    "react-native-snap-carousel": "^3.7.5",
+    "react-native-svg": "^9.3.1",
     "react-native-ui-lib": "^3.18.0",
     "react-native-vector-icons": "^6.3.0",
     "react-navigation": "^3.3.2",

@@ -3,20 +3,26 @@ import { View, Platform, StyleSheet, TextInput } from 'react-native';
 
 import { fonts, colors } from '../styles';
 
-const RNSTextInput = props => {
+const RNSTextInput = ({
+  type,
+  dark,
+  style,
+  placeholderTextColor,
+  ...restProps
+}) => {
   const finalStyle = [
     styles.default,
-    props.type === 'bordered' && styles.bordered,
-    props.dark && styles.dark,
-    props.style && props.style,
+    type === 'bordered' && styles.bordered,
+    dark && styles.dark,
+    style && style,
   ];
 
   return (
     <View style={{ alignSelf: 'stretch', flexDirection: 'column' }}>
       <TextInput
-        placeholderTextColor={props.placeholderTextColor || colors.white}
+        placeholderTextColor={placeholderTextColor || colors.white}
         underlineColorAndroid="white"
-        {...props}
+        {...restProps}
         style={finalStyle}
       />
       {Platform.OS === 'ios' && (

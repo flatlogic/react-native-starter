@@ -12,18 +12,25 @@ import {
   Platform,
 } from 'react-native';
 
-const RNSSegmentedControl = props => {
-  const segments = props.values.map((value, index) => (
+const RNSSegmentedControl = ({
+  type,
+  values,
+  selectedIndex,
+  selectionColor,
+  onChange,
+  style,
+}) => {
+  const segments = values.map((value, index) => (
     <Segment
-      type={props.type}
+      type={type}
       key={value}
       value={value}
-      isSelected={index === props.selectedIndex}
-      selectionColor={props.selectionColor}
-      onPress={() => props.onChange(index)}
+      isSelected={index === selectedIndex}
+      selectionColor={selectionColor}
+      onPress={() => onChange(index)}
     />
   ));
-  return <View style={[styles.container, props.style]}>{segments}</View>;
+  return <View style={[styles.container, style]}>{segments}</View>;
 };
 
 function Segment({ isSelected, onPress, selectionColor, value, type }) {

@@ -14,28 +14,31 @@ class RNSDropDown extends React.Component {
     borderColor: colors.primary,
   };
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      isOpened: false,
-    };
+  state = {
+    isOpened: false,
+  };
 
-    this._openModal = this._openModal.bind(this);
-    this._closeModal = this._closeModal.bind(this);
-  }
-
-  _openModal() {
+  _openModal = () => {
     this.setState({ isOpened: true });
-  }
+  };
 
-  _closeModal() {
+  _closeModal = () => {
     this.setState({ isOpened: false });
-  }
+  };
 
   render() {
+    const {
+      items,
+      color,
+      onSelect,
+      style,
+      borderColor,
+      selectedIndex,
+      placeholder,
+    } = this.props;
     return (
       <ModalDropdown
-        options={this.props.items}
+        options={items}
         onDropdownWillShow={this._openModal}
         onDropdownWillHide={this._closeModal}
         dropdownStyle={{
@@ -56,27 +59,20 @@ class RNSDropDown extends React.Component {
         }}
         renderRow={text => (
           <View style={{ paddingHorizontal: 20, paddingVertical: 10 }}>
-            <Text style={{ color: this.props.color }}>{text}</Text>
+            <Text style={{ color }}>{text}</Text>
           </View>
         )}
-        onSelect={this.props.onSelect}
+        onSelect={onSelect}
       >
-        <View
-          style={[
-            styles.container,
-            this.props.style && this.props.style,
-            { borderColor: this.props.borderColor },
-          ]}
-        >
-          <Text style={{ color: this.props.color }}>
-            {this.props.selectedIndex > -1 &&
-            this.props.items[this.props.selectedIndex]
-              ? this.props.items[this.props.selectedIndex]
-              : this.props.placeholder}
+        <View style={[styles.container, style && style, { borderColor }]}>
+          <Text style={{ color }}>
+            {selectedIndex > -1 && items[selectedIndex]
+              ? items[selectedIndex]
+              : placeholder}
           </Text>
           <Icon
             name={this.state.isOpened ? 'angle-up' : 'angle-down'}
-            color={this.props.color}
+            color={color}
             size={20}
             style={styles.icon}
           />

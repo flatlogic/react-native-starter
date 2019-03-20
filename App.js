@@ -13,6 +13,7 @@ export default function App() {
     <Provider store={store}>
       <PersistGate
         loading={
+          // eslint-disable-next-line react/jsx-wrap-multilines
           <View style={styles.container}>
             <ActivityIndicator color={colors.red} />
           </View>

@@ -58,10 +58,11 @@ class CalendarScreen extends React.Component {
   }
 
   render() {
+    const { items, loadItems } = this.props;
     return (
       <Agenda
-        items={this.props.items}
-        loadItemsForMonth={this.props.loadItems}
+        items={items}
+        loadItemsForMonth={loadItems}
         renderItem={this.renderItem}
         renderEmptyDate={this.renderEmptyDate}
         rowHasChanged={this.rowHasChanged}

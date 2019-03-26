@@ -1,7 +1,9 @@
 import React from 'react';
-import { Image, TouchableOpacity } from 'react-native';
-import { createAppContainer, createStackNavigator } from 'react-navigation';
-
+import { Image } from 'react-native';
+import { createAppContainer, createStackNavigator, createSwitchNavigator, createDrawerNavigator } from 'react-navigation';
+import Icon from 'react-native-vector-icons/Entypo';
+import NavigationService from './NavigationService';
+import CustomDrawer from './CustomDrawer';
 import MainTabNavigator from './MainTabNavigator';
 
 import GalleryScreen from '../gallery/GalleryViewContainer';
@@ -24,8 +26,7 @@ const stackNavigator = createStackNavigator(
     Main: {
       screen: MainTabNavigator,
       navigationOptions: () => ({
-        title: 'React Native Starter',
-        headerLeft: null,
+        title: null,
         headerBackground: (
           <Image
             style={{ flex: 1, width: '100%' }}
@@ -45,6 +46,14 @@ const stackNavigator = createStackNavigator(
       screen: GalleryScreen,
       navigationOptions: {
         title: 'Gallery',
+        headerLeft: (
+          <Icon
+            style={{ color: '#fff', paddingLeft: 10 }}
+            onPress={() => NavigationService.goBack()}
+            name="arrow-bold-left"
+            size={30}
+          />
+        ),
       },
     },
     Article: {
@@ -83,7 +92,7 @@ const stackNavigator = createStackNavigator(
       },
       headerBackground: (
         <Image
-          style={{ flex: 1 }}
+          style={{ flex: 1, width: '100%' }}
           source={headerBackground}
           resizeMode="cover"
         />
@@ -93,24 +102,41 @@ const stackNavigator = createStackNavigator(
         fontFamily: fonts.primaryRegular,
       },
       headerTintColor: '#222222',
-      headerLeft: props => (
-        <TouchableOpacity
-          onPress={props.onPress}
-          style={{
-            paddingLeft: 25,
-          }}
-        >
-          <Image
-            source={require('../../../assets/images/icons/arrow-back.png')}
-            resizeMode="contain"
-            style={{
-              height: 20,
-            }}
-          />
-        </TouchableOpacity>
+      headerLeft: (
+        <Icon
+          style={{ color: '#fff', paddingLeft: 10 }}
+          onPress={() => NavigationService.openDrawer()}
+          name="menu"
+          size={30}
+        />
       ),
     }),
   },
 );
 
-export default createAppContainer(stackNavigator);
+const AppDrawerNavigator = createDrawerNavigator({
+  Dashboard: {
+    screen: stackNavigator,
+    navigationOptions: {
+      drawerLabel: 'Home',
+      drawerIcon: (
+        <Icon
+          style={{ paddingLeft: 10 }}
+          name="menu"
+          size={30}
+        />
+      ),
+    },
+  },
+}, {
+  contentComponent: CustomDrawer,
+  drawerWidth: 300
+});
+
+const AppSwitchNavigator = createSwitchNavigator({
+  Dashboard: { screen: AppDrawerNavigator },
+  Gallery: { screen: GalleryScreen },
+});
+
+const MainAppContainer = createAppContainer(AppSwitchNavigator);
+export default MainAppContainer;

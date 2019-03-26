@@ -2,6 +2,7 @@ import React from 'react';
 import {
   StyleSheet,
   View,
+  Image,
   TouchableOpacity,
   ImageBackground,
 } from 'react-native';
@@ -29,9 +30,11 @@ export default function HomeScreen({ isExtended, setIsExtended }) {
         resizeMode="cover"
       >
         <View style={styles.section}>
-          <Text size={20} white>
-            Home
-          </Text>
+          <Image
+            source={require('../../../assets/images/white-logo.png')}
+            resizeMode="contain"
+            style={styles.logoImg}
+          />
         </View>
         <View style={styles.section}>
           <Text color="#19e7f7" size={15}>
@@ -101,6 +104,10 @@ const styles = StyleSheet.create({
   description: {
     padding: 15,
     lineHeight: 25,
+  },
+  logoImg: {
+    marginTop: 10,
+    width: 250,
   },
   titleDescription: {
     color: '#19e7f7',

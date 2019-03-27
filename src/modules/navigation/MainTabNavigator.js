@@ -172,19 +172,10 @@ bottomTabNav.navigationOptions = ({ navigation }) => {
 
   // Set the headerTitle to the current route name
   const currentRoute = routeName;
-  let headerTitle;
-
-  switch (currentRoute) {
-    case 'Home':
-      headerTitle = "React Native Starter";
-      break;
-    default:
-      headerTitle = currentRoute;
-  }
 
   return {
-    headerTitle
-  };
+    headerTitle: currentRoute === 'Home' ? 'React Native Starter' : currentRoute,
+  }
 };
 
 export default bottomTabNav;

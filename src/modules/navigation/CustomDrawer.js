@@ -2,6 +2,7 @@ import React from 'react';
 import { Text, StyleSheet, View, ImageBackground } from 'react-native';
 import { ScrollView, SafeAreaView } from 'react-navigation';
 import { Drawer } from 'react-native-paper';
+import { colors } from '../../styles';
 import NavigationService from './NavigationService';
 
 
@@ -58,7 +59,7 @@ export default CustomDrawerContentComponent;
 
 const styles = StyleSheet.create({
   container: {
-      flex: 1
+    flex: 1,
   },
   imageBackground: {
     flex: 1,
@@ -67,24 +68,24 @@ const styles = StyleSheet.create({
     height: 75,
     alignItems: 'center',
   },
-  headerContainer: {
-      height: 150,
+    headerContainer: {
+    height: 150,
   },
   headerText: {
-      color: '#fff8f8',
-      fontSize: 25,
+    color: colors.white,
+    fontSize: 25,
   },
   screenContainer: {
-      paddingTop: 20
+    paddingTop: 20
   },
   screenStyle: {
-      height: 30,
-      marginTop: 2,
-      flexDirection: 'row',
-      alignItems: 'center'
+    height: 30,
+    marginTop: 2,
+    flexDirection: 'row',
+    alignItems: 'center'
   },
   screenTextStyle:{
-      fontSize: 20,
-      marginLeft: 20
+    fontSize: 20,
+    marginLeft: 20
   },
 });

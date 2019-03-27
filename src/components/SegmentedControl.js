@@ -12,6 +12,7 @@ import {
   Platform,
 } from 'react-native';
 
+// $FlowFixMe
 const RNSSegmentedControl = ({
   type,
   values,

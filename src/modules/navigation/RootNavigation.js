@@ -28,7 +28,7 @@ const stackNavigator = createStackNavigator(
         headerLeft: null,
         headerBackground: (
           <Image
-            style={{ flex: 1 }}
+            style={{ flex: 1, width: '100%' }}
             source={headerBackground}
             resizeMode="cover"
           />

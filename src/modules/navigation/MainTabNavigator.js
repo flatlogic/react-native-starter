@@ -56,17 +56,19 @@ const styles = StyleSheet.create({
   },
 });
 
-export default createBottomTabNavigator(
+const bottomTabNav = createBottomTabNavigator(
   {
     Home: {
       screen: HomeScreen,
       navigationOptions: {
+        title: "Home",
         header: null,
       },
     },
     Calendar: {
       screen: CalendarScreen,
       navigationOptions: {
+        title: "Calendar",
         header: (
           <View style={styles.headerContainer}>
             <Image style={styles.headerImage} source={hederBackground} />
@@ -78,6 +80,7 @@ export default createBottomTabNavigator(
     Grids: {
       screen: GridsScreen,
       navigationOptions: {
+        title: "Grids",
         header: (
           <View style={styles.headerContainer}>
             <Image style={styles.headerImage} source={hederBackground} />
@@ -89,6 +92,7 @@ export default createBottomTabNavigator(
     Pages: {
       screen: PagesScreen,
       navigationOptions: {
+        title: "Pages",
         header: (
           <View style={styles.headerContainer}>
             <Image style={styles.headerImage} source={hederBackground} />
@@ -100,6 +104,7 @@ export default createBottomTabNavigator(
     Components: {
       screen: ComponentsScreen,
       navigationOptions: {
+        title: "Components",
         header: (
           <View style={styles.headerContainer}>
             <Image style={styles.headerImage} source={hederBackground} />
@@ -161,3 +166,25 @@ export default createBottomTabNavigator(
     },
   },
 );
+
+bottomTabNav.navigationOptions = ({ navigation }) => {
+  const { routeName } = navigation.state.routes[navigation.state.index];
+
+  // Set the headerTitle to the current route name
+  const currentRoute = routeName;
+  let headerTitle;
+
+  switch (currentRoute) {
+    case 'Home':
+      headerTitle = "React Native Starter";
+      break;
+    default:
+      headerTitle = currentRoute;
+  }
+
+  return {
+    headerTitle
+  };
+};
+
+export default bottomTabNav;

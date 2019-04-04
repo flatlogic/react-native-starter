@@ -3,17 +3,27 @@ import { Text as RNText, StyleSheet } from 'react-native';
 
 import { colors, fonts } from '../styles';
 
-function applyGeneralStyles(props) {
+function applyGeneralStyles({
+  style,
+  bold,
+  light,
+  white,
+  underline,
+  hCenter,
+  lineThrough,
+  color,
+  size,
+}) {
   return [
-    props.style && props.style,
-    props.bold && styles.bold,
-    props.light && styles.light,
-    props.white && styles.white,
-    props.underline && styles.underline,
-    props.hCenter && { textAlign: 'center' },
-    props.lineThrough && styles.lineThrough,
-    props.color && { color: props.color },
-    props.size && { fontSize: props.size },
+    style && style,
+    bold && styles.bold,
+    light && styles.light,
+    white && styles.white,
+    underline && styles.underline,
+    hCenter && { textAlign: 'center' },
+    lineThrough && styles.lineThrough,
+    color && { color },
+    size && { fontSize: size },
   ];
 }
 

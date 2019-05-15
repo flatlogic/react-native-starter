@@ -34,7 +34,7 @@ export default function HomeScreen({ isExtended, setIsExtended }) {
           </Text>
         </View>
         <View style={styles.section}>
-          <Text color="#19e7f7" size={15}>
+          <Text color={colors.introText} size={15}>
             The smartest Way to build your mobile app
           </Text>
           <Text size={30} bold white style={styles.title}>
@@ -42,7 +42,12 @@ export default function HomeScreen({ isExtended, setIsExtended }) {
           </Text>
         </View>
         <View style={[styles.section, styles.sectionLarge]}>
-          <Text color="#19e7f7" hCenter size={15} style={styles.description}>
+          <Text
+            color={colors.introText}
+            hCenter
+            size={15}
+            style={styles.description}
+          >
             {' '}
             A powerful starter project that bootstraps development of your
             mobile application and saves you $20 000*
@@ -103,7 +108,7 @@ const styles = StyleSheet.create({
     lineHeight: 25,
   },
   titleDescription: {
-    color: '#19e7f7',
+    color: colors.introText,
     textAlign: 'center',
     fontFamily: fonts.primaryRegular,
     fontSize: 15,

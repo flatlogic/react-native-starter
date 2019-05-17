@@ -10,10 +10,18 @@ export default function RNSRadioGroup({
   onChange,
   style,
   underline,
+  mainColor,
 }) {
   return (
     <View
-      style={[styles.container, underline && styles.underline, style && style]}
+      style={[
+        styles.container,
+        underline && styles.underline,
+        style && style,
+        mainColor && {
+          borderColor: mainColor,
+        },
+      ]}
     >
       {items &&
         items.map((item, index) => {
@@ -22,7 +30,11 @@ export default function RNSRadioGroup({
             isActive = true;
 
           let activeStyle = styles.itemActive;
-          if (underline) activeStyle = styles.itemActiveUnderline;
+          if (underline)
+            activeStyle = [
+              styles.itemActiveUnderline,
+              mainColor && { borderBottomColor: mainColor },
+            ];
 
           let activeTextStyle = styles.textActive;
           if (underline) activeTextStyle = styles.textActiveUnderline;
@@ -42,6 +54,7 @@ export default function RNSRadioGroup({
                   styles.text,
                   underline && styles.textUnderline,
                   isActive && activeTextStyle,
+                  isActive && mainColor && { color: mainColor },
                 ]}
               >
                 {item.value || item}

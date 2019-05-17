@@ -47,3 +47,7 @@ replace_a_file $THEME_DIR/tabbar assets/images/tabbar calendar@3x.png
 replace_a_file $THEME_DIR src/modules/auth AuthView.js
 replace_a_file $THEME_DIR src/modules/home HomeView.js
 replace_a_file $THEME_DIR src/modules/grids GridsView.js
+replace_a_file $THEME_DIR src/modules/calendar CalendarView.js
+replace_a_file $THEME_DIR src/modules/components ComponentsView.js
+replace_a_file $THEME_DIR src/modules/navigation MainTabNavigator.js
+replace_a_file $THEME_DIR src/modules/pages PagesView.js

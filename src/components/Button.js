@@ -18,7 +18,11 @@ export default function RNSButton(props) {
   let icon;
   if (props.icon) {
     icon = (
-      <Image resizeMode="contain" source={props.icon} style={styles.icon} />
+      <Image
+        resizeMode="contain"
+        source={props.icon}
+        style={[styles.icon, props.iconColor && { tintColor: props.iconColor }]}
+      />
     );
   }
 

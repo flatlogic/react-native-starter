@@ -43,3 +43,7 @@ replace_a_file $THEME_DIR/tabbar assets/images/tabbar components@3x.png
 replace_a_file $THEME_DIR/tabbar assets/images/tabbar calendar.png
 replace_a_file $THEME_DIR/tabbar assets/images/tabbar calendar@2x.png
 replace_a_file $THEME_DIR/tabbar assets/images/tabbar calendar@3x.png
+
+replace_a_file $THEME_DIR src/modules/auth AuthView.js
+replace_a_file $THEME_DIR src/modules/home HomeView.js
+replace_a_file $THEME_DIR src/modules/grids Grids.js

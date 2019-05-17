@@ -20,13 +20,13 @@ const RNSTextInput = ({
   return (
     <View style={{ alignSelf: 'stretch', flexDirection: 'column' }}>
       <TextInput
-        placeholderTextColor={placeholderTextColor || colors.white}
-        underlineColorAndroid="white"
+        placeholderTextColor={placeholderTextColor || colors.textInputColor}
+        underlineColorAndroid={colors.textInputColor}
         {...restProps}
         style={finalStyle}
       />
       {Platform.OS === 'ios' && (
-        <View style={{ height: 0.5, backgroundColor: 'white' }} />
+        <View style={{ height: 0.5, backgroundColor: colors.textInputColor }} />
       )}
     </View>
   );

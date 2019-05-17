@@ -23,6 +23,7 @@ const colors = {
   yellow: '#ffc247',
   labelOne: '#FDCB67',
   labelTwo: '#FE8B7C',
+  textInputColor: '#ffffff',
 };
 
 export default colors;

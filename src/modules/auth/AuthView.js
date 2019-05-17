@@ -130,6 +130,8 @@ export default class AuthScreen extends React.Component {
               style={[styles.section, styles.bottom, this.fadeIn(700, -20)]}
             >
               <Button
+                bgColor="white"
+                textColor={colors.primary}
                 secondary
                 rounded
                 style={{ alignSelf: 'stretch', marginBottom: 10 }}

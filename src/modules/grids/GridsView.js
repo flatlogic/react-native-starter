@@ -9,6 +9,7 @@ import {
   Image,
   Dimensions,
 } from 'react-native';
+import LinearGradient from 'react-native-linear-gradient';
 import { colors, fonts } from '../../styles';
 
 import { RadioGroup, GridRow } from '../../components';
@@ -66,7 +67,12 @@ export default class GridsScreen extends React.Component {
     >
       <View style={styles.itemTwoContent}>
         <Image style={styles.itemTwoImage} source={{ uri: item.image }} />
-        <View style={styles.itemTwoOverlay} />
+        <LinearGradient
+          start={{ x: 0, y: 0 }}
+          end={{ x: 1, y: 1 }}
+          colors={[colors.primaryGradientStart, colors.primaryGradientEnd]}
+          style={styles.itemTwoOverlay}
+        />
         <Text style={styles.itemTwoTitle}>{item.title}</Text>
         <Text style={styles.itemTwoSubTitle}>{item.subtitle}</Text>
         <Text style={styles.itemTwoPrice}>{item.price}</Text>
@@ -95,7 +101,7 @@ export default class GridsScreen extends React.Component {
               <View
                 style={[
                   styles.badge,
-                  item.badge === 'NEW' && { backgroundColor: colors.green },
+                  item.badge === 'NEW' && { backgroundColor: colors.labelOne },
                 ]}
               >
                 <Text
@@ -229,7 +235,6 @@ const styles = StyleSheet.create({
     right: 0,
     top: 0,
     bottom: 0,
-    backgroundColor: '#6271da',
     opacity: 0.5,
   },
   itemThreeContainer: {
@@ -281,7 +286,7 @@ const styles = StyleSheet.create({
     marginRight: -15,
   },
   badge: {
-    backgroundColor: colors.secondary,
+    backgroundColor: colors.labelTwo,
     borderRadius: 10,
     paddingHorizontal: 10,
     paddingVertical: 5,

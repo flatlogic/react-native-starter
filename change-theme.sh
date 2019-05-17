@@ -27,3 +27,19 @@ THEME_DIR=src/themes/$THEME_NAME
 replace_a_file $THEME_DIR src/styles colors.js
 replace_a_file $THEME_DIR assets/images background.png
 replace_a_file $THEME_DIR assets/images topBarBg.png
+
+replace_a_file $THEME_DIR/tabbar assets/images/tabbar home.png
+replace_a_file $THEME_DIR/tabbar assets/images/tabbar home@2x.png
+replace_a_file $THEME_DIR/tabbar assets/images/tabbar home@3x.png
+replace_a_file $THEME_DIR/tabbar assets/images/tabbar grids.png
+replace_a_file $THEME_DIR/tabbar assets/images/tabbar grids@2x.png
+replace_a_file $THEME_DIR/tabbar assets/images/tabbar grids@3x.png
+replace_a_file $THEME_DIR/tabbar assets/images/tabbar pages.png
+replace_a_file $THEME_DIR/tabbar assets/images/tabbar pages@2x.png
+replace_a_file $THEME_DIR/tabbar assets/images/tabbar pages@3x.png
+replace_a_file $THEME_DIR/tabbar assets/images/tabbar components.png
+replace_a_file $THEME_DIR/tabbar assets/images/tabbar components@2x.png
+replace_a_file $THEME_DIR/tabbar assets/images/tabbar components@3x.png
+replace_a_file $THEME_DIR/tabbar assets/images/tabbar calendar.png
+replace_a_file $THEME_DIR/tabbar assets/images/tabbar calendar@2x.png
+replace_a_file $THEME_DIR/tabbar assets/images/tabbar calendar@3x.png

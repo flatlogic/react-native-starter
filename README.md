@@ -78,4 +78,4 @@ Read more and purchase it at https://reactnativestarter.com
 
 ## License
 
-[MIT License](LICENSE)
+[Mozilla Public License 2.0](LICENSE)

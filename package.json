@@ -17,7 +17,7 @@
   },
   "dependencies": {
     "i18n-js": "^3.2.1",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.13",
     "moment": "^2.24.0",
     "react": "16.8.3",
     "react-native": "0.59.1",

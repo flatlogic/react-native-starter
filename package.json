@@ -13,7 +13,8 @@
     "lint:fix": "./node_modules/eslint/bin/eslint.js src --fix",
     "flow": "./node_modules/flow-bin/cli.js",
     "e2e:build": "detox build --configuration ios.sim.debug",
-    "e2e:test": "detox test --configuration ios.sim.debug"
+    "e2e:test": "detox test --configuration ios.sim.debug",
+    "rename":"./rename.sh"
   },
   "dependencies": {
     "i18n-js": "^3.2.1",

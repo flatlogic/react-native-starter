@@ -13,11 +13,11 @@ import GalleryScreen from '../gallery/GalleryViewContainer';
 // import MessagesScreen from '../containers/chat/MessagesScreen';
 // import ChartsScreen from '../containers/ChartsScreen';
 
-const { width } = Dimensions.get('window');
-
 import AvailableInFullVersion from '../availableInFullVersion/AvailableInFullVersionViewContainer';
 
 import { colors, fonts } from '../../styles';
+
+const { width } = Dimensions.get('window');
 
 const headerBackground = require('../../../assets/images/topBarBg.png');
 

@@ -51,6 +51,7 @@ function Segment({ isSelected, onPress, selectionColor, value, type }) {
   }
 
   return (
+    // $FlowFixMe
     <TouchableOpacity
       accessibilityTraits={accessibilityTraits}
       activeOpacity={0.8}

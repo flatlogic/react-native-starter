@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image, TouchableOpacity } from 'react-native';
+import { Image, TouchableOpacity, Dimensions } from 'react-native';
 import { createAppContainer, createStackNavigator } from 'react-navigation';
 
 import MainTabNavigator from './MainTabNavigator';
@@ -12,6 +12,8 @@ import GalleryScreen from '../gallery/GalleryViewContainer';
 // import ChatScreen from '../containers/chat/ChatScreen';
 // import MessagesScreen from '../containers/chat/MessagesScreen';
 // import ChartsScreen from '../containers/ChartsScreen';
+
+const { width } = Dimensions.get('window');
 
 import AvailableInFullVersion from '../availableInFullVersion/AvailableInFullVersionViewContainer';
 
@@ -28,7 +30,10 @@ const stackNavigator = createStackNavigator(
         headerLeft: null,
         headerBackground: (
           <Image
-            style={{ flex: 1 }}
+            style={{
+              flex: 1,
+              width,
+            }}
             source={headerBackground}
             resizeMode="cover"
           />

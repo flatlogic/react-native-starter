@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image, TouchableOpacity } from 'react-native';
+import { Image, TouchableOpacity, Dimensions } from 'react-native';
 import { createAppContainer, createStackNavigator } from 'react-navigation';
 
 import MainTabNavigator from './MainTabNavigator';
@@ -17,6 +17,8 @@ import AvailableInFullVersion from '../availableInFullVersion/AvailableInFullVer
 
 import { colors, fonts } from '../../styles';
 
+const { width } = Dimensions.get('window');
+
 const headerBackground = require('../../../assets/images/topBarBg.png');
 
 const stackNavigator = createStackNavigator(
@@ -28,7 +30,10 @@ const stackNavigator = createStackNavigator(
         headerLeft: null,
         headerBackground: (
           <Image
-            style={{ flex: 1 }}
+            style={{
+              flex: 1,
+              width,
+            }}
             source={headerBackground}
             resizeMode="cover"
           />

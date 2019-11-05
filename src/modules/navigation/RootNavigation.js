@@ -1,17 +1,10 @@
 import React from 'react';
-import { Image, TouchableOpacity } from 'react-native';
+import { Image, TouchableOpacity, Dimensions } from 'react-native';
 import { createAppContainer, createStackNavigator } from 'react-navigation';
 
 import MainTabNavigator from './MainTabNavigator';
 
 import GalleryScreen from '../gallery/GalleryViewContainer';
-
-// To use this screens please see the full version at https://reactnativestarter.com
-// import ProfileScreen from '../containers/ProfileScreen';
-// import ArticleScreen from '../containers/ArticleScreen';
-// import ChatScreen from '../containers/chat/ChatScreen';
-// import MessagesScreen from '../containers/chat/MessagesScreen';
-// import ChartsScreen from '../containers/ChartsScreen';
 
 import ProfileScreen from '../profile/ProfileViewContainer';
 import ArticleScreen from '../article/ArticleViewContainer';
@@ -21,6 +14,8 @@ import ChartsScreen from '../charts/ChartsViewContainer';
 import AuthScreen from '../auth/AuthViewContainer';
 
 import { colors, fonts } from '../../styles';
+
+const { width } = Dimensions.get('window');
 
 const headerBackground = require('../../../assets/images/topBarBg.png');
 
@@ -33,7 +28,10 @@ const stackNavigator = createStackNavigator(
         headerLeft: null,
         headerBackground: (
           <Image
-            style={{ flex: 1 }}
+            style={{
+              flex: 1,
+              width,
+            }}
             source={headerBackground}
             resizeMode="cover"
           />

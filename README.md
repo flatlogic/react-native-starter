@@ -29,6 +29,9 @@ git clone https://github.com/flatlogic/react-native-starter.git
 
 # Navigate to clonned folder and Install dependencies
 cd react-native-starter && yarn install
+
+# Install Pods
+cd ios && pod install
 ```
 
 #### 2. Open RNS in your iOS simulator

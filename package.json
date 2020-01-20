@@ -16,11 +16,13 @@
     "e2e:test": "detox test --configuration ios.sim.debug"
   },
   "dependencies": {
+    "global": "^4.4.0",
     "i18n-js": "^3.2.1",
+    "jetifier": "^1.6.5",
     "lodash": "^4.17.13",
     "moment": "^2.24.0",
-    "react": "16.8.1",
-    "react-native": "0.61.3",
+    "react": "16.9.0",
+    "react-native": "0.61.5",
     "react-native-calendars": "^1.212.0",
     "react-native-gesture-handler": "^1.5.0",
     "react-native-gifted-chat": "^0.11.3",
@@ -29,7 +31,7 @@
     "react-native-localize": "^1.3.1",
     "react-native-modal": "^9.0.0",
     "react-native-modal-datetime-picker": "^6.0.0",
-    "react-native-modal-dropdown": "^0.6.2",
+    "react-native-modal-dropdown": "0.7.0",
     "react-native-paper": "^3.1.1",
     "react-native-ui-lib": "^3.39.0",
     "react-native-vector-icons": "^6.6.0",
@@ -46,8 +48,8 @@
     "victory-native": "^31.0.0"
   },
   "devDependencies": {
-    "@babel/preset-flow": "^7.0.0",
     "@babel/core": "^7.5.0",
+    "@babel/preset-flow": "^7.0.0",
     "@babel/runtime": "^7.5.0",
     "@react-native-community/eslint-config": "^0.0.3",
     "babel-eslint": "^10.0.1",

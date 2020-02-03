@@ -6,8 +6,8 @@ A powerful react native starter template that bootstraps development of your mob
 
 ![React Native Starter](https://i.imgur.com/vcz4bU6.png)
 
-<a href='https://play.google.com/store/apps/details?id=com.reactnativestarter.lite&pcampaignid=Github-OS-Repo'><img width="200" alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png'/></a>
-<a href='https://play.google.com/store/apps/details?id=com.reactnativestarter.lite&pcampaignid=Github-OS-Repo'><img width="200" alt='Download on App Store' src='https://i.imgur.com/7IxtMV0.png'/></a>
+<a href='https://play.google.com/store/apps/details?id=com.reactnativestarter.app'><img width="200" alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png'/></a>
+<a href='https://play.google.com/store/apps/details?id=com.reactnativestarter.app'><img width="200" alt='Download on App Store' src='https://i.imgur.com/7IxtMV0.png'/></a>
 
 ## What's inside
 

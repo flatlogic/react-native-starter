@@ -1,5 +1,9 @@
 # Changelog
 
+## [2.0.1]
+
+Bug fixes and libraries update.
+
 ## [2.0.0]
 
 It's a huge update that doesn't have a backward compability with the 1.x version because we totally rebuilt the RNS from the ground.

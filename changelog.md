@@ -1,5 +1,9 @@
 # Changelog
 
+## [2.1.1]
+
+General project and dependencies QA
+
 ## [2.1.0]
 
 Bug fixes and libraries update.

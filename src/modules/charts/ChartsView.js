@@ -5,6 +5,7 @@ import {
   Text,
   ScrollView,
   ActivityIndicator,
+  Dimensions,
 } from 'react-native';
 import {
   VictoryPie,
@@ -13,6 +14,14 @@ import {
   VictoryLine,
   VictoryBoxPlot,
 } from 'victory-native';
+import {
+  LineChart,
+  BarChart,
+  PieChart,
+  ProgressChart,
+  ContributionGraph,
+  StackedBarChart
+} from "react-native-chart-kit";
 import { colors, fonts } from '../../styles';
 
 const candleData = [
@@ -25,6 +34,30 @@ const candleData = [
   { x: 7, open: 30, close: 90, high: 95, low: 30 },
   { x: 8, open: 80, close: 81, high: 83, low: 75 },
 ];
+
+const data = {
+  labels: ["January", "February", "March", "April", "May", "June"],
+  datasets: [
+    {
+      data: [20, 45, 28, 80, 99, 43],
+      color: (opacity = 1) => `rgba(134, 65, 244, ${opacity})`, // optional
+      strokeWidth: 2 // optional
+    }
+  ],
+  legend: ["Rainy Days", "Sunny Days", "Snowy Days"] // optional
+};
+
+const screenWidth = Dimensions.get("window").width;
+
+const chartConfig = {
+  backgroundGradientFrom: "#1E2923",
+  backgroundGradientFromOpacity: 0,
+  backgroundGradientTo: "#08130D",
+  backgroundGradientToOpacity: 0.5,
+  color: '#fff',
+  strokeWidth: 2, // optional, default 3
+  barPercentage: 0.5
+};
 
 export default function ChartsScreen(props) {
   if (!props.data && props.isLoading) {
@@ -42,6 +75,61 @@ export default function ChartsScreen(props) {
         <Text style={styles.titleText}>Charts Demo</Text>
       </View>
       <View style={styles.background}>
+        <View style={styles.chartView}>
+          <LineChart
+            data={data}
+            width={screenWidth}
+            height={220}
+            chartConfig={chartConfig}
+          />
+        </View>
+        <View style={styles.chartView}>
+          <LineChart
+            data={{
+              labels: ["January", "February", "March", "April", "May", "June"],
+              datasets: [
+                {
+                  data: [
+                    Math.random() * 100,
+                    Math.random() * 100,
+                    Math.random() * 100,
+                    Math.random() * 100,
+                    Math.random() * 100,
+                    Math.random() * 100
+                  ]
+                }
+              ]
+            }}
+            width={260} // from react-native
+            height={280}
+            yAxisLabel="$"
+            yAxisSuffix="k"
+            verticalLabelRotation={35}
+            formatXLabel={(str) => str.slice(0,3)}
+            yAxisInterval={1} // optional, defaults to 1
+            chartConfig={{
+              backgroundColor: "#e26a00",
+              backgroundGradientFrom: "#fb8c00",
+              backgroundGradientTo: "#ffa726",
+              decimalPlaces: 2, // optional, defaults to 2dp
+              color: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
+              labelColor: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
+              style: {
+                borderRadius: 16
+              },
+              propsForDots: {
+                r: "6",
+                strokeWidth: "2",
+                stroke: "#ffa726"
+              }
+            }}
+            bezier
+            style={{
+              marginVertical: 8,
+              borderRadius: 16
+            }}
+          />
+        </View>
         <View style={styles.chartView}>
           <Text style={styles.chartLabelText}>Pie Chart</Text>
           <VictoryPie
@@ -133,6 +221,11 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     backgroundColor: colors.white,
     padding: 10,
+  },
+  newChartView: {
+    marginTop: 20,
+    borderRadius: 5,
+    backgroundColor: colors.white,
   },
   chartLabelText: {
     color: '#686868',

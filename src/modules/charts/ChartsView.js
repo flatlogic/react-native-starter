@@ -17,12 +17,12 @@ import {
 import {
   LineChart,
   BarChart,
-  PieChart,
   ProgressChart,
   ContributionGraph,
   StackedBarChart
 } from "react-native-chart-kit";
 import { colors, fonts } from '../../styles';
+import Charts from './chartsCollection/charts/index'
 
 const candleData = [
   { x: 1, open: 9, close: 30, high: 56, low: 7 },
@@ -35,29 +35,25 @@ const candleData = [
   { x: 8, open: 80, close: 81, high: 83, low: 75 },
 ];
 
-const data = {
-  labels: ["January", "February", "March", "April", "May", "June"],
-  datasets: [
-    {
-      data: [20, 45, 28, 80, 99, 43],
-      color: (opacity = 1) => `rgba(134, 65, 244, ${opacity})`, // optional
-      strokeWidth: 2 // optional
-    }
-  ],
-  legend: ["Rainy Days", "Sunny Days", "Snowy Days"] // optional
-};
+const screenWidth = Dimensions.get("window").width - 60;
 
-const screenWidth = Dimensions.get("window").width;
-
-const chartConfig = {
-  backgroundGradientFrom: "#1E2923",
-  backgroundGradientFromOpacity: 0,
-  backgroundGradientTo: "#08130D",
-  backgroundGradientToOpacity: 0.5,
-  color: '#fff',
-  strokeWidth: 2, // optional, default 3
+const defaultConfig = {
+  backgroundColor: "#e26a00",
+  backgroundGradientFrom: "#0075B7",
+  backgroundGradientTo: "#22A6F2",
+  decimalPlaces: 2, // optional, defaults to 2dp
+  color: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
+  labelColor: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
+  style: {
+    borderRadius: 16
+  },
+  propsForDots: {
+    r: "6",
+    strokeWidth: "2",
+    stroke: "#ffa726"
+  },
   barPercentage: 0.5
-};
+}
 
 export default function ChartsScreen(props) {
   if (!props.data && props.isLoading) {
@@ -75,12 +71,69 @@ export default function ChartsScreen(props) {
         <Text style={styles.titleText}>Charts Demo</Text>
       </View>
       <View style={styles.background}>
+        <Charts />
         <View style={styles.chartView}>
-          <LineChart
-            data={data}
+          <ContributionGraph
+            values={[
+              { date: "2017-01-02", count: 1 },
+              { date: "2017-01-03", count: 2 },
+              { date: "2017-01-04", count: 3 },
+              { date: "2017-01-05", count: 4 },
+              { date: "2017-01-06", count: 5 },
+              { date: "2017-01-30", count: 2 },
+              { date: "2017-01-31", count: 3 },
+              { date: "2017-03-01", count: 2 },
+              { date: "2017-04-02", count: 4 },
+              { date: "2017-03-05", count: 2 },
+              { date: "2017-02-30", count: 4 }
+            ]}
+            endDate={new Date("2017-04-01")}
+            numDays={105}
             width={screenWidth}
             height={220}
-            chartConfig={chartConfig}
+            chartConfig={defaultConfig}
+          />
+        </View>
+        <View style={styles.chartView}>
+          <StackedBarChart
+            data={{
+              labels: ["Test1", "Test2"],
+              legend: ["L1", "L2", "L3"],
+              data: [[60, 60, 60], [30, 30, 60]],
+              barColors: ["#dfe4ea", "#ced6e0", "#a4b0be"]
+            }}
+            width={screenWidth}
+            height={220}
+            chartConfig={defaultConfig}
+          />
+        </View>
+        <View style={styles.chartView}>
+          <BarChart
+            data={{
+              labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
+              datasets: [
+                {
+                  data: [20, 45, 28, 80, 99, 43]
+                }
+              ]
+            }}
+            width={screenWidth}
+            height={220}
+            yAxisLabel="$"
+            chartConfig={defaultConfig}
+            verticalLabelRotation={30}
+          />
+        </View>
+        <View style={styles.chartView}>
+          <ProgressChart
+            data={{
+              labels: ["Swim", "Bike", "Run"],
+              data: [0.4, 0.6, 0.8]
+            }}
+            width={screenWidth}
+            height={220}
+            chartConfig={defaultConfig}
+            hideLegend={false}
           />
         </View>
         <View style={styles.chartView}>
@@ -100,29 +153,14 @@ export default function ChartsScreen(props) {
                 }
               ]
             }}
-            width={260} // from react-native
+            width={screenWidth} // from react-native
             height={280}
             yAxisLabel="$"
             yAxisSuffix="k"
             verticalLabelRotation={35}
             formatXLabel={(str) => str.slice(0,3)}
             yAxisInterval={1} // optional, defaults to 1
-            chartConfig={{
-              backgroundColor: "#e26a00",
-              backgroundGradientFrom: "#fb8c00",
-              backgroundGradientTo: "#ffa726",
-              decimalPlaces: 2, // optional, defaults to 2dp
-              color: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
-              labelColor: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
-              style: {
-                borderRadius: 16
-              },
-              propsForDots: {
-                r: "6",
-                strokeWidth: "2",
-                stroke: "#ffa726"
-              }
-            }}
+            chartConfig={defaultConfig}
             bezier
             style={{
               marginVertical: 8,
@@ -212,14 +250,14 @@ const styles = StyleSheet.create({
     fontFamily: fonts.primaryBold,
   },
   background: {
-    backgroundColor: '#f1f1f8',
+    backgroundColor: '#fff',
     flex: 1,
     paddingHorizontal: 20,
   },
   chartView: {
     marginTop: 20,
     borderRadius: 5,
-    backgroundColor: colors.white,
+    backgroundColor: 'transparent',
     padding: 10,
   },
   newChartView: {

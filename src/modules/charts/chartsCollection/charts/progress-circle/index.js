@@ -1,20 +1,20 @@
-import React from 'react'
-import { ProgressCircle } from 'react-native-svg-charts'
+import React from 'react';
+import { ProgressCircle } from 'react-native-svg-charts';
+import colors from '../../../../../styles/colors';
 
 class ProgressCircleExample extends React.PureComponent {
 
-    render() {
+  render() {
 
-        return (
-            <ProgressCircle
-                style={ { height: 200 } }
-                progress={ 0.7 }
-                progressColor={ 'rgb(134, 65, 244)' }
-                { ...this.props }
-            />
-        )
-    }
-
+    return (
+      <ProgressCircle
+        style={ { height: 200 } }
+        progress={ 0.7 }
+        progressColor={colors.primary}
+        { ...this.props }
+      />
+    )
+  }
 }
 
 export default ProgressCircleExample

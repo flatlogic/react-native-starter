@@ -1,6 +1,7 @@
-import React from 'react'
-import { AreaChart, Grid } from 'react-native-svg-charts'
-import { Circle, Path } from 'react-native-svg'
+import React from 'react';
+import { AreaChart, Grid } from 'react-native-svg-charts';
+import { Circle, Path } from 'react-native-svg';
+import colors from '../../../../styles/colors';
 
 class DecoratorExample extends React.PureComponent {
 
@@ -14,8 +15,8 @@ class DecoratorExample extends React.PureComponent {
                     key={ index }
                     cx={ x(index) }
                     cy={ y(value) }
-                    r={ 4 }
-                    stroke={ 'rgb(134, 65, 244)' }
+                    r={ 6 }
+                    stroke={colors.blue}
                     fill={ 'white' }
                 />
             ))
@@ -24,17 +25,18 @@ class DecoratorExample extends React.PureComponent {
         const Line = ({ line }) => (
             <Path
                 d={ line }
-                stroke={ 'rgba(134, 65, 244)' }
+                stroke={colors.green}
                 fill={ 'none' }
             />
         )
 
         return (
             <AreaChart
-                style={{ height: 200 }}
-                data={ data }
-                svg={{ fill: 'rgba(134, 65, 244, 0.2)' }}
-                contentInset={{ top: 20, bottom: 30 }}
+              style={{ height: 200 }}
+              data={ data }
+              svg={{ fill: colors.yellow, fillOpacity: 0.2 }}
+              opacity={0.2}
+              contentInset={{ top: 20, bottom: 30 }}
             >
                 <Grid/>
                 <Line/>

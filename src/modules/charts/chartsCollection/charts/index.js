@@ -18,6 +18,7 @@ import BarChartHorizontal from './bar-chart/horizontal'
 import BarChartHorizontalWithYAxis from './bar-chart/horizontal-with-axis'
 import BarChartHorizontalWithLabels from './bar-chart/horizontal-with-labels'
 import BarChartVerticalWithLabels from './bar-chart/vertical-with-labels'
+import BarStack from './bar-stack';
 
 import PieChart from './pie-chart'
 import PieChartWithLabels from './pie-chart/with-labels'
@@ -49,37 +50,38 @@ class Charts extends React.PureComponent {
   render() {
     return (
       <View>
-          <AreaChart />
-          <AreaChartWithGradient />
-          <LineChart />
-          <LineChartWithGradient />
-          <MultipleBarChart />
-          <BarChartWithGradient />
-          <BarChartWithDifferentBars />
-          <BarChartHorizontal />
-          <BarChartHorizontalWithYAxis />
-          <BarChartHorizontalWithLabels />
-          <BarChartVerticalWithLabels />
-          <PieChart />
-          <PieChartWithLabels />
-          <PieChartWithDifferentArcs />
-          <PieChartWithCenteredLabels />
-          <PieChartWithImageLabels />
-          <PieChartWithDynamicSlices />
-          <ProgressCircle  />
-          <ProgressGauge  />
-          <LayeredCharts  />
-          <Decorators />
-          <Extras />
-          <XAxisScaleBandExample />
-          <XAxisScaleLinearExample /> 
-          <YAxisExample />
-          <AxesExample />
-          <AreaStackWithAxisExample />
-          <GridMinMax />
-          <CustomGrid />
-          <PartialAreaChart />
-          <PartialLineChart />
+        <AreaChart />
+        <BarStack />
+        <AreaChartWithGradient />
+        <LineChart />
+        <LineChartWithGradient />
+        <MultipleBarChart />
+        <BarChartWithGradient />
+        <BarChartWithDifferentBars />
+        <BarChartHorizontal />
+        <BarChartHorizontalWithYAxis />
+        <BarChartHorizontalWithLabels />
+        <BarChartVerticalWithLabels />
+        <PieChart />
+        <PieChartWithLabels />
+        <PieChartWithDifferentArcs />
+        <PieChartWithCenteredLabels />
+        <PieChartWithImageLabels />
+        <PieChartWithDynamicSlices />
+        <ProgressCircle  />
+        <ProgressGauge  />
+        <LayeredCharts  />
+        <Decorators />
+        <Extras />
+        <XAxisScaleBandExample />
+        <XAxisScaleLinearExample /> 
+        <YAxisExample />
+        <AxesExample />
+        <AreaStackWithAxisExample />
+        <GridMinMax />
+        <CustomGrid />
+        <PartialAreaChart />
+        <PartialLineChart />
       </View>
     )
   }

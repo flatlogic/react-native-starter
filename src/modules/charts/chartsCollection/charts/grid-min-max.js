@@ -1,6 +1,7 @@
 import React from 'react'
 import { AreaChart, Path } from 'react-native-svg-charts'
 import * as shape from 'd3-shape'
+import colors from '../../../../styles/colors';
 
 class GridMinMaxExample extends React.PureComponent {
 
@@ -12,7 +13,7 @@ class GridMinMaxExample extends React.PureComponent {
             <Path
                 key={ 'line ' }
                 d={ line }
-                stroke={ 'rgb(134, 65, 244)' }
+                stroke={ colors.green }
                 fill={ 'none' }
             />
         )
@@ -21,7 +22,7 @@ class GridMinMaxExample extends React.PureComponent {
             <AreaChart
                 style={{ height: 200 }}
                 data={ data }
-                svg={{ fill: 'rgba(134, 65, 244, 0.2)' }}
+                svg={{ fill: colors.blue, fillOpacity: 0.2 }}
                 curve={ shape.curveNatural }
                 gridMax={ 500 }
                 gridMin={ -500 }

@@ -2,6 +2,7 @@ import React from 'react'
 import { AreaChart, Grid } from 'react-native-svg-charts'
 import * as shape from 'd3-shape'
 import { StyleSheet, View } from 'react-native'
+import colors from '../../../../styles/colors';
 
 class LayeredChartsExample extends React.PureComponent {
 
@@ -15,7 +16,7 @@ class LayeredChartsExample extends React.PureComponent {
                 <AreaChart
                     style={ { flex: 1 } }
                     data={ data }
-                    svg={{ fill: 'rgba(134, 65, 244, 0.5)' }}
+                    svg={{ fill: colors.blue, fillOpacity: 0.5 }}
                     contentInset={ { top: 20, bottom: 20 } }
                     curve={ shape.curveNatural }
                 >
@@ -24,7 +25,7 @@ class LayeredChartsExample extends React.PureComponent {
                 <AreaChart
                     style={ StyleSheet.absoluteFill }
                     data={ data2 }
-                    svg={{ fill: 'rgba(34, 128, 176, 0.5)' }}
+                    svg={{ fill: colors.green,fillOpacity: 0.5 }}
                     contentInset={ { top: 20, bottom: 20 } }
                     curve={ shape.curveNatural }
                 />

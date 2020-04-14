@@ -12,18 +12,30 @@ class HorizontaBarChartWithYAxis extends React.PureComponent {
       {
         value: 50,
         label: 'One',
+        svg: {
+          fill: colors.primary,
+        },
       },
       {
         value: 10,
         label: 'Two',
+        svg: {
+          fill: colors.blue,
+        },
       },
       {
         value: 40,
         label: 'Three',
+        svg: {
+          fill: colors.yellow,
+        },
       },
       {
         value: 95,
         label: 'Four',
+        svg: {
+          fill: colors.introText,
+        },
       },
       {
         value: 85,

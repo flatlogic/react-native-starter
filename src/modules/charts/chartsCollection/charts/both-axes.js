@@ -9,7 +9,7 @@ class AxesExample extends React.PureComponent {
 
     const data = [ 50, 10, 40, 95, -4, -24, 85, 91, 35, 53, -53, 24, 50, -20, -80 ]
 
-    const axesSvg = { fontSize: 10, fill: colors.primary };
+    const axesSvg = { fontSize: 10, fill: colors.black };
     const verticalContentInset = { top: 10, bottom: 10 }
     const xAxisHeight = 30
 
@@ -32,9 +32,9 @@ class AxesExample extends React.PureComponent {
             style={{ flex: 1 }}
             data={data}
             contentInset={verticalContentInset}
-            svg={{ stroke: colors.blue }}
+            svg={{ stroke: colors.primary }}
           >
-            <Grid />
+            <Grid svg={{ strokeOpacity: 0.5}} />
           </LineChart>
           <XAxis
             style={{ marginHorizontal: -10, height: xAxisHeight }}

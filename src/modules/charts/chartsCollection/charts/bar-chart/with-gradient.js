@@ -13,7 +13,7 @@ class GradientBarExample extends React.PureComponent {
       <Defs key="gradient">
         <LinearGradient id="gradient" x1="0%" y="0%" x2="0%" y2="100%">
           <Stop offset="0%" stopColor={colors.blue} />
-          <Stop offset="100%" stopColor={colors.green} />
+          <Stop offset="100%" stopColor={colors.primary} />
         </LinearGradient>
       </Defs>
     )
@@ -28,7 +28,7 @@ class GradientBarExample extends React.PureComponent {
           fill: 'url(#gradient)',
         }}
       >
-        <Grid />
+        <Grid svg={{ strokeOpacity: 0.5}} />
         <Gradient />
       </BarChart>
     )

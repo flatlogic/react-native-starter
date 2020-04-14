@@ -39,7 +39,7 @@ class AreaStackWithAxisExample extends React.PureComponent {
       },
     ]
 
-    const colorsArr = [ colors.blue, colors.green, colors.primaryGradientEnd, colors.primary ]
+    const colorsArr = [ colors.introText, colors.yellow, colors.primary, colors.blue ]
     const keys   = [ 'apples', 'bananas', 'cherries', 'dates' ]
 
     return (
@@ -52,7 +52,7 @@ class AreaStackWithAxisExample extends React.PureComponent {
           colors={colorsArr}
           curve={shape.curveNatural}
         >
-          <Grid />
+          <Grid svg={{ strokeOpacity: 0.5}} />
         </StackedAreaChart>
         <YAxis
           style={{ position: 'absolute', top: 0, bottom: 0 }}
@@ -60,7 +60,7 @@ class AreaStackWithAxisExample extends React.PureComponent {
           contentInset={{ top: 10, bottom: 10 }}
           svg={{
             fontSize: 8,
-            fill: 'white',
+            fill: 'black',
             stroke: 'black',
             strokeWidth: 0.1,
             alignmentBaseline: 'baseline',

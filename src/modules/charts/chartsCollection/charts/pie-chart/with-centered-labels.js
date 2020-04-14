@@ -31,7 +31,7 @@ class PieChartWithCenteredLabels extends React.PureComponent {
       {
         key: 5,
         amount: 35,
-        svg: { fill: colors.gray }
+        svg: { fill: colors.blue }
       }
     ]
 

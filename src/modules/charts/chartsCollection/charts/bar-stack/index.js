@@ -37,7 +37,7 @@ class StackedBarChartExample extends React.PureComponent {
       },
     ]
 
-    const colorsArr = [ colors.blue, colors.green, colors.yellow, colors.gray ]
+    const colorsArr = [ colors.yellow, colors.introText, colors.blue, colors.primary ]
     const keys   = [ 'apples', 'bananas', 'cherries', 'dates' ]
 
     return (

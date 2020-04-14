@@ -28,7 +28,7 @@ class GradientLineExample extends React.PureComponent {
           stroke: 'url(#gradient)',
         }}
       >
-        <Grid />
+        <Grid svg={{ strokeOpacity: 0.5}} />
         <Gradient />
       </LineChart>
     )

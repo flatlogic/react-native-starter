@@ -18,7 +18,7 @@ class XAxisExample extends React.PureComponent {
           contentInset={{ top: 10, bottom: 10 }}
           svg={{ stroke: colors.yellow }}
         >
-          <Grid />
+          <Grid svg={{ strokeOpacity: 0.5}} />
         </LineChart>
         <XAxis
           style={{ marginHorizontal: -10 }}

@@ -10,7 +10,7 @@ class ProgressCircleExample extends React.PureComponent {
       <ProgressCircle
         style={ { height: 200 } }
         progress={ 0.7 }
-        progressColor={colors.primary}
+        progressColor={colors.blue}
         { ...this.props }
       />
     )

@@ -27,7 +27,7 @@ class LineChartExample extends React.PureComponent {
         svg={{ stroke: colors.primary }}
         contentInset={{ top: 20, bottom: 20 }}
       >
-        <Grid />
+        <Grid svg={{ strokeOpacity: 0.5}} />
         <Shadow />
       </LineChart>
     )

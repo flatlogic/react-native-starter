@@ -9,7 +9,7 @@ class PieChartWithLabelExample extends React.PureComponent {
 
     const data = [ 50, 10, 40, 95, -4, -24, 85, 91 ]
 
-    const colorsArr = [ colors.blue, colors.green, colors.gray, colors.primary, colors.darkGray, colors.primaryLight, colors.secondaryGradientStart, colors.primaryGradientEnd, colors.primaryGradientStart ]
+    const colorsArr = [ '#4857BE', '#6270D1', '#829BF8', '#53A6EA', '#6ECEA3', '#99F2F8', '#1BE6F7', '#F6B24F', '#FFDE89']
 
     const pieData = data
       .filter(value => value > 0)

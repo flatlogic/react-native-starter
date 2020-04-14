@@ -10,6 +10,9 @@ class ColorBarExample extends React.PureComponent {
     const data = [
       {
         value: 50,
+        svg: {
+          fill: colors.primary,
+        },
       },
       {
         value: 10,
@@ -20,7 +23,7 @@ class ColorBarExample extends React.PureComponent {
       {
         value: 40,
         svg: {
-          stroke: colors.primary,
+          stroke: colors.blue,
           strokeWidth: 2,
           fill: 'white',
           strokeDasharray: [ 4, 2 ],
@@ -35,7 +38,7 @@ class ColorBarExample extends React.PureComponent {
       {
         value: 85,
         svg: {
-          fill: colors.green,
+          fill: colors.primary,
         },
       },
     ]
@@ -44,7 +47,7 @@ class ColorBarExample extends React.PureComponent {
       <Defs key="gradient">
         <LinearGradient id="gradient" x1="0" y="0%" x2="100%" y2="0%">
           <Stop offset="0%" stopColor={colors.blue} />
-          <Stop offset="100%" stopColor={colors.green} />
+          <Stop offset="100%" stopColor={colors.introText} />
         </LinearGradient>
       </Defs>
     )
@@ -58,7 +61,7 @@ class ColorBarExample extends React.PureComponent {
         yAccessor={({ item }) => item.value}
         contentInset={{ top: 20, bottom: 20 }}
       >
-        <Grid />
+        <Grid svg={{ strokeOpacity: 0.5}} />
         <Gradient />
       </BarChart>
     )

@@ -17,7 +17,7 @@ class YAxisExample extends React.PureComponent {
           data={data}
           contentInset={ contentInset }
           svg={{
-            fill: colors.primary,
+            fill: colors.black,
             fontSize: 10,
           }}
           formatLabel={ value => `${value}ºC` }
@@ -25,10 +25,10 @@ class YAxisExample extends React.PureComponent {
         <LineChart
           style={ { flex: 1, marginLeft: 16 } }
           data={data}
-          svg={{ stroke: colors.green }}
+          svg={{ stroke: '#52a6e9' }}
           contentInset={ contentInset }
         >
-          <Grid />
+          <Grid svg={{ strokeOpacity: 0.5}} />
         </LineChart>
       </View>
     )

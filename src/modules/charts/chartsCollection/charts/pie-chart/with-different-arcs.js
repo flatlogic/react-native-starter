@@ -31,7 +31,7 @@ class PieChartWithDifferentArcs extends React.PureComponent {
       {
         key: 5,
         value: 35,
-        svg: { fill: colors.gray }
+        svg: { fill: colors.introText }
       }
     ]
 

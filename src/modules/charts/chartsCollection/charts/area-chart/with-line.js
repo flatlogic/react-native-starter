@@ -14,7 +14,7 @@ class AreaChartExample extends React.PureComponent {
       <Path
         key="line"
         d={line}
-        stroke={colors.primaryGradientStart}
+        stroke={colors.primary}
         fill="none"
       />
     )
@@ -25,9 +25,9 @@ class AreaChartExample extends React.PureComponent {
         data={data}
         contentInset={{ top: 30, bottom: 30 }}
         curve={shape.curveNatural}
-        svg={{ fill: colors.blue }}
+        svg={{ fill: '#99F2F8', fillOpacity: 0.5 }}
       >
-        <Grid />
+        <Grid svg={{ strokeOpacity: 0.5}} />
         <Line />
       </AreaChart>
     )

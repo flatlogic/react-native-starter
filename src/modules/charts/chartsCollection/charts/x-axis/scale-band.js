@@ -16,14 +16,14 @@ class XAxisExample extends React.PureComponent {
           style={{ flex: 1 }}
           data={data}
           gridMin={0}
-          svg={{ fill: colors.green }}
+          svg={{ fill: colors.primary }}
         />
         <XAxis
           style={{ marginTop: 10 }}
-          data={ data }
+          data={data}
           scale={scale.scaleBand}
-          formatLabel={ (value, index) => index }
-          labelStyle={ { color: 'black' } }
+          formatLabel={(value, index) => index}
+          labelStyle={{ color: 'black' }}
         />
       </View>
     )

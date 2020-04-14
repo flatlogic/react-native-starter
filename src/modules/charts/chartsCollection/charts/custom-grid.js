@@ -49,7 +49,7 @@ class CustomGridExample extends React.PureComponent {
           style={{ flex: 1 }}
           data={data}
           svg={{
-            stroke: 'rgb(134, 65, 244)',
+            stroke: '#6270d1',
           }}
         >
           <CustomGrid belowChart />

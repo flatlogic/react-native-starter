@@ -42,7 +42,7 @@ class BarChartExample extends React.PureComponent {
         value: 85,
         label: 'Green',
         svg: {
-            fill: 'green',
+            fill: colors.yellow,
         },
       },
     ]

@@ -14,7 +14,7 @@ import colors from '../../../../../styles/colors';
     this.state = {
       selectedSlice: {
         label: '',
-        value: 0
+        value: ''
       },
       labelWidth: 0
     }
@@ -25,7 +25,7 @@ import colors from '../../../../../styles/colors';
     const { label, value } = selectedSlice;
     const keys = ['google', 'facebook', 'linkedin', 'youtube', 'Twitter'];
     const values = [15, 25, 35, 45, 55];
-    const colorsArr = [colors.blue, colors.primary, colors.yellow, colors.green, colors.gray]
+    const colorsArr = [colors.blue, colors.primary, colors.introText, colors.yellow, colors.green]
     const data = keys.map((key, index) => {
         return {
           key,

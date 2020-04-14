@@ -12,8 +12,8 @@ class PartialAreaChartExample extends React.PureComponent {
     const Gradient = () => (
       <Defs key="defs">
         <LinearGradient id="gradient" x1="0%" y="0%" x2="0%" y2="100%">
-          <Stop offset="0%" stopColor={colors.green} stopOpacity={0.8} />
-          <Stop offset="100%" stopColor={colors.green} stopOpacity={0.2} />
+          <Stop offset="0%" stopColor={colors.blue} stopOpacity={0.8} />
+          <Stop offset="100%" stopColor={colors.primary} stopOpacity={0.2} />
         </LinearGradient>
       </Defs>
     )
@@ -33,7 +33,7 @@ class PartialAreaChartExample extends React.PureComponent {
       <Path
         key="line"
         d={line}
-        stroke="green"
+        stroke={colors.blue}
         fill="none"
         clipPath="url(#clip-path-1)"
       />
@@ -42,7 +42,7 @@ class PartialAreaChartExample extends React.PureComponent {
     const DashedLine = ({ line }) => (
       <Path
         key="dashed-line"
-        stroke="green"
+        stroke={colors.blue}
         d={line}
         fill="none"
         clipPath="url(#clip-path-2)"

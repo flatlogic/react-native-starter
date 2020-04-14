@@ -34,7 +34,7 @@ class GroupedBarChartExample extends React.PureComponent {
         contentInset={{ top: 30, bottom: 30 }}
         {...this.props}
       >
-        <Grid />
+        <Grid svg={{ strokeOpacity: 0.5}} />
       </BarChart>
     )
   }

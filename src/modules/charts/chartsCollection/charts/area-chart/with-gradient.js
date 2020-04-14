@@ -24,7 +24,7 @@ class GradientExample extends React.PureComponent {
           contentInset={{ top: 20, bottom: 20 }}
           svg={{ fill: 'url(#gradient)' }}
         >
-          <Grid />
+          <Grid svg={{ strokeOpacity: 0.5}} />
           <Gradient />
         </AreaChart>
     )

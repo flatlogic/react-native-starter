@@ -35,22 +35,20 @@ const candleData = [
   { x: 8, open: 80, close: 81, high: 83, low: 75 },
 ];
 
-const screenWidth = Dimensions.get("window").width - 60;
+const screenWidth = Dimensions.get("window").width - 40;
 
 const defaultConfig = {
-  backgroundColor: "#e26a00",
-  backgroundGradientFrom: "#0075B7",
-  backgroundGradientTo: "#22A6F2",
+  backgroundColor: "#6270d1",
+  backgroundGradientFrom: "#6270d1",
+  backgroundGradientTo: "#6270d1",
   decimalPlaces: 2, // optional, defaults to 2dp
   color: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
   labelColor: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
-  style: {
-    borderRadius: 16
-  },
   propsForDots: {
     r: "6",
-    strokeWidth: "2",
-    stroke: "#ffa726"
+  },
+  propsForBackgroundLines: {
+    stroke: '#829bf8',
   },
   barPercentage: 0.5
 }
@@ -70,8 +68,16 @@ export default function ChartsScreen(props) {
       <View style={styles.titleView}>
         <Text style={styles.titleText}>Charts Demo</Text>
       </View>
+      <View style={styles.subtitleView}>
+        <Text style={styles.subtitleViewText}>React native svg charts</Text>
+      </View>
       <View style={styles.background}>
         <Charts />
+      </View>
+      <View style={styles.subtitleViewPackage}>
+        <Text style={styles.subtitleViewText}>React native charts kit</Text>
+      </View>
+      <View style={styles.background}>
         <View style={styles.chartView}>
           <ContributionGraph
             values={[
@@ -88,7 +94,7 @@ export default function ChartsScreen(props) {
               { date: "2017-02-30", count: 4 }
             ]}
             endDate={new Date("2017-04-01")}
-            numDays={105}
+            numDays={98}
             width={screenWidth}
             height={220}
             chartConfig={defaultConfig}
@@ -100,7 +106,7 @@ export default function ChartsScreen(props) {
               labels: ["Test1", "Test2"],
               legend: ["L1", "L2", "L3"],
               data: [[60, 60, 60], [30, 30, 60]],
-              barColors: ["#dfe4ea", "#ced6e0", "#a4b0be"]
+              barColors: ["#1C2985", "#3241AA", "#4857BE"]
             }}
             width={screenWidth}
             height={220}
@@ -162,12 +168,13 @@ export default function ChartsScreen(props) {
             yAxisInterval={1} // optional, defaults to 1
             chartConfig={defaultConfig}
             bezier
-            style={{
-              marginVertical: 8,
-              borderRadius: 16
-            }}
           />
         </View>
+      </View>
+      <View style={styles.subtitleViewPackage}>
+        <Text style={styles.subtitleViewText}>React native Victory charts</Text>
+      </View>
+      <View style={styles.background}>
         <View style={styles.chartView}>
           <Text style={styles.chartLabelText}>Pie Chart</Text>
           <VictoryPie
@@ -232,11 +239,31 @@ export default function ChartsScreen(props) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: '#f1f1f8',
+  },
+  subtitleView: {
+    alignItems: 'center',
+    paddingTop: 8,
+    paddingBottom: 8,
+    backgroundColor: '#ccc',
+    marginBottom: 10,
+    marginTop: 0,
+  },
+  subtitleViewPackage: {
+    alignItems: 'center',
+    paddingTop: 8,
+    paddingBottom: 8,
+    backgroundColor: '#ccc',
+    marginBottom: 10,
+    marginTop: 10,
+  },
+  subtitleViewText: {
+    color: colors.gray,
   },
   titleView: {
     alignItems: 'center',
-    paddingTop: 20,
-    paddingBottom: 5,
+    paddingTop: 10,
+    paddingBottom: 10,
     backgroundColor: colors.white,
   },
   loaderContainer: {
@@ -250,24 +277,24 @@ const styles = StyleSheet.create({
     fontFamily: fonts.primaryBold,
   },
   background: {
-    backgroundColor: '#fff',
+    backgroundColor: '#f1f1f8',
     flex: 1,
     paddingHorizontal: 20,
   },
   chartView: {
-    marginTop: 20,
+    marginTop: 10,
+    marginBottom: 10,
     borderRadius: 5,
-    backgroundColor: 'transparent',
-    padding: 10,
-  },
-  newChartView: {
-    marginTop: 20,
-    borderRadius: 5,
-    backgroundColor: colors.white,
+    borderColor: '#ffffff',
+    borderStyle: 'solid',
+    borderWidth: 1,
+    backgroundColor: '#ffffff',
+    overflow: 'hidden',
   },
   chartLabelText: {
     color: '#686868',
     fontFamily: fonts.primaryBold,
     fontSize: 18,
+    padding: 10,
   },
 });

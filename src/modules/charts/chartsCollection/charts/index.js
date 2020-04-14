@@ -46,42 +46,106 @@ import CustomGrid from './custom-grid'
 import PartialAreaChart from './partial-chart/area-chart'
 import PartialLineChart from './partial-chart/line-chart'
 
+import ChartWrapper from './wrapper';
+
 class Charts extends React.PureComponent {
   render() {
     return (
       <View>
-        <AreaChart />
-        <BarStack />
-        <AreaChartWithGradient />
-        <LineChart />
-        <LineChartWithGradient />
-        <MultipleBarChart />
-        <BarChartWithGradient />
-        <BarChartWithDifferentBars />
-        <BarChartHorizontal />
-        <BarChartHorizontalWithYAxis />
-        <BarChartHorizontalWithLabels />
-        <BarChartVerticalWithLabels />
-        <PieChart />
-        <PieChartWithLabels />
-        <PieChartWithDifferentArcs />
-        <PieChartWithCenteredLabels />
-        <PieChartWithImageLabels />
-        <PieChartWithDynamicSlices />
-        <ProgressCircle  />
-        <ProgressGauge  />
-        <LayeredCharts  />
-        <Decorators />
-        <Extras />
-        <XAxisScaleBandExample />
-        <XAxisScaleLinearExample /> 
-        <YAxisExample />
-        <AxesExample />
-        <AreaStackWithAxisExample />
-        <GridMinMax />
-        <CustomGrid />
-        <PartialAreaChart />
-        <PartialLineChart />
+        <ChartWrapper title="Line Chart">
+          <AreaChart />
+        </ChartWrapper>
+        <ChartWrapper title="Line Chart opacity">
+          <AreaChartWithGradient />
+        </ChartWrapper>
+        <ChartWrapper title="Line Chart \w shadow">
+          <LineChart />
+        </ChartWrapper>
+        <ChartWrapper title="Line Chart gradient">
+          <LineChartWithGradient />
+        </ChartWrapper>
+        <ChartWrapper title="Multiple Bar Chart">
+          <MultipleBarChart />
+        </ChartWrapper>
+        <ChartWrapper title="Bar Stack">
+          <BarStack />
+        </ChartWrapper>
+        <ChartWrapper title="Bar Chart">
+          <XAxisScaleBandExample />
+        </ChartWrapper>
+        <ChartWrapper title="Bar Chart Gradient">
+          <BarChartWithGradient />
+        </ChartWrapper>
+        <ChartWrapper title="Bar Chart Customized">
+          <BarChartWithDifferentBars />
+        </ChartWrapper>
+        <ChartWrapper title="Bar Chart Horizontal">
+          <BarChartHorizontal />
+        </ChartWrapper>
+        <ChartWrapper title="Bar Chart \w Labels">
+          <BarChartHorizontalWithYAxis />
+        </ChartWrapper>
+        <ChartWrapper title="Bar Chart \w Labels">
+          <BarChartHorizontalWithLabels />
+        </ChartWrapper>
+        <ChartWrapper title="Bar Chart \w Labels">
+          <BarChartVerticalWithLabels />
+        </ChartWrapper>
+        <ChartWrapper title="Pie Chart">
+          <PieChart />
+        </ChartWrapper>
+        <ChartWrapper title="Pie Chart \w Labels">
+          <PieChartWithLabels />
+        </ChartWrapper>
+        <ChartWrapper title="Pie Chart \w Arcs">
+          <PieChartWithDifferentArcs />
+        </ChartWrapper>
+        <ChartWrapper title="Pie Chart \w Labels">
+          <PieChartWithCenteredLabels />
+        </ChartWrapper>
+        {/* <PieChartWithImageLabels /> */}
+        <ChartWrapper title="Pie Chart \w Slices">
+          <PieChartWithDynamicSlices />
+        </ChartWrapper>
+        <ChartWrapper title="Progress Circle">
+          <ProgressCircle  />
+        </ChartWrapper>
+        <ChartWrapper title="Progress Gauge">
+          <ProgressGauge  />
+        </ChartWrapper>
+        <ChartWrapper title="Layered Charts">
+          <LayeredCharts  />
+        </ChartWrapper>
+        <ChartWrapper title="Decorators">
+          <Decorators />
+        </ChartWrapper>
+        <ChartWrapper title="Extra">
+          <Extras />
+        </ChartWrapper>
+        <ChartWrapper title="X Axis Scale">
+          <XAxisScaleLinearExample />
+        </ChartWrapper>
+        <ChartWrapper title="Y Axis Values">
+          <YAxisExample />
+        </ChartWrapper>
+        <ChartWrapper title="X/Y Axis Values">
+          <AxesExample />
+        </ChartWrapper>
+        <ChartWrapper title="Area Stack">
+          <AreaStackWithAxisExample />
+        </ChartWrapper>
+        <ChartWrapper title="Grid Min Max">
+          <GridMinMax />
+        </ChartWrapper>
+        <ChartWrapper title="Custom Grid">
+          <CustomGrid />
+        </ChartWrapper>
+        <ChartWrapper title="Partial Area Chart">
+          <PartialAreaChart />
+        </ChartWrapper>
+        <ChartWrapper title="Partial Line Chart">
+          <PartialLineChart />
+        </ChartWrapper>
       </View>
     )
   }

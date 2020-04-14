@@ -74,6 +74,165 @@ export default function ChartsScreen(props) {
       <View style={styles.background}>
         <Charts />
       </View>
+      <View style={styles.subtitleViewPackage}>
+        <Text style={styles.subtitleViewText}>React native charts kit</Text>
+      </View>
+      <View style={styles.background}>
+        <View style={styles.chartView}>
+          <ContributionGraph
+            values={[
+              { date: "2017-01-02", count: 1 },
+              { date: "2017-01-03", count: 2 },
+              { date: "2017-01-04", count: 3 },
+              { date: "2017-01-05", count: 4 },
+              { date: "2017-01-06", count: 5 },
+              { date: "2017-01-30", count: 2 },
+              { date: "2017-01-31", count: 3 },
+              { date: "2017-03-01", count: 2 },
+              { date: "2017-04-02", count: 4 },
+              { date: "2017-03-05", count: 2 },
+              { date: "2017-02-30", count: 4 }
+            ]}
+            endDate={new Date("2017-04-01")}
+            numDays={98}
+            width={screenWidth}
+            height={220}
+            chartConfig={defaultConfig}
+            squareSize={screenWidth / 19}
+          />
+        </View>
+        <View style={styles.chartView}>
+          <StackedBarChart
+            data={{
+              labels: ["Test1", "Test2"],
+              legend: ["L1", "L2", "L3"],
+              data: [[60, 60, 60], [30, 30, 60]],
+              barColors: ["#1C2985", "#3241AA", "#4857BE"]
+            }}
+            width={screenWidth}
+            height={220}
+            chartConfig={defaultConfig}
+          />
+        </View>
+        <View style={styles.chartView}>
+          <BarChart
+            data={{
+              labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
+              datasets: [
+                {
+                  data: [20, 45, 28, 80, 99, 43]
+                }
+              ]
+            }}
+            width={screenWidth}
+            height={220}
+            yAxisLabel="$"
+            chartConfig={defaultConfig}
+            verticalLabelRotation={30}
+          />
+        </View>
+        <View style={styles.chartView}>
+          <ProgressChart
+            data={{
+              labels: ["Swim", "Bike", "Run"],
+              data: [0.4, 0.6, 0.8]
+            }}
+            width={screenWidth}
+            height={220}
+            chartConfig={defaultConfig}
+            hideLegend={false}
+          />
+        </View>
+        <View style={styles.chartView}>
+          <LineChart
+            data={{
+              labels: ["January", "February", "March", "April", "May", "June"],
+              datasets: [
+                {
+                  data: [
+                    Math.random() * 100,
+                    Math.random() * 100,
+                    Math.random() * 100,
+                    Math.random() * 100,
+                    Math.random() * 100,
+                    Math.random() * 100
+                  ]
+                }
+              ]
+            }}
+            width={screenWidth} // from react-native
+            height={280}
+            yAxisLabel="$"
+            yAxisSuffix="k"
+            verticalLabelRotation={35}
+            formatXLabel={(str) => str.slice(0,3)}
+            yAxisInterval={1} // optional, defaults to 1
+            chartConfig={defaultConfig}
+            bezier
+          />
+        </View>
+      </View>
+      <View style={styles.subtitleViewPackage}>
+        <Text style={styles.subtitleViewText}>React native Victory charts</Text>
+      </View>
+      <View style={styles.background}>
+        <View style={styles.chartView}>
+          <Text style={styles.chartLabelText}>Pie Chart</Text>
+          <VictoryPie
+            width={screenWidth}
+            height={290}
+            data={pie}
+            colorScale={[
+              '#19e7f7',
+              '#9af2f9',
+              '#52a6e9',
+              '#829bf8',
+              '#6271d1',
+              '#f6b24e',
+            ]}
+            innerRadius={45}
+            labelRadius={65}
+            padAngle={1}
+            style={{ labels: { fill: colors.white, fontSize: 18 } }}
+          />
+        </View>
+        <View style={styles.chartView}>
+          <Text style={styles.chartLabelText}>Candlestick Chart</Text>
+          <VictoryChart width={290} height={290}>
+            <VictoryCandlestick
+              candleColors={{ positive: '#19e7f7', negative: '#f6b24e' }}
+              data={candleData}
+            />
+          </VictoryChart>
+        </View>
+        <View style={[styles.chartView, { marginBottom: 10 }]}>
+          <Text style={styles.chartLabelText}>Voronoi Container</Text>
+          <VictoryChart width={290} height={290}>
+            <VictoryLine
+              data={line}
+              style={{ data: { stroke: colors.primaryGradientStart } }}
+            />
+          </VictoryChart>
+        </View>
+
+        <View style={[styles.chartView, { marginBottom: 20 }]}>
+          <Text style={styles.chartLabelText}>Box Plot</Text>
+          <VictoryChart domainPadding={50}>
+            <VictoryBoxPlot
+              minLabels
+              maxLabels
+              boxWidth={10}
+              data={[
+                { x: 'red', y: [5, 10, 9, 2] },
+                { x: 'blue', y: [1, 15, 6, 8] },
+                { x: 'green', y: [3, 5, 6, 9] },
+                { x: 'yellow', y: [5, 20, 8, 12] },
+                { x: 'white', y: [2, 11, 12, 13] },
+              ]}
+            />
+          </VictoryChart>
+        </View>
+      </View>
     </ScrollView>
   );
 }

@@ -22,7 +22,7 @@ const tabNavigationData = [
     icon: iconCalendar,
   },
   {
-    name: 'Grid',
+    name: 'Grids',
     component: GridsScreen,
     icon: iconGrids,
   },

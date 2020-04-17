@@ -35,7 +35,7 @@ export default function ComponentsScreen(props) {
         <RadioGroup
           underline
           style={styles.demoItem}
-          items={['One', 'Two', 'Tree', 'Four']}
+          items={['One', 'Two', 'Three', 'Four']}
           selectedIndex={props.radioGroupsState[1]}
           onChange={index =>
             props.setRadioGroupsState({ ...props.radioGroupsState, 1: index })

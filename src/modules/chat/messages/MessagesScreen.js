@@ -74,7 +74,7 @@ export default class MessagesScreen extends React.Component {
     this._isAlright = null;
   }
 
-  componentWillMount() {
+  componentDidMount() {
     this._isMounted = true;
     const messages = require('./data/messages.js').map(message => {
       if (message.user.id !== 1) {

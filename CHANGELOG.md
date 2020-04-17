@@ -1,5 +1,13 @@
 # Changelog
 
+## [3.0.0]
+
+Added brand new Drawer navigation, updated react-navigation.
+
+## [2.2.0]
+
+Added new modern charts, updated libraries, updated legacy lifecycle methods.
+
 ## [2.1.1]
 
 General project and dependencies QA

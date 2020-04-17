@@ -5,7 +5,7 @@ import AppView from './AppView';
 
 export default compose(
   lifecycle({
-    componentWillMount() {
+    componentDidMount() {
       StatusBar.setBarStyle('light-content');
       if (Platform.OS === 'android') {
         // eslint-disable-next-line no-unused-expressions

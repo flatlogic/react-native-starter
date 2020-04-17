@@ -95,7 +95,8 @@ export default function ArticleScreen(props) {
     </TouchableOpacity>
   );
 
-  const itemParams = props.navigation.state.params;
+  const itemParams = props.route.params.article;
+  
   return (
     <ScrollView style={styles.container}>
       <View style={styles.header}>

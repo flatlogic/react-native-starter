@@ -60,7 +60,7 @@ export default class MessagesScreen extends React.Component {
       loadEarlier: true,
       typingText: null,
       isLoadingEarlier: false,
-      userParams: props.navigation.state.params,
+      userParams: props.route.params,
     };
 
     this._isMounted = false;

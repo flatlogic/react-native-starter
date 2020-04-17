@@ -15,13 +15,11 @@ export default function ChatScreen(props) {
   const _renderItem = ({ item }) => (
     <TouchableOpacity
       onPress={() =>
-        props.navigation.navigate({
-          routeName: 'Messages',
-          params: {
+        props.navigation.navigate('Messages', {
             title: item.userName,
             ...item,
           },
-        })
+        )
       }
     >
       <View style={styles.messageItem}>

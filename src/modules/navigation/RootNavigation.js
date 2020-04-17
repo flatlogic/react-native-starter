@@ -1,125 +1,65 @@
+import 'react-native-gesture-handler';
 import React from 'react';
-import { Image, TouchableOpacity, Dimensions } from 'react-native';
-import { createAppContainer, createStackNavigator } from 'react-navigation';
+import { createStackNavigator } from '@react-navigation/stack';
+import { Image, StyleSheet, TouchableOpacity } from 'react-native';
 
-import MainTabNavigator from './MainTabNavigator';
+import StackNavigationData from './stackNavigationData';
 
-import GalleryScreen from '../gallery/GalleryViewContainer';
+const Stack = createStackNavigator();
 
-import ProfileScreen from '../profile/ProfileViewContainer';
-import ArticleScreen from '../article/ArticleViewContainer';
-import ChatScreen from '../chat/ChatViewContainer';
-import MessagesScreen from '../chat/MessagesViewContainer';
-import ChartsScreen from '../charts/ChartsViewContainer';
-import AuthScreen from '../auth/AuthViewContainer';
+export default function NavigatorView(props) {
+  // if (authState.isLoggedIn || authState.hasSkippedLogin) {
+  //     return <AppNavigator />;
+  // }
+  // return <AuthScreen />;
 
-import { colors, fonts } from '../../styles';
-
-const { width } = Dimensions.get('window');
-
-const headerBackground = require('../../../assets/images/topBarBg.png');
-
-const stackNavigator = createStackNavigator(
-  {
-    Main: {
-      screen: MainTabNavigator,
-      navigationOptions: () => ({
-        title: 'React Native Starter',
-        headerLeft: null,
-        headerBackground: (
-          <Image
-            style={{
-              flex: 1,
-              width,
-            }}
-            source={headerBackground}
-            resizeMode="cover"
-          />
-        ),
-      }),
-    },
-    Profile: {
-      screen: ProfileScreen,
-      navigationOptions: {
-        title: 'Profile',
-      },
-    },
-    Gallery: {
-      screen: GalleryScreen,
-      navigationOptions: {
-        title: 'Gallery',
-      },
-    },
-    Article: {
-      screen: ArticleScreen,
-      navigationOptions: {
-        title: 'Article',
-      },
-    },
-    Chat: {
-      screen: ChatScreen,
-      navigationOptions: {
-        title: 'Chat',
-      },
-    },
-    Messages: {
-      screen: MessagesScreen,
-      navigationOptions: {
-        title: 'Messages',
-      },
-    },
-    Charts: {
-      screen: ChartsScreen,
-      navigationOptions: {
-        title: 'Charts',
-      },
-    },
-    Auth: {
-      screen: AuthScreen,
-      navigationOptions: {
-        header: null,
-      },
-    },
-  },
-  {
-    defaultNavigationOptions: () => ({
-      titleStyle: {
-        fontFamily: fonts.primaryLight,
-      },
-      headerStyle: {
-        backgroundColor: colors.primary,
-        borderBottomWidth: 0,
-      },
-      headerBackground: (
+  const headerLeftComponentMenu = () => {
+    return (
+      <TouchableOpacity
+        onPress={() => props.navigation.toggleDrawer()}
+        style={{
+          paddingLeft: 10,
+        }}
+      >
         <Image
-          style={{ flex: 1 }}
-          source={headerBackground}
-          resizeMode="cover"
-        />
-      ),
-      headerTitleStyle: {
-        color: colors.white,
-        fontFamily: fonts.primaryRegular,
-      },
-      headerTintColor: '#222222',
-      headerLeft: props => (
-        <TouchableOpacity
-          onPress={props.onPress}
+          source={require('../../../assets/images/drawer/menu.png')}
+          resizeMode="contain"
           style={{
-            paddingLeft: 25,
+            height: 20,
           }}
-        >
-          <Image
-            source={require('../../../assets/images/icons/arrow-back.png')}
-            resizeMode="contain"
-            style={{
-              height: 20,
-            }}
-          />
-        </TouchableOpacity>
-      ),
-    }),
-  },
-);
+        />
+      </TouchableOpacity>    
+    )
+  }
 
-export default createAppContainer(stackNavigator);
+  return (
+    <Stack.Navigator>
+      {StackNavigationData.map((item, idx) => (
+        <Stack.Screen
+          key={`stack_item-${idx+1}`}
+          name={item.name} 
+          component={item.component} 
+          options={{
+            headerLeft: item.headerLeft || headerLeftComponentMenu,
+            headerBackground: () => (
+              <Image style={styles.headerImage} source={item.headerBackground.source} />
+            ),
+            headerTitleStyle: item.headerTitleStyle,
+          }} 
+        />
+      ))}
+    </Stack.Navigator>
+  );
+}
+
+const styles = StyleSheet.create({
+  headerImage: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    width: 100 + '%',
+    height: 57,
+  },
+});

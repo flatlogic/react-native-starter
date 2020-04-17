@@ -1,5 +1,9 @@
 # Changelog
 
+## [2.2.0]
+
+Added new modern charts, updated libraries, updated legacy lifecycle methods.
+
 ## [2.1.1]
 
 General project and dependencies QA

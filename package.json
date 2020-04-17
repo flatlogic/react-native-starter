@@ -31,11 +31,7 @@
     "react": "16.9.0",
     "react-native": "0.61.5",
     "react-native-calendars": "1.265.0",
-<<<<<<< HEAD
-    "react-native-gesture-handler": "^1.5.0",
-=======
     "react-native-gesture-handler": "^1.6.1",
->>>>>>> new_charts
     "react-native-gifted-chat": "^0.11.3",
     "react-native-lightbox": "^0.8.0",
     "react-native-linear-gradient": "^2.5.6",

@@ -14,7 +14,7 @@ export default function PagesScreen(props) {
     <View style={styles.container}>
       <View style={styles.row}>
         <TouchableOpacity
-          onPress={() => props.navigation.navigate({ routeName: 'Charts' })}
+          onPress={() => props.navigation.navigate('Charts')}
           style={styles.item}
         >
           <Image
@@ -25,7 +25,7 @@ export default function PagesScreen(props) {
           <Text style={styles.itemText}>Charts</Text>
         </TouchableOpacity>
         <TouchableOpacity
-          onPress={() => props.navigation.navigate({ routeName: 'Gallery' })}
+          onPress={() => props.navigation.navigate('Gallery')}
           style={styles.item}
         >
           <Image
@@ -36,7 +36,7 @@ export default function PagesScreen(props) {
           <Text style={styles.itemText}>Gallery</Text>
         </TouchableOpacity>
         <TouchableOpacity
-          onPress={() => props.navigation.navigate({ routeName: 'Profile' })}
+          onPress={() => props.navigation.navigate('Profile')}
           style={styles.item}
         >
           <Image
@@ -49,7 +49,7 @@ export default function PagesScreen(props) {
       </View>
       <View style={styles.row}>
         <TouchableOpacity
-          onPress={() => props.navigation.navigate({ routeName: 'Chat' })}
+          onPress={() => props.navigation.navigate('Chat')}
           style={styles.item}
         >
           <Image
@@ -60,7 +60,7 @@ export default function PagesScreen(props) {
           <Text style={styles.itemText}>Chats</Text>
         </TouchableOpacity>
         <TouchableOpacity
-          onPress={() => props.navigation.navigate({ routeName: 'Calendar' })}
+          onPress={() => props.navigation.navigate('Calendar')}
           style={styles.item}
         >
           <Image

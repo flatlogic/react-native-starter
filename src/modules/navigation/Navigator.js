@@ -7,6 +7,8 @@ import {
 } from '@react-navigation/drawer';
 import NavigatorView from './RootNavigation';
 
+import { colors } from '../../styles';
+
 const iconHome = require('../../../assets/images/drawer/home.png');
 const iconCalendar = require('../../../assets/images/drawer/calendar.png');
 const iconGrids = require('../../../assets/images/drawer/grids.png');
@@ -90,7 +92,7 @@ export default function App() {
   return (
     <Drawer.Navigator
       drawerStyle={{
-        backgroundColor: '#3C38B1',
+        backgroundColor: colors.drawer,
       }}
       drawerContent={props => <CustomDrawerContent {...props} />}
     >

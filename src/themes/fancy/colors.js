@@ -1,4 +1,5 @@
 const colors = {
+  drawer: '#F97396',
   primary: '#D87BA6',
   primaryLight: '#FF7F8F',
   primaryGradientStart: '#FF6C8E',

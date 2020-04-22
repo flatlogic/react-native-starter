@@ -37,9 +37,7 @@ export default class AuthScreen extends React.Component {
       Platform.select({ android: 'keyboardDidHide', ios: 'keyboardWillHide' }),
       this._keyboardDidHide.bind(this),
     );
-  }
 
-  componentDidMount() {
     Animated.timing(this.state.anim, { toValue: 3000, duration: 3000 }).start();
   }
 

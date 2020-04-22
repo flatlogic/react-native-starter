@@ -1,5 +1,9 @@
 # Changelog
 
+## [3.1.0]
+
+Added dynamic color variable for the drawer, updated themes.
+
 ## [3.0.0]
 
 Added brand new Drawer navigation, updated react-navigation.

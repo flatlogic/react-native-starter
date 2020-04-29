@@ -9,6 +9,8 @@ import ChatScreen from '../chat/ChatViewContainer';
 import MessagesScreen from '../chat/MessagesViewContainer';
 import ChartsScreen from '../charts/ChartsViewContainer';
 import AuthScreen from '../auth/AuthViewContainer';
+import BlogScreen from '../blog/BlogContainer';
+import PostScreen from '../blog/PostView';
 
 import { colors, fonts } from '../../styles';
 
@@ -121,6 +123,29 @@ const StackNavigationData = [
       color: colors.white,
       fontSize: 18,
     },
+  },
+  {
+    name: 'Blog',
+    component: BlogScreen,
+    headerLeft: headerLeftComponent,
+    headerBackground: { source: headerBackground },
+    headerTitleStyle: {
+      fontFamily: fonts.primaryRegular,
+      color: colors.white,
+      fontSize: 18,
+    },
+  },
+  {
+    name: 'Post',
+    component: PostScreen,
+    headerLeft: headerLeftComponent,
+    headerBackground: { source: headerBackground },
+    headerTitleStyle: {
+      fontFamily: fonts.primaryRegular,
+      color: colors.white,
+      fontSize: 18,
+    },
+    
   },
 ]
 

@@ -63,7 +63,7 @@ function CustomDrawerContent(props) {
               style={styles.menuLabelFlex}>
               <Image
                 style={{ width: 20, height: 20}}
-                source={iconHome}
+                source={item.icon}
               />
               <Text style={styles.menuTitle}>{item.name}</Text>
             </View>
@@ -79,10 +79,10 @@ function CustomDrawerContent(props) {
               style={{ width: 20, height: 20}}
               source={iconSettings} 
             />
-            <Text style={styles.menuTitle}>Settings</Text>
+            <Text style={styles.menuTitle}>Blog</Text>
           </View>
         )}
-        onPress={() => props.navigation.navigate('Calendar')}
+        onPress={() => props.navigation.navigate('Blog')}
       />
     </DrawerContentScrollView>
   );

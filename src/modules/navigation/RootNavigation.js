@@ -1,6 +1,6 @@
 import 'react-native-gesture-handler';
 import React from 'react';
-import { createStackNavigator } from '@react-navigation/stack';
+import { createStackNavigator, Header } from '@react-navigation/stack';
 import { Image, StyleSheet, TouchableOpacity } from 'react-native';
 
 import StackNavigationData from './stackNavigationData';
@@ -60,6 +60,6 @@ const styles = StyleSheet.create({
     right: 0,
     bottom: 0,
     width: 100 + '%',
-    height: 57,
+    height: Header.height,
   },
 });

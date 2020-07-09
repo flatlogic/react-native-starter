@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { View, Text, StyleSheet, Image } from 'react-native';
-import { 
+import {
   createDrawerNavigator,
   DrawerItem,
   DrawerContentScrollView,
@@ -15,6 +15,7 @@ const iconGrids = require('../../../assets/images/drawer/grids.png');
 const iconPages = require('../../../assets/images/drawer/pages.png');
 const iconComponents = require('../../../assets/images/drawer/components.png');
 const iconSettings = require('../../../assets/images/drawer/settings.png');
+const iconUser = require('../../../assets/images/drawer/user.png');
 
 const drawerData = [
   {
@@ -47,7 +48,7 @@ function CustomDrawerContent(props) {
       <View style={styles.avatarContainer}>
         <Image
           style={styles.avatar}
-          source={require('../../../assets/images/drawer/user.png')}
+          source={iconUser}
         />
         <View style={{ paddingLeft: 15 }}>
           <Text style={styles.userName}>John Doe</Text>
@@ -62,22 +63,22 @@ function CustomDrawerContent(props) {
             <View
               style={styles.menuLabelFlex}>
               <Image
-                style={{ width: 20, height: 20}}
-                source={iconHome}
+                style={styles.menuIcon}
+                source={item.icon}
               />
               <Text style={styles.menuTitle}>{item.name}</Text>
             </View>
           )}
           onPress={() => props.navigation.navigate(item.name)}
-        />        
+        />
       ))}
       <View style={styles.divider} />
       <DrawerItem
         label={() => (
           <View style={styles.menuLabelFlex}>
             <Image
-              style={{ width: 20, height: 20}}
-              source={iconSettings} 
+              style={styles.menuIcon}
+              source={iconSettings}
             />
             <Text style={styles.menuTitle}>Settings</Text>
           </View>
@@ -102,6 +103,10 @@ export default function App() {
 }
 
 const styles = StyleSheet.create({
+  menuIcon: {
+    width: 20,
+    height: 20
+  },
   menuTitle: {
     marginLeft: 10,
     color: '#fff'

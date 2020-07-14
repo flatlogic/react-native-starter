@@ -1,5 +1,9 @@
 # Changelog
 
+## [3.3.0]
+
+Updated React-Native version
+
 ## [3.2.0]
 
 Added Blog page, and single post view, connected to wp rest API

@@ -7,7 +7,7 @@ const listData = [
     id: 1,
     brand: 'Citizen',
     title: 'CITIZEN ECO-DRIVE',
-    subtitle: 'Limited Edition',
+    subtitle: 'CITIZEN ECO-DRIVE',
     price: '$129.99',
     badge: 'NEW',
     badgeColor: '#3cd39f',

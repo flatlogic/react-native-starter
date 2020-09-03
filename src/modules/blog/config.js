@@ -1,4 +1,4 @@
 export default {
   apiToken: '',
-  apiEndpoint: 'https://wordpress.org/news/wp-json',
+  apiEndpoint: 'https://flatlogic.com/blog/wp-json',
 };

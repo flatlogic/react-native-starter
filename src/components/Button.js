@@ -42,6 +42,9 @@ export default function RNSButton(props) {
       props.bgColor && {
         borderColor: props.bgColor,
       },
+      props.disabled && {
+        borderColor: colors.grey,
+      },
       props.rounded && styles.rounded,
     ];
     const textStyle = [
@@ -61,6 +64,9 @@ export default function RNSButton(props) {
       props.textColor && {
         color: props.textColor,
       },
+      props.disabled && {
+        color: colors.grey
+      }
     ];
 
     content = (
@@ -88,6 +94,10 @@ export default function RNSButton(props) {
 
     if (props.bgColor) {
       gradientArray = [props.bgColor, props.bgColor];
+    }
+
+    if (props.disabled) {
+      gradientArray = ["#BBB", "#BBB"]
     }
 
     content = (
@@ -138,13 +148,14 @@ export default function RNSButton(props) {
     <TouchableOpacity
       accessibilityTraits="button"
       onPress={props.onPress}
-      activeOpacity={0.8}
+      activeOpacity={props.disabled ? 1 : 0.8}
       style={[
         styles.container,
         props.small && styles.containerSmall,
         props.large && styles.containerLarge,
         props.style,
       ]}
+      {...props}
     >
       {content}
     </TouchableOpacity>

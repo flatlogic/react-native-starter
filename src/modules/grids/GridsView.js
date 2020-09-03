@@ -129,7 +129,7 @@ export default class GridsScreen extends React.Component {
       <View style={styles.container}>
         <View style={{ height: 50 }}>
           <RadioGroup
-            selectedIndex={this.props.tabIndex}
+            xtedIndex={this.props.tabIndex}
             items={this.props.tabs}
             onChange={this.props.setTabIndex}
             underline

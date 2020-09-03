@@ -8,6 +8,8 @@ import {
   ActivityIndicator,
 } from 'react-native';
 
+import { colors, fonts } from '../../styles';
+
 import PostCard from './PostCard';
 
 const PostsView = ({

@@ -11,6 +11,7 @@ import {
   ImageBackground,
 } from 'react-native';
 
+
 import { fonts, colors } from '../../styles';
 import { TextInput, Button } from '../../components';
 
@@ -239,6 +240,7 @@ const styles = StyleSheet.create({
   textInput: {
     alignSelf: 'stretch',
     marginTop: 20,
+    width: 350
   },
   logo: {
     height: 150,

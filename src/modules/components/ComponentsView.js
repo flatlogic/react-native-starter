@@ -3,7 +3,6 @@ import { StyleSheet, View, Text, ScrollView, TouchableOpacity, Image } from 'rea
 
 import { colors, fonts } from '../../styles';
 
-const autocompleteImg = require('../../../assets/images/components/autocomplete.png')
 const avatarImg = require('../../../assets/images/components/avatar.png')
 const bottomNavImg = require ('../../../assets/images/components/bottom-navigation.png')
 const btnImg = require('../../../assets/images/components/button.png')
@@ -11,7 +10,6 @@ const btnGroupImg = require('../../../assets/images/components/button-group.png'
 const calendarImg = require('../../../assets/images/components/calendar.png')
 const cardImg = require('../../../assets/images/components/card.png')
 const checkboxImg = require('../../../assets/images/components/checkbox.png')
-const datepickerImg = require('../../../assets/images/components/date-picker.png')
 const drawerImg = require('../../../assets/images/components/drawer.png')
 const iconImg = require('../../../assets/images/components/icon.png')
 const inputImg = require('../../../assets/images/components/input.png')
@@ -22,7 +20,6 @@ const modalImg = require('../../../assets/images/components/modal.png')
 const overflowMenuImg = require('../../../assets/images/components/overflow-menu.png')
 const popoverImg = require('../../../assets/images/components/popover.png')
 const rangeCalendarImg = require('../../../assets/images/components/range-calendar.png')
-const rangeDatepickerImg = require('../../../assets/images/components/range-datepicker.png')
 const selectImg = require('../../../assets/images/components/select.png')
 const spinnerImg = require('../../../assets/images/components/spinner.png')
 const tabViewImg = require('../../../assets/images/components/tabs.png')
@@ -39,23 +36,6 @@ export default function ComponentsScreen(props) {
       <View style={styles.container}>
         <View style={styles.row}>
           <TouchableOpacity
-            onPress={() => props.navigation.navigate('Autocomplete')}
-            style={styles.item}
-          >
-            <Image source={autocompleteImg} />
-            <Text style={styles.itemText}>Autocomplete</Text>
-          </TouchableOpacity>
-
-          <TouchableOpacity
-            onPress={() => props.navigation.navigate('Avatar')}
-            style={styles.item}
-          >
-            <Image source={avatarImg}/>
-            <Text style={styles.itemText}>Avatar</Text>
-          </TouchableOpacity>
-        </View>
-        <View style={styles.row}>
-          <TouchableOpacity
             onPress={() => props.navigation.navigate('Bottom Navigation')}
             style={styles.item}
           >
@@ -63,11 +43,11 @@ export default function ComponentsScreen(props) {
             <Text style={styles.itemText}>Bottom Navigation</Text>
           </TouchableOpacity>
           <TouchableOpacity
-            onPress={() => props.navigation.navigate('Button')}
+            onPress={() => props.navigation.navigate('Avatar')}
             style={styles.item}
           >
-            <Image source={btnImg}/>
-            <Text style={styles.itemText}>Button</Text>
+            <Image source={avatarImg}/>
+            <Text style={styles.itemText}>Avatar</Text>
           </TouchableOpacity>
         </View>
         <View style={styles.row}>
@@ -79,11 +59,11 @@ export default function ComponentsScreen(props) {
             <Text style={styles.itemText}>Button Group</Text>
           </TouchableOpacity>
           <TouchableOpacity
-            onPress={() => props.navigation.navigate('Calendar')}
+            onPress={() => props.navigation.navigate('Button')}
             style={styles.item}
           >
-            <Image source={calendarImg}/>
-            <Text style={styles.itemText}>Calendar</Text>
+            <Image source={btnImg}/>
+            <Text style={styles.itemText}>Button</Text>
           </TouchableOpacity>
         </View>
         <View style={styles.row}>
@@ -95,27 +75,27 @@ export default function ComponentsScreen(props) {
             <Text style={styles.itemText}>Card</Text>
           </TouchableOpacity>
           <TouchableOpacity
-            onPress={() => props.navigation.navigate('Checkbox')}
+            onPress={() => props.navigation.navigate('Calendar')}
             style={styles.item}
           >
-            <Image source={checkboxImg}/>
-            <Text style={styles.itemText}>Checkbox</Text>
+            <Image source={calendarImg}/>
+            <Text style={styles.itemText}>Calendar</Text>
           </TouchableOpacity>
         </View>
         <View style={styles.row}>
-          <TouchableOpacity
-            onPress={() => props.navigation.navigate('Datepicker')}
-            style={styles.item}
-          >
-            <Image source={datepickerImg}/>
-            <Text style={styles.itemText}>Datepicker</Text>
-          </TouchableOpacity>
           <TouchableOpacity
             onPress={() => props.navigation.navigate('Drawer')}
             style={styles.item}
           >
             <Image source={drawerImg}/>
             <Text style={styles.itemText}>Drawer</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => props.navigation.navigate('Checkbox')}
+            style={styles.item}
+          >
+            <Image source={checkboxImg}/>
+            <Text style={styles.itemText}>Checkbox</Text>
           </TouchableOpacity>
         </View>
         <View style={styles.row}>
@@ -191,27 +171,11 @@ export default function ComponentsScreen(props) {
             <Text style={styles.itemText}>Range Calendar</Text>
           </TouchableOpacity>
           <TouchableOpacity
-            onPress={() => props.navigation.navigate('Charts')}
-            style={styles.item}
-          >
-            <Image source={rangeDatepickerImg}/>
-            <Text style={styles.itemText}>Range Datepicker</Text>
-          </TouchableOpacity>
-        </View>
-        <View style={styles.row}>
-          <TouchableOpacity
             onPress={() => props.navigation.navigate('Select')}
             style={styles.item}
           >
             <Image source={selectImg}/>
             <Text style={styles.itemText}>Select</Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={() => props.navigation.navigate('Spinner')}
-            style={styles.item}
-          >
-            <Image source={spinnerImg}/>
-            <Text style={styles.itemText}>Spinner</Text>
           </TouchableOpacity>
         </View>
         <View style={styles.row}>
@@ -223,11 +187,11 @@ export default function ComponentsScreen(props) {
             <Text style={styles.itemText}>Tab View</Text>
           </TouchableOpacity>
           <TouchableOpacity
-            onPress={() => props.navigation.navigate('Text')}
+            onPress={() => props.navigation.navigate('Spinner')}
             style={styles.item}
           >
-            <Image source={textImg}/>
-            <Text style={styles.itemText}>Text</Text>
+            <Image source={spinnerImg}/>
+            <Text style={styles.itemText}>Spinner</Text>
           </TouchableOpacity>
         </View>
         <View style={styles.row}>
@@ -239,11 +203,11 @@ export default function ComponentsScreen(props) {
             <Text style={styles.itemText}>Toggle</Text>
           </TouchableOpacity>
           <TouchableOpacity
-            onPress={() => props.navigation.navigate('Tooltip')}
+            onPress={() => props.navigation.navigate('Text')}
             style={styles.item}
           >
-            <Image source={tooltipImg}/>
-            <Text style={styles.itemText}>Tooltip</Text>
+            <Image source={textImg}/>
+            <Text style={styles.itemText}>Text</Text>
           </TouchableOpacity>
         </View>
         <View style={styles.row}>
@@ -254,6 +218,15 @@ export default function ComponentsScreen(props) {
             <Image source={topNavImg}/>
             <Text style={styles.itemText}>Top Navigation</Text>
           </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => props.navigation.navigate('Tooltip')}
+            style={styles.item}
+          >
+            <Image source={tooltipImg}/>
+            <Text style={styles.itemText}>Tooltip</Text>
+          </TouchableOpacity>
+        </View>
+        <View style={styles.row}>
           <TouchableOpacity
             onPress={() => props.navigation.navigate('Badges')}
             style={styles.item}

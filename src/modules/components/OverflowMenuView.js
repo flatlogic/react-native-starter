@@ -25,60 +25,78 @@ export default function ComponentsScreen(props) {
             Default
           </Text>
           <View>
-            <ModalDropdown
-              options={['kek', 'you', 'are']}
-              onDropdownWillShow={() => true}
-              onDropdownWillHide={() => true}
-              renderRow={text => (
-                <View style={{ paddingHorizontal: 20, paddingVertical: 10 }}>
-                  <Text>{text}</Text>
-                </View>
-              )}
-            >
-              <View>
-                <Button caption={"show menu"} />
+            <Provider>
+              <View
+                style={{
+                  paddingTop: 50,
+                  flexDirection: 'row',
+                  justifyContent: 'center',
+                }}>
+                <Menu
+                  visible={visible}
+                  onDismiss={closeMenu}
+                  anchor={<Button onPress={openMenu}><Text>Show menu</Text></Button>}>
+                  <Menu.Item onPress={() => {}} title="Item 1" />
+                  <Menu.Item onPress={() => {}} title="Item 2" />
+                  <Divider />
+                  <Menu.Item onPress={() => {}} title="Item 3" />
+                </Menu>
               </View>
-            </ModalDropdown>
+            </Provider>
+            {/*<ModalDropdown*/}
+            {/*  options={['kek', 'you', 'are']}*/}
+            {/*  onDropdownWillShow={() => true}*/}
+            {/*  onDropdownWillHide={() => true}*/}
+            {/*  renderRow={text => (*/}
+            {/*    <View style={{ paddingHorizontal: 20, paddingVertical: 10 }}>*/}
+            {/*      <Text>{text}</Text>*/}
+            {/*    </View>*/}
+            {/*  )}*/}
+            {/*>*/}
+            {/*  <View>*/}
+            {/*    <Button caption={"show menu"} />*/}
+            {/*  </View>*/}
+            {/*</ModalDropdown>*/}
           </View>
       </Card>
-      <Card title={'Style'} style={{marginTop: 20}}>
-        <View style={styles.demoInputContainer}>
-        <Text style={[styles.componentSectionTitle, { flex: 1 }]}>
-          Styled Menu
-        </Text>
-        <Provider>
-          <View>
-            <Menu
-              visible={false}
-              onDismiss={closeMenu}
-              anchor={<Button secondary caption={"show menu"} />}>
-              <Menu.Item onPress={() => {}} title="Item 1" />
-              <Menu.Item onPress={() => {}} title="Item 2" />
-              <Divider />
-              <Menu.Item onPress={() => {}} title="Item 3" />
-            </Menu>
-          </View>
-        </Provider>
-        </View>
-        <View style={styles.demoInputContainer}>
-          <Text style={[styles.componentSectionTitle, { flex: 1 }]}>
-            Styled Backdrop
-          </Text>
-          <Provider>
-            <View>
-              <Menu
-                visible={false}
-                onDismiss={closeMenu}
-                anchor={<Button bgColor={"transparent"} textColor={colors.primary} caption={"show menu"} />}>
-                <Menu.Item onPress={() => {}} title="Item 1" />
-                <Menu.Item onPress={() => {}} title="Item 2" />
-                <Divider />
-                <Menu.Item onPress={() => {}} title="Item 3" />
-              </Menu>
-            </View>
-          </Provider>
-        </View>
-      </Card>
+      {/*<Card title={'Style'} style={{marginTop: 20}}>*/}
+      {/*  <View style={styles.demoInputContainer}>*/}
+      {/*  <Text style={[styles.componentSectionTitle, { flex: 1 }]}>*/}
+      {/*    Styled Menu*/}
+      {/*  </Text>*/}
+      {/*  <Provider>*/}
+      {/*    <View>*/}
+      {/*      <Menu*/}
+      {/*        visible={false}*/}
+      {/*        onDismiss={closeMenu}*/}
+      {/*        anchor={<Button secondary caption={"show menu"} />}>*/}
+      {/*        <Menu.Item onPress={() => {}} title="Item 1" />*/}
+      {/*        <Menu.Item onPress={() => {}} title="Item 2" />*/}
+      {/*        <Divider />*/}
+      {/*        <Menu.Item onPress={() => {}} title="Item 3" />*/}
+      {/*      </Menu>*/}
+      {/*    </View>*/}
+      {/*  </Provider>*/}
+      {/*  </View>*/}
+      {/*  <View style={styles.demoInputContainer}>*/}
+      {/*    <Text style={[styles.componentSectionTitle, { flex: 1 }]}>*/}
+      {/*      Styled Backdrop*/}
+      {/*    </Text>*/}
+      {/*    <Provider>*/}
+      {/*      <View>*/}
+      {/*        <Menu*/}
+      {/*          visible={false}*/}
+      {/*          onDismiss={closeMenu}*/}
+      {/*          anchor={<Button bgColor={"transparent"} textColor={colors.primary} caption={"show menu"} />}>*/}
+      {/*          <Menu.Item onPress={() => {}} title="Item 1" />*/}
+      {/*          <Menu.Item onPress={() => {}} title="Item 2" />*/}
+      {/*          <Divider />*/}
+      {/*          <Menu.Item onPress={() => {}} title="Item 3" />*/}
+      {/*        </Menu>*/}
+      {/*      </View>*/}
+      {/*    </Provider>*/}
+      {/*  </View>*/}
+      {/*</Card>*/}
 
     </ScrollView>
   );

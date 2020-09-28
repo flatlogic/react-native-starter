@@ -2,14 +2,15 @@ import React from 'react';
 import { StyleSheet, View, Text, ScrollView } from 'react-native';
 
 import Card from '../../components/Card';
-import Switch from '../../components/Switch'
 import Dropdown from '../../components/Dropdown'
 
 import { colors, fonts } from '../../styles';
 
 export default function ComponentsScreen(props) {
-  const [isEnabled, setIsEnabled] = React.useState(false);
-  const toggleSwitch = () => setIsEnabled(previousState => !previousState);
+  const [select1, setSelect1] = React.useState(-1);
+  const [select2, setSelect2] = React.useState(2);
+  const [select3, setSelect3] = React.useState(-1);
+  const [select4, setSelect4] = React.useState(1);
   return (
     <ScrollView
       style={styles.container}
@@ -31,9 +32,9 @@ export default function ComponentsScreen(props) {
               'Option 8',
             ]}
             onSelect={index =>
-              props.setSelectedSizeIndex(parseInt(index, 10))
+              setSelect1(parseInt(index, 10))
             }
-            selectedIndex={props.selectedSizeIndex}
+            selectedIndex={select1}
             style={{flex: 1}}
           />
         </View>
@@ -74,9 +75,9 @@ export default function ComponentsScreen(props) {
                 'Option 8',
               ]}
               onSelect={index =>
-                props.setSelectedSizeIndex2(parseInt(index, 10))
+                setSelect2(parseInt(index, 10))
               }
-              selectedIndex={props.selectedSizeIndex2}
+              selectedIndex={select2}
               style={{flex: 1}}
               defaultIndex={1}
             />
@@ -98,10 +99,9 @@ export default function ComponentsScreen(props) {
               'Option 8',
             ]}
             onSelect={index =>
-              props.setSelectedSizeIndex4(parseInt(index, 10))
+              setSelect3(parseInt(index, 10))
             }
-            multiselect
-            selectedIndex={props.selectedSizeIndex4}
+            selectedIndex={select3}
             style={{flex: 1}}
           />
         </View>
@@ -120,11 +120,10 @@ export default function ComponentsScreen(props) {
               'Option 8',
             ]}
             onSelect={index =>
-              props.setSelectedSizeIndex5(parseInt(index, 10))
+              setSelect4(parseInt(index, 10))
             }
-            selectedIndex={props.selectedSizeIndex5}
+            selectedIndex={select4}
             style={{flex: 1}}
-            disabled
           />
         </View>
       </Card>

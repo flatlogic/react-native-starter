@@ -98,8 +98,6 @@ export const loadNextPosts = () => async (dispatch, getState) => {
 
     const parsedResponse = await rawResponse.json();
 
-    debugger;
-
     if (parsedResponse) {
       dispatch(endPostsLoading(parsedResponse, true));
     } else {

@@ -30,6 +30,10 @@ export default function RNSButton(props) {
 
   if (props.bordered) {
     const borderedStyle = [
+      props.style,
+      styles.container,
+      props.small && styles.containerSmall,
+      props.large && styles.containerLarge,
       styles.button,
       props.small && styles.buttonSmall,
       styles.border,
@@ -106,7 +110,11 @@ export default function RNSButton(props) {
         end={{ x: 1, y: 1 }}
         colors={gradientArray}
         style={[
+          styles.container,
+          props.style,
           styles.button,
+          props.small && styles.containerSmall,
+          props.large && styles.containerLarge,
           props.small && styles.buttonSmall,
           styles.primaryButton,
           props.rounded && { borderRadius },

@@ -37,7 +37,9 @@ export default function ComponentsScreen(props) {
                                 setChecked(!checked);
                               }}
                               theme={{ roundness: 8 }}
+                              label={"required"}
                               color={colors.secondary}
+                              rounded
             />
             <Checkbox.Android status={checked2 ? 'checked' : 'unchecked'}
                               onPress={() => {

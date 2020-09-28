@@ -63,7 +63,7 @@ const PostsView = ({
 };
 
 const styles = StyleSheet.create({
-  safeAreaContainer: { flex: 1, marginHorizontal: 20 },
+  safeAreaContainer: { flex: 1, marginHorizontal: 20},
   container: {
     flex: 1,
     padding: 15,

@@ -1,7 +1,5 @@
 apply plugin: "com.android.application"
-
 import com.android.build.OutputFile
-
 /**
  * The react.gradle file registers a task for each build variant (e.g. bundleDebugJsAndAssets
  * and bundleReleaseJsAndAssets).
@@ -74,14 +72,11 @@ import com.android.build.OutputFile
  *   extraPackagerArgs: []
  * ]
  */
-
 project.ext.react = [
     entryFile: "index.js",
     enableHermes: true,
 ]
-
 apply from: "../../node_modules/react-native/react.gradle"
-
 /**
  * Set this to true to create two separate APKs instead of one:
  *   - An APK that only works on ARM devices
@@ -91,12 +86,10 @@ apply from: "../../node_modules/react-native/react.gradle"
  * the correct one based on the CPU architecture of their device.
  */
 def enableSeparateBuildPerCPUArchitecture = false
-
 /**
  * Run Proguard to shrink the Java bytecode in release builds.
  */
 def enableProguardInReleaseBuilds = false
-
 /**
  * The preferred build flavor of JavaScriptCore.
  *
@@ -117,7 +110,6 @@ def jscFlavor = 'org.webkit:android-jsc:+'
  * and the benefits of using Hermes will therefore be sharply reduced.
  */
 def enableHermes = project.ext.react.get("enableHermes", true);
-
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
     compileOptions {
@@ -131,13 +123,19 @@ android {
             keyAlias 'androiddebugkey'
             keyPassword 'android'
         }
+        release {
+            storeFile file('my-upload-key.keystore')
+            storePassword 'vlad_keystore321'
+            keyAlias 'my-key-alias'
+            keyPassword 'vlad_keystore321'
+        }
     }
     defaultConfig {
-        applicationId "com.reactnativestarter"
+        applicationId "com.reactnativestarter.upd"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 2
-        versionName "2.1"
+        versionCode 5
+        versionName "4.0.0"
     }
     splits {
         abi {
@@ -154,7 +152,7 @@ android {
         release {
             // Caution! In production, you need to generate your own keystore file.
             // see https://facebook.github.io/react-native/docs/signed-apk-android.
-            signingConfig signingConfigs.debug
+            signingConfig signingConfigs.release
             minifyEnabled enableProguardInReleaseBuilds
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
         }
@@ -173,10 +171,8 @@ android {
         }
     }
 }
-
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
-
     implementation "com.facebook.react:react-native:+"  // From node_modules
 
     implementation "com.android.support:appcompat-v7:${rootProject.ext.supportLibVersion}"
@@ -189,12 +185,10 @@ dependencies {
         implementation jscFlavor
     }
 }
-
 // Run this once to be able to run the application with BUCK
 // puts all compile dependencies into folder libs for BUCK to use
 task copyDownloadableDepsToLibs(type: Copy) {
     from configurations.compile
     into 'libs'
 }
-
 apply from: file("../../node_modules/@react-native-community/cli-platform-android/native_modules.gradle"); applyNativeModulesAppBuildGradle(project)

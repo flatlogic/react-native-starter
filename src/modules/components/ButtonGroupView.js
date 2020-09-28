@@ -7,6 +7,10 @@ import { Button, RadioGroup, Dropdown } from '../../components';
 import Card from '../../components/Card'
 
 export default function ComponentsScreen(props) {
+  const [state1, setState1] = React.useState(0);
+  const [state2, setState2] = React.useState(0);
+  const [state3, setState3] = React.useState(0)
+  const [state4, setState4] = React.useState(0)
   return (
     <ScrollView
       style={styles.container}
@@ -18,9 +22,9 @@ export default function ComponentsScreen(props) {
           <RadioGroup
           style={styles.demoItem}
           items={['One', 'Two', 'Three']}
-          selectedIndex={props.radioGroupsState[0]}
+          selectedIndex={state1}
           onChange={index =>
-            props.setRadioGroupsState({ ...props.radioGroupsState, 0: index })
+            setState1(index)
           }
         />
         </View>
@@ -32,9 +36,9 @@ export default function ComponentsScreen(props) {
           <RadioGroup
             style={{flex: 2}}
             items={['One', 'Two', 'Three']}
-            selectedIndex={props.radioGroupsState[0]}
+            selectedIndex={state2}
             onChange={index =>
-              props.setRadioGroupsState({ ...props.radioGroupsState, 0: index })
+              setState2(index)
             }
             lg
           />
@@ -44,9 +48,9 @@ export default function ComponentsScreen(props) {
           <RadioGroup
             style={{flex: 2}}
             items={['One', 'Two', 'Three']}
-            selectedIndex={props.radioGroupsState[0]}
+            selectedIndex={state3}
             onChange={index =>
-              props.setRadioGroupsState({ ...props.radioGroupsState, 0: index })
+              setState3(index)
             }
           />
         </View>
@@ -55,9 +59,9 @@ export default function ComponentsScreen(props) {
           <RadioGroup
             style={{flex: 2}}
             items={['One', 'Two', 'Three']}
-            selectedIndex={props.radioGroupsState[0]}
+            selectedIndex={state4}
             onChange={index =>
-              props.setRadioGroupsState({ ...props.radioGroupsState, 0: index })
+              setState4(index)
             }
             sm
           />

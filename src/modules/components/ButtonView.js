@@ -1,12 +1,18 @@
 import React from 'react';
-import { StyleSheet, View, Text, ScrollView, Button as ButtonNative } from 'react-native';
+import {
+  StyleSheet,
+  View,
+  Text,
+  ScrollView,
+  Button as ButtonNative,
+} from 'react-native';
 
 import Icon from 'react-native-vector-icons/Entypo';
 import { colors, fonts } from '../../styles';
 
-import IconImg from '../../../assets/images/icons/arrow-back.png'
+import IconImg from '../../../assets/images/icons/arrow-back.png';
 
-import { Button, RadioGroup, Dropdown } from '../../components';
+import { Button } from '../../components';
 
 export default function ComponentsScreen(props) {
   return (
@@ -17,82 +23,82 @@ export default function ComponentsScreen(props) {
       <View style={styles.componentsSection}>
         <Text style={styles.componentSectionHeader}>Default Buttons</Text>
         <View style={styles.demoButtonsContainer}>
-        <Button
-          style={styles.demoButton}
-          primary
-          caption="Button"
-          onPress={() => {}}
-        />
-        <Button
-          style={styles.demoButton}
-          secondary
-          caption="Button"
-          onPress={() => {}}
-        />
+          <Button
+            style={styles.demoButton}
+            primary
+            caption="Button"
+            onPress={() => {}}
+          />
+          <Button
+            style={styles.demoButton}
+            secondary
+            caption="Button"
+            onPress={() => {}}
+          />
         </View>
         <View style={styles.demoButtonsContainer}>
-        <Button
-          style={styles.demoButton}
-          primary
-          rounded
-          caption="Button"
-          onPress={() => {}}
-        />
-        <Button
-          style={styles.demoButton}
-          secondary
-          rounded
-          caption="Button"
-          onPress={() => {}}
-        />
+          <Button
+            style={styles.demoButton}
+            primary
+            rounded
+            caption="Button"
+            onPress={() => {}}
+          />
+          <Button
+            style={styles.demoButton}
+            secondary
+            rounded
+            caption="Button"
+            onPress={() => {}}
+          />
         </View>
       </View>
       <View style={styles.componentsSection}>
         <Text style={styles.componentSectionHeader}>Bordered Buttons</Text>
         <View style={styles.demoButtonsContainer}>
-      <Button
-        style={styles.demoButton}
-        primary
-        bordered
-        caption="Button"
-        onPress={() => {}}
-      />
-      <Button
-        style={styles.demoButton}
-        secondary
-        bordered
-        caption="Button"
-        onPress={() => {}}
-      />
+          <Button
+            style={styles.demoButton}
+            primary
+            bordered
+            caption="Button"
+            onPress={() => {}}
+          />
+          <Button
+            style={styles.demoButton}
+            secondary
+            bordered
+            caption="Button"
+            onPress={() => {}}
+          />
         </View>
         <View style={styles.demoButtonsContainer}>
-      <Button
-        style={styles.demoButton}
-        primary
-        bordered
-        rounded
-        caption="Button"
-        onPress={() => {}}
-      />
-      <Button
-        style={styles.demoButton}
-        secondary
-        bordered
-        rounded
-        caption="Button"
-        onPress={() => {}}
-      />
+          <Button
+            style={styles.demoButton}
+            primary
+            bordered
+            rounded
+            caption="Button"
+            onPress={() => {}}
+          />
+          <Button
+            style={styles.demoButton}
+            secondary
+            bordered
+            rounded
+            caption="Button"
+            onPress={() => {}}
+          />
         </View>
       </View>
       <View style={styles.componentsSection}>
         <Text style={styles.componentSectionHeader}>Disabled Buttons</Text>
         <View style={styles.demoButtonsContainer}>
-        <Button
-          style={styles.demoButton}
-          disabled
-          caption="Button"
-          onPress={() => {}}
-        />
+          <Button
+            style={styles.demoButton}
+            disabled
+            caption="Button"
+            onPress={() => {}}
+          />
           <Button
             style={styles.demoButton}
             disabled
@@ -174,23 +180,19 @@ export default function ComponentsScreen(props) {
       </View>
       <View style={styles.componentsSection}>
         <Text style={styles.componentSectionHeader}>Size</Text>
-          <Button
-            style={styles.demoButton}
-            caption="Button"
-            large
-            onPress={() => {}}
-          />
-          <Button
-            style={styles.demoButton}
-            caption="Button"
-            onPress={() => {}}
-          />
-          <Button
-            style={styles.demoButton}
-            small
-            caption="Button"
-            onPress={() => {}}
-          />
+        <Button
+          style={styles.demoButton}
+          caption="Button"
+          large
+          onPress={() => {}}
+        />
+        <Button style={styles.demoButton} caption="Button" onPress={() => {}} />
+        <Button
+          style={styles.demoButton}
+          small
+          caption="Button"
+          onPress={() => {}}
+        />
       </View>
     </ScrollView>
   );

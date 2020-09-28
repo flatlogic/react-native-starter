@@ -133,7 +133,7 @@ export default class AuthScreen extends React.Component {
                 textColor={colors.primary}
                 secondary
                 rounded
-                style={{ alignSelf: 'stretch', marginBottom: 10 }}
+                style={{ alignSelf: 'stretch', marginBottom: 10, height: 50 }}
                 caption={
                   this.state.formState === FORM_STATES.LOGIN
                     ? 'Login'
@@ -250,6 +250,7 @@ const styles = StyleSheet.create({
     alignSelf: 'stretch',
     marginTop: 15,
     justifyContent: 'space-between',
+    height: 40
   },
   socialButton: {
     flex: 1,

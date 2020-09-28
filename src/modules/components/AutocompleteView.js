@@ -3,8 +3,8 @@ import { StyleSheet, View, Text, ScrollView, Image } from 'react-native';
 
 import Input from '../../components/TextInput'
 import Card from '../../components/Card'
+import Autocomplete from '../../components/Autocomplete'
 import { colors, fonts } from '../../styles';
-import ModalDropdown from 'react-native-modal-dropdown';
 import Icon from 'react-native-vector-icons/AntDesign';
 
 
@@ -17,48 +17,7 @@ export default function ComponentsScreen(props) {
       <Card title={"Default"}>
         <View style={styles.demoAutocompleteContainer}>
           <Text style={styles.componentSectionTitle}>Default</Text>
-          <Input dark type={'bordered'} style={{width: 200}} placeholder={"Place your text"}/>
-          {/*<ModalDropdown*/}
-          {/*  options={[*/}
-          {/*    "Star Wars",*/}
-          {/*    "Back to the Future",*/}
-          {/*    "The Matrix",*/}
-          {/*    "Inception",*/}
-          {/*    "Interstellar"*/}
-          {/*  ]}*/}
-          {/*  onDropdownWillShow={openModal}*/}
-          {/*  onDropdownWillHide={closeModal}*/}
-          {/*  dropdownStyle={{*/}
-          {/*    shadowColor: '#000000',*/}
-          {/*    shadowOffset: {*/}
-          {/*      width: 0,*/}
-          {/*      height: 3,*/}
-          {/*    },*/}
-          {/*    shadowRadius: 5,*/}
-          {/*    shadowOpacity: 1.0,*/}
-          {/*  }}*/}
-          {/*  adjustFrame={params => {*/}
-          {/*    // eslint-disable-next-line no-param-reassign*/}
-          {/*    params.left = 0;*/}
-          {/*    // eslint-disable-next-line no-param-reassign*/}
-          {/*    params.right = 0;*/}
-          {/*    return params;*/}
-          {/*  }}*/}
-          {/*  renderRow={text => (*/}
-          {/*    <View style={{ paddingHorizontal: 20, paddingVertical: 10 }}>*/}
-          {/*      <Text style={{ color }}>{text}</Text>*/}
-          {/*    </View>*/}
-          {/*  )}*/}
-          {/*  onSelect={onSelect}*/}
-          {/*>*/}
-          {/*  <View style={[styles.container, style && style, { borderColor }]}>*/}
-          {/*    <Text style={{ color }}>*/}
-          {/*      {selectedIndex > -1 && items[selectedIndex]*/}
-          {/*        ? items[selectedIndex]*/}
-          {/*        : placeholder}*/}
-          {/*    </Text>*/}
-          {/*  </View>*/}
-          {/*</ModalDropdown>*/}
+          <Autocomplete />
         </View>
         <View style={styles.demoAutocompleteContainer}>
           <Text style={styles.componentSectionTitle}>Disabled</Text>

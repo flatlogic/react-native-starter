@@ -4,6 +4,7 @@ import { StyleSheet, View, Text } from 'react-native';
 import { colors, fonts } from '../styles';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import ModalDropdown from 'react-native-modal-dropdown';
+import Input from '../components/TextInput'
 
 export default function RNSAutocomplete({
   items,
@@ -48,13 +49,7 @@ export default function RNSAutocomplete({
       )}
       onSelect={onSelect}
     >
-      <View style={[styles.container, style && style, { borderColor }]}>
-        <Text style={{ color }}>
-          {selectedIndex > -1 && items[selectedIndex]
-            ? items[selectedIndex]
-            : placeholder}
-        </Text>
-      </View>
+      <Input ref={(btn) => console.log(btn.measure)}dark type={'bordered'} style={{width: 200}} placeholder={"Place your text"}/>
     </ModalDropdown>
   );
 }

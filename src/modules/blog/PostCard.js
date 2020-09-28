@@ -6,7 +6,18 @@ import {
   StyleSheet,
   Dimensions,
   TouchableOpacity,
+  Image
 } from 'react-native';
+
+const githubIcon = require('../../../assets/images/icons/github.png');
+import twitterIcon from '../../../assets/images/icons/twitter.png';
+import facebookIcon from '../../../assets/images/icons/facebook.png';
+
+const getPostImg = (post) => {
+  const postImg = post['yoast_head'];
+  return postImg.match(/https:\/\/\w+.\w+\/blog\/wp-content\/uploads\/[A-Za-z0-9-!$%^&*()_+|~=`{}\[\]:";'<>?,.\/]+.\w+/)[0];
+}
+
 
 export default ({ post, onPress }) => (
   <TouchableOpacity
@@ -17,6 +28,14 @@ export default ({ post, onPress }) => (
     <Text style={styles.title}>
       {post.title.rendered || 'Unknown Deal'}
     </Text>
+    <View style={{alignSelf: 'stretch', flexDirection: 'row', justifyContent: 'center'}}>
+      <Image resizeMode="contain" source={{ uri: getPostImg(post)}} style={styles.canvas}/>
+      <View style={{justifyContent: 'center', width: '30%', alignItems: 'center'}}>
+        <Image source={githubIcon} style={{marginBottom: 20}}/>
+        <Image source={twitterIcon} style={{marginBottom: 20}}/>
+        <Image source={facebookIcon}/>
+      </View>
+    </View>
     <HTML
       html={post.excerpt.rendered}
       imagesMaxWidth={Dimensions.get('window').width}
@@ -32,6 +51,7 @@ export default ({ post, onPress }) => (
 
         return false;
       }}
+      tagsStyles={{'p': {margin: 0}}}
     />
   </TouchableOpacity>
 );
@@ -45,8 +65,13 @@ const styles = StyleSheet.create({
     borderRadius: 20,
   },
   title: {
-    fontSize: 22,
-    fontWeight: '500',
-    textDecorationLine: 'underline',
+    fontSize: 18,
+    fontWeight: '700',
+    color: '#686868',
+    textTransform: 'uppercase',
+  },
+  canvas: {
+    width: '60%',
+    height: 200
   },
 });

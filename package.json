@@ -35,6 +35,7 @@
     "moment": "^2.24.0",
     "react": "16.9.0",
     "react-native": "0.63.0",
+    "react-native-autocomplete-input": "^4.2.0",
     "react-native-calendars": "^1.313.0",
     "react-native-elements": "^2.1.0",
     "react-native-gesture-handler": "^1.6.1",

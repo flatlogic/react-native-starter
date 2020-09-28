@@ -16,7 +16,6 @@ import ButtonScreen from '../components/ButtonContainer'
 import ActionButtonsScreen from '../components/ActionButtonContainer'
 import AvatarScreen from '../components/AvatarContainer'
 import CardScreen from '../components/CardContainer'
-import AutocompleteScreen from '../components/AutocompleteContainer'
 import InputScreen from '../components/InputContainer'
 import ButtonGroupScreen from '../components/ButtonGroupContainer'
 import TabGroupScreen from '../components/TabGroupContainer'
@@ -36,7 +35,6 @@ import RangeCalendarScreen from '../components/RangeCalendarContainer'
 import MenuScreen from '../components/MenuContainer'
 import OverflowMenuScreen from '../components/OverflowMenuContainer'
 import LayoutScreen from '../components/LayoutContainer'
-import DatepickerScreen from '../components/DatepickerContainer'
 import PopoverScreen from '../components/PopoverContainer'
 import IconScreen from '../components/IconContainer'
 
@@ -223,17 +221,6 @@ const StackNavigationData = [
   {
     name: 'Card',
     component: CardScreen,
-    headerLeft: headerLeftComponent,
-    headerBackground: { source: headerBackground },
-    headerTitleStyle: {
-      fontFamily: fonts.primaryRegular,
-      color: colors.white,
-      fontSize: 18,
-    },
-  },
-  {
-    name: 'Autocomplete',
-    component: AutocompleteScreen,
     headerLeft: headerLeftComponent,
     headerBackground: { source: headerBackground },
     headerTitleStyle: {
@@ -443,17 +430,6 @@ const StackNavigationData = [
   {
     name: 'Layout',
     component: LayoutScreen,
-    headerLeft: headerLeftComponent,
-    headerBackground: { source: headerBackground },
-    headerTitleStyle: {
-      fontFamily: fonts.primaryRegular,
-      color: colors.white,
-      fontSize: 18,
-    },
-  },
-  {
-    name: 'Datepicker',
-    component: DatepickerScreen,
     headerLeft: headerLeftComponent,
     headerBackground: { source: headerBackground },
     headerTitleStyle: {

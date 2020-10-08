@@ -1,5 +1,9 @@
 # Changelog
 
+## [3.2.1]
+
+Update some libs
+
 ## [3.2.0]
 
 Added Blog page, and single post view, connected to wp rest API

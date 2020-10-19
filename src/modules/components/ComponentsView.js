@@ -39,14 +39,14 @@ export default function ComponentsScreen(props) {
             onPress={() => props.navigation.navigate('Bottom Navigation')}
             style={styles.item}
           >
-            <Image source={bottomNavImg}/>
+            <Image source={bottomNavImg} style={styles.componentImage}/>
             <Text style={styles.itemText}>Bottom Navigation</Text>
           </TouchableOpacity>
           <TouchableOpacity
             onPress={() => props.navigation.navigate('Avatar')}
             style={styles.item}
           >
-            <Image source={avatarImg}/>
+            <Image source={avatarImg} style={styles.componentImage}/>
             <Text style={styles.itemText}>Avatar</Text>
           </TouchableOpacity>
         </View>
@@ -55,14 +55,14 @@ export default function ComponentsScreen(props) {
             onPress={() => props.navigation.navigate('Button Group')}
             style={styles.item}
           >
-            <Image source={btnGroupImg}/>
+            <Image source={btnGroupImg} style={styles.componentImage}/>
             <Text style={styles.itemText}>Button Group</Text>
           </TouchableOpacity>
           <TouchableOpacity
             onPress={() => props.navigation.navigate('Button')}
             style={styles.item}
           >
-            <Image source={btnImg}/>
+            <Image source={btnImg} style={styles.componentImage}/>
             <Text style={styles.itemText}>Button</Text>
           </TouchableOpacity>
         </View>
@@ -71,14 +71,14 @@ export default function ComponentsScreen(props) {
             onPress={() => props.navigation.navigate('Card')}
             style={styles.item}
           >
-            <Image source={cardImg}/>
+            <Image source={cardImg} style={styles.componentImage}/>
             <Text style={styles.itemText}>Card</Text>
           </TouchableOpacity>
           <TouchableOpacity
             onPress={() => props.navigation.navigate('Calendar')}
             style={styles.item}
           >
-            <Image source={calendarImg}/>
+            <Image source={calendarImg} style={styles.componentImage}/>
             <Text style={styles.itemText}>Calendar</Text>
           </TouchableOpacity>
         </View>
@@ -87,14 +87,14 @@ export default function ComponentsScreen(props) {
             onPress={() => props.navigation.navigate('Drawer')}
             style={styles.item}
           >
-            <Image source={drawerImg}/>
+            <Image source={drawerImg} style={styles.componentImage}/>
             <Text style={styles.itemText}>Drawer</Text>
           </TouchableOpacity>
           <TouchableOpacity
             onPress={() => props.navigation.navigate('Checkbox')}
             style={styles.item}
           >
-            <Image source={checkboxImg}/>
+            <Image source={checkboxImg} style={styles.componentImage}/>
             <Text style={styles.itemText}>Checkbox</Text>
           </TouchableOpacity>
         </View>
@@ -103,14 +103,14 @@ export default function ComponentsScreen(props) {
             onPress={() => props.navigation.navigate('Icon')}
             style={styles.item}
           >
-            <Image source={iconImg}/>
+            <Image source={iconImg} style={styles.componentImage}/>
             <Text style={styles.itemText}>Icon</Text>
           </TouchableOpacity>
           <TouchableOpacity
             onPress={() => props.navigation.navigate('Input')}
             style={styles.item}
           >
-            <Image source={inputImg}/>
+            <Image source={inputImg} style={styles.componentImage}/>
             <Text style={styles.itemText}>Input</Text>
           </TouchableOpacity>
         </View>
@@ -119,14 +119,14 @@ export default function ComponentsScreen(props) {
             onPress={() => props.navigation.navigate('Layout')}
             style={styles.item}
           >
-            <Image source={layoutImg}/>
+            <Image source={layoutImg} style={styles.componentImage}/>
             <Text style={styles.itemText}>Layout</Text>
           </TouchableOpacity>
           <TouchableOpacity
             onPress={() => props.navigation.navigate('List')}
             style={styles.item}
           >
-            <Image source={listImg}/>
+            <Image source={listImg} style={styles.componentImage}/>
             <Text style={styles.itemText}>List</Text>
           </TouchableOpacity>
         </View>
@@ -135,14 +135,14 @@ export default function ComponentsScreen(props) {
             onPress={() => props.navigation.navigate('Menu')}
             style={styles.item}
           >
-            <Image source={menuImg}/>
+            <Image source={menuImg} style={styles.componentImage}/>
             <Text style={styles.itemText}>Menu</Text>
           </TouchableOpacity>
           <TouchableOpacity
             onPress={() => props.navigation.navigate('Modal')}
             style={styles.item}
           >
-            <Image source={modalImg}/>
+            <Image source={modalImg} style={styles.componentImage}/>
             <Text style={styles.itemText}>Modal</Text>
           </TouchableOpacity>
         </View>
@@ -151,14 +151,14 @@ export default function ComponentsScreen(props) {
             onPress={() => props.navigation.navigate('Overflow Menu')}
             style={styles.item}
           >
-            <Image source={overflowMenuImg}/>
+            <Image source={overflowMenuImg} style={styles.componentImage}/>
             <Text style={styles.itemText}>Overflow Menu</Text>
           </TouchableOpacity>
           <TouchableOpacity
             onPress={() => props.navigation.navigate('Popover')}
             style={styles.item}
           >
-            <Image source={popoverImg}/>
+            <Image source={popoverImg} style={styles.componentImage}/>
             <Text style={styles.itemText}>Popover</Text>
           </TouchableOpacity>
         </View>
@@ -167,14 +167,14 @@ export default function ComponentsScreen(props) {
             onPress={() => props.navigation.navigate('Range Calendar')}
             style={styles.item}
           >
-            <Image source={rangeCalendarImg}/>
+            <Image source={rangeCalendarImg} style={styles.componentImage}/>
             <Text style={styles.itemText}>Range Calendar</Text>
           </TouchableOpacity>
           <TouchableOpacity
             onPress={() => props.navigation.navigate('Select')}
             style={styles.item}
           >
-            <Image source={selectImg}/>
+            <Image source={selectImg} style={styles.componentImage}/>
             <Text style={styles.itemText}>Select</Text>
           </TouchableOpacity>
         </View>
@@ -183,14 +183,14 @@ export default function ComponentsScreen(props) {
             onPress={() => props.navigation.navigate('Tab View')}
             style={styles.item}
           >
-            <Image source={tabViewImg}/>
+            <Image source={tabViewImg} style={styles.componentImage}/>
             <Text style={styles.itemText}>Tab View</Text>
           </TouchableOpacity>
           <TouchableOpacity
             onPress={() => props.navigation.navigate('Spinner')}
             style={styles.item}
           >
-            <Image source={spinnerImg}/>
+            <Image source={spinnerImg} style={styles.componentImage}/>
             <Text style={styles.itemText}>Spinner</Text>
           </TouchableOpacity>
         </View>
@@ -199,14 +199,14 @@ export default function ComponentsScreen(props) {
             onPress={() => props.navigation.navigate('Toggle')}
             style={styles.item}
           >
-            <Image source={toggleImg}/>
+            <Image source={toggleImg} style={styles.componentImage}/>
             <Text style={styles.itemText}>Toggle</Text>
           </TouchableOpacity>
           <TouchableOpacity
             onPress={() => props.navigation.navigate('Text')}
             style={styles.item}
           >
-            <Image source={textImg}/>
+            <Image source={textImg} style={styles.componentImage}/>
             <Text style={styles.itemText}>Text</Text>
           </TouchableOpacity>
         </View>
@@ -215,14 +215,14 @@ export default function ComponentsScreen(props) {
             onPress={() => props.navigation.navigate('Top Navigation')}
             style={styles.item}
           >
-            <Image source={topNavImg}/>
+            <Image source={topNavImg} style={styles.componentImage}/>
             <Text style={styles.itemText}>Top Navigation</Text>
           </TouchableOpacity>
           <TouchableOpacity
             onPress={() => props.navigation.navigate('Tooltip')}
             style={styles.item}
           >
-            <Image source={tooltipImg}/>
+            <Image source={tooltipImg} style={styles.componentImage}/>
             <Text style={styles.itemText}>Tooltip</Text>
           </TouchableOpacity>
         </View>
@@ -231,7 +231,7 @@ export default function ComponentsScreen(props) {
             onPress={() => props.navigation.navigate('Badges')}
             style={styles.item}
           >
-            <Image source={badgesImg}/>
+            <Image source={badgesImg} style={styles.componentImage}/>
             <Text style={styles.itemText}>Badges</Text>
           </TouchableOpacity>
         </View>
@@ -271,4 +271,9 @@ const styles = StyleSheet.create({
     height: 35,
     tintColor: colors.primary,
   },
+  componentImage: {
+    width: 36,
+    height: 36,
+    resizeMode: 'contain',
+  }
 });

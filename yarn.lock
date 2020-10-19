@@ -1199,7 +1199,7 @@
   dependencies:
     "@types/node" ">= 8"
 
-"@react-native-community/art@^1.1.2":
+"@react-native-community/art@^1.1.2", "@react-native-community/art@^1.2.0":
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/@react-native-community/art/-/art-1.2.0.tgz#386d95393f6042d9006f9d4bc6063fb898794460"
   integrity sha512-a+ZcRGl/BzLa89yi33Mbn5SHavsEXqKUMdbfLf3U8MDLElndPqUetoJyGkv63+BcPO49UMWiQRP1YUz6/zfJ+A==

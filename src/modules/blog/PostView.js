@@ -80,7 +80,7 @@ const styles = StyleSheet.create({
     fontSize: 15,
   },
   author: {
-    paddingTop: 15,
+    paddingVertical: 15,
     flexDirection: 'row',
     alignItems: 'center'
   }

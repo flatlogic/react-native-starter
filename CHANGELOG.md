@@ -1,5 +1,38 @@
 # Changelog
 
+## [4.0.0]
+
+### New Features
+ - Bottom Navigation component
+ - Avatar component
+ - Bottom Group component
+ - Button component
+ - Card component
+ - Calendar component
+ - Drawer component
+ - Checkbox component
+ - Icon component
+ - Input component
+ - Layout component
+ - List component
+ - Menu component
+ - Modal component
+ - Overflow Menu component
+ - Popover component
+ - Range Calendar component
+ - Select component
+ - Tab View component
+ - Spinner component
+ - Toggle component
+ - Text component
+ - Top Navigation component
+ - Tooltip component
+ - Badges component 
+ - Implement Blog
+ 
+ ### Updated
+ - Update core React Native libs
+
 ## [3.3.0]
 
 Updated React-Native version

@@ -210,7 +210,7 @@ export class Switch extends Component {
               height: barHeight || circleSize,
               borderRadius: switchBorderRadius || circleSize,
               borderColor: value && colors.primary,
-              borderWidth: value && 1,
+              borderWidth: 1,
             }
           ]}
         >

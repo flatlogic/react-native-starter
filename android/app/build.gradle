@@ -134,8 +134,8 @@ android {
         applicationId "com.reactnativestarter.upd"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 5
-        versionName "4.0.0"
+        versionCode 6
+        versionName "4.0.1"
     }
     splits {
         abi {
@@ -176,6 +176,7 @@ dependencies {
     implementation "com.facebook.react:react-native:+"  // From node_modules
 
     implementation "com.android.support:appcompat-v7:${rootProject.ext.supportLibVersion}"
+    implementation project(':react-native-art')
 
     if (enableHermes) {
         def hermesPath = "../../node_modules/hermes-engine/android/";

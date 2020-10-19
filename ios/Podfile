@@ -2,18 +2,23 @@
 platform :ios, '10.0'
 require_relative '../node_modules/react-native/scripts/react_native_pods'
 require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
-pod 'React-ART', :path => '../node_modules/react-native/Libraries/ART'
+
 target 'ReactNativeStarter' do
   # Comment the next line if you don't want to use dynamic frameworks
   # use_frameworks!
+
   config = use_native_modules!
   use_react_native!(:path => config["reactNativePath"])
+
+  pod 'ReactNativeART', :path => '../node_modules/@react-native-community/art'
+
   target 'ReactNativeStarterTests' do
     inherit! :search_paths
     # Pods for testing
   end
   use_native_modules!
 end
+
 target 'ReactNativeStarter-tvOS' do
   target 'ReactNativeStarter-tvOSTests' do
     inherit! :search_paths

@@ -40,8 +40,6 @@ export function loadItems(day) {
       newItems[key] = items[key];
     });
 
-    console.log(newItems);
-
     dispatch(itemsLoaded(newItems));
   };
 }

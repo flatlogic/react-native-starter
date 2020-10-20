@@ -1,5 +1,16 @@
 # Changelog
 
+## [3.2.2]
+
+### Features
+- Add blog link to the drawer.
+- Add Blog/Login images to Pages.
+
+### Fixed
+- Fixed indents of Components page.
+- Fixed bottom nav bar on IOS devices.
+- Fixed touchable spacing of top nav Arrow/Burger button.
+
 ## [3.2.1]
 
 Update some libs

@@ -1,5 +1,6 @@
 import React from 'react';
 import { StyleSheet, View, Text, ScrollView } from 'react-native';
+import { useRoute } from '@react-navigation/native';
 
 import Icon from 'react-native-vector-icons/Entypo';
 import { colors, fonts } from '../../styles';
@@ -7,6 +8,7 @@ import { colors, fonts } from '../../styles';
 import { Button, RadioGroup, Dropdown } from '../../components';
 
 export default function ComponentsScreen(props) {
+  const route = useRoute();
   return (
     <ScrollView
       style={styles.container}
@@ -48,47 +50,47 @@ export default function ComponentsScreen(props) {
 
         <View style={styles.demoButtonsContainer}>
           <Button
-            style={styles.demoButton}
+            style={[styles.demoButton, {flexBasis: '47%'}]}
             primary
             caption="Button"
             onPress={() => {}}
           />
           <Button
-            style={styles.demoButton}
+            style={[styles.demoButton, {flexBasis: '47%'}]}
             secondary
             caption="Button"
             onPress={() => {}}
           />
           <Button
-            style={styles.demoButton}
+            style={[styles.demoButton, {flexBasis: '47%'}]}
             primary
             rounded
             caption="Button"
             onPress={() => {}}
           />
           <Button
-            style={styles.demoButton}
+            style={[styles.demoButton, {flexBasis: '47%'}]}
             secondary
             rounded
             caption="Button"
             onPress={() => {}}
           />
           <Button
-            style={styles.demoButton}
+            style={[styles.demoButton, {flexBasis: '47%'}]}
             primary
             bordered
             caption="Button"
             onPress={() => {}}
           />
           <Button
-            style={styles.demoButton}
+            style={[styles.demoButton, {flexBasis: '47%'}]}
             secondary
             bordered
             caption="Button"
             onPress={() => {}}
           />
           <Button
-            style={styles.demoButton}
+            style={[styles.demoButton, {flexBasis: '47%'}]}
             primary
             bordered
             rounded
@@ -96,7 +98,7 @@ export default function ComponentsScreen(props) {
             onPress={() => {}}
           />
           <Button
-            style={styles.demoButton}
+            style={[styles.demoButton, {flexBasis: '47%'}]}
             secondary
             bordered
             rounded
@@ -325,7 +327,7 @@ export default function ComponentsScreen(props) {
         </View>
 
         <Button
-          style={[styles.demoButton, { width: 200, alignSelf: 'center' }]}
+          style={[styles.demoButton, { flex: 1 }]}
           primary
           bordered
           caption="More Icons"
@@ -336,7 +338,7 @@ export default function ComponentsScreen(props) {
         <Text style={styles.componentSectionHeader}>Dropdown</Text>
 
         <Dropdown
-          style={{ width: 200, alignSelf: 'center' }}
+          style={{ width: '100%', alignSelf: 'center' }}
           onSelect={() => {}}
           items={['option 1', 'option 2']}
         />
@@ -354,14 +356,15 @@ const styles = StyleSheet.create({
   },
   componentsSection: {
     backgroundColor: colors.white,
-    padding: 15,
+    paddingHorizontal: 16,
+    paddingVertical: 24,
     marginBottom: 20,
     borderRadius: 5,
   },
   componentSectionHeader: {
     fontFamily: fonts.primaryRegular,
     color: '#686868',
-    fontSize: 20,
+    fontSize: 24,
     marginBottom: 20,
   },
   demoButtonsContainer: {
@@ -376,7 +379,8 @@ const styles = StyleSheet.create({
     flexWrap: 'wrap',
     flex: 1,
     alignItems: 'center',
-    justifyContent: 'space-around',
+    justifyContent: 'space-between',
+    paddingHorizontal: 3,
     marginBottom: 20,
   },
   demoButton: {

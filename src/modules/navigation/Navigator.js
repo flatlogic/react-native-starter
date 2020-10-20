@@ -15,6 +15,7 @@ const iconGrids = require('../../../assets/images/drawer/grids.png');
 const iconPages = require('../../../assets/images/drawer/pages.png');
 const iconComponents = require('../../../assets/images/drawer/components.png');
 const iconSettings = require('../../../assets/images/drawer/settings.png');
+const iconBlog = require('../../../assets/images/drawer/blog.png')
 
 const drawerData = [
   {
@@ -63,14 +64,27 @@ function CustomDrawerContent(props) {
               style={styles.menuLabelFlex}>
               <Image
                 style={{ width: 20, height: 20}}
-                source={iconHome}
+                source={item.icon}
               />
               <Text style={styles.menuTitle}>{item.name}</Text>
             </View>
           )}
           onPress={() => props.navigation.navigate(item.name)}
-        />        
+        />
       ))}
+      <View style={styles.divider} />
+      <DrawerItem
+        label={() => (
+          <View style={styles.menuLabelFlex}>
+            <Image
+              style={{ width: 20, height: 20}}
+              source={iconBlog}
+            />
+            <Text style={styles.menuTitle}>Blog</Text>
+          </View>
+        )}
+        onPress={() => props.navigation.navigate('Blog')}
+      />
       <View style={styles.divider} />
       <DrawerItem
         label={() => (
@@ -89,6 +103,7 @@ function CustomDrawerContent(props) {
 }
 
 export default function App() {
+
   return (
     <Drawer.Navigator
       drawerStyle={{

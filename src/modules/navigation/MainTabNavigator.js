@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Text, View, Image, StyleSheet } from 'react-native';
+import { Text, View, Image, StyleSheet, Platform } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { colors } from '../../styles';
 
@@ -9,7 +9,7 @@ const Tab = createBottomTabNavigator();
 
 export default function BottomTabs() {
   return (
-    <Tab.Navigator>
+    <Tab.Navigator tabBarOptions={{style: {height: Platform.OS === 'ios' ? 90 : 50}}}>
       {tabNavigationData.map((item, idx) => (
         <Tab.Screen 
           key={`tab_item${idx+1}`}
@@ -25,8 +25,8 @@ export default function BottomTabs() {
               />
             </View>
           ),
-          tabBarLabel: ({ focused }) => <Text style={{ fontSize: 12, color: focused ? colors.primary : colors.gray }}>{item.name}</Text>
-        }} 
+          tabBarLabel: ({ focused }) => <Text style={{ fontSize: 12, color: focused ? colors.primary : colors.gray }}>{item.name}</Text>,
+        }}
         />        
       ))}
     </Tab.Navigator>
@@ -35,12 +35,12 @@ export default function BottomTabs() {
 
 const styles = StyleSheet.create({
   tabBarItemContainer: {
-    flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
     borderBottomWidth: 2,
     borderBottomColor: colors.white,
     paddingHorizontal: 10,
+    bottom: Platform.OS === 'ios' ? -5 : 0,
   },
   tabBarIcon: {
     width: 23,

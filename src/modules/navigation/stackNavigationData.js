@@ -19,7 +19,8 @@ const headerLeftComponent = (props) => {
     <TouchableOpacity
       onPress={props.onPress}
       style={{
-        paddingLeft: 10,
+        paddingHorizontal: 16,
+        paddingVertical: 12,
       }}
     >
       <Image
@@ -49,6 +50,17 @@ const StackNavigationData = [
   },
   {
     name: 'Charts',
+    component: AvailableInFullVersion,
+    headerLeft: headerLeftComponent,
+    headerBackground: { source: headerBackground },
+    headerTitleStyle: {
+      fontFamily: fonts.primaryRegular,
+      color: colors.white,
+      fontSize: 18,
+    },
+  },
+  {
+    name: 'Blog',
     component: AvailableInFullVersion,
     headerLeft: headerLeftComponent,
     headerBackground: { source: headerBackground },

@@ -1,6 +1,6 @@
 {
   "name": "react-native-starter",
-  "version": "2.1.0",
+  "version": "3.2.2",
   "private": false,
   "resolutions": {
     "deprecated-react-native-listview": "0.0.6"

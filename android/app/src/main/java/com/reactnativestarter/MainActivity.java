@@ -1,4 +1,4 @@
-package com.reactnativestarter;
+package com.reactnativestarter.upd;
 
 import com.facebook.react.ReactActivity;
 

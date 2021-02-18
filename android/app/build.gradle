@@ -131,6 +131,10 @@ android {
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
         versionName "1.0"
+        multiDexEnabled true
+    }
+    dexOptions {
+        javaMaxHeapSize "4g"
     }
     signingConfigs {
         debug {
@@ -177,7 +181,7 @@ android {
 
 dependencies {
     implementation "com.facebook.react:react-native:+"  // From node_modules
-
+    compile 'com.android.support:multidex:1.0.0'
     if (enableHermes) {
         def hermesPath = "../../node_modules/hermes-engine/android/";
         debugImplementation files(hermesPath + "hermes-debug.aar")

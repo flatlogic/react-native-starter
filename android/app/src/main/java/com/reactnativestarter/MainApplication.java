@@ -8,7 +8,7 @@ import com.facebook.react.ReactApplication;
 import com.reactnativecommunity.art.ARTPackage;
 import com.horcrux.svg.SvgPackage;
 import com.oblador.vectoricons.VectorIconsPackage;
-import com.reactcommunity.rnlocalize.RNLocalizePackage;
+import com.zoontek.rnlocalize.RNLocalizePackage;
 import com.BV.LinearGradient.LinearGradientPackage;
 import com.swmansion.gesturehandler.react.RNGestureHandlerPackage;
 import com.facebook.react.ReactNativeHost;

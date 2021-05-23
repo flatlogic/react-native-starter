@@ -1,5 +1,14 @@
 # Changelog
 
+## [4.1.0]
+
+Updated React Native to 0.64.1
+
+### Fixed
+
+- Assets appearance on IOS.
+- Pods/Grandle installing. 
+
 ## [4.0.0]
 
 ### New Features

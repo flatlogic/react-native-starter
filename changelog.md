@@ -2,7 +2,8 @@
 
 ## [4.1.0]
 
-Updated React Native to 0.64.1
+- Updated React Native to 0.64.1
+- Update core React Native libs
 
 ### Fixed
 

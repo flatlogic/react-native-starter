@@ -20,6 +20,7 @@
     "postinstall": "npx jetify"
   },
   "dependencies": {
+    "@babel/helper-hoist-variables": "^7.14.5",
     "@exponent/react-native-action-sheet": "^0.3.0",
     "@react-native-community/art": "^1.2.0",
     "@react-native-community/checkbox": "^0.4.2",
@@ -52,7 +53,7 @@
     "react-native-paper": "^4.8.1",
     "react-native-progress": "^4.1.2",
     "react-native-reanimated": "^2.1.0",
-    "react-native-render-html": "^5.1.0",
+    "react-native-render-html": "^6.0.0-alpha.26",
     "react-native-safe-area-context": "^3.2.0",
     "react-native-screens": "^3.2.0",
     "react-native-snap-carousel": "^3.9.1",

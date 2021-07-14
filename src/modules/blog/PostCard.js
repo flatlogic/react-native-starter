@@ -37,9 +37,11 @@ export default ({ post, onPress }) => (
       </View>
     </View>
     <HTML
-      html={post.excerpt.rendered}
+      source={{
+        html: post.excerpt.rendered
+      }}
       imagesMaxWidth={Dimensions.get('window').width}
-      ignoreNodesFunction={node => {
+      ingnoreDomNode={node => {
         if (
           node &&
           node.attribs &&

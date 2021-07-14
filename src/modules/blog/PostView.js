@@ -33,11 +33,13 @@ export default (props) => {
           <Text style={{fontSize: 18, color: '#686868', textTransform: 'uppercase', fontWeight: 'bold', flex: 1}}>{post.title.rendered}</Text>
         </View>
         <HTML
-          html={post.content.rendered}
+          source={{
+            html: post.excerpt.rendered
+          }}
           imagesMaxWidth={Dimensions.get('window').width}
           tagsStyles={{h2: {textTransform: 'uppercase', color: '#686868'}}}
           imagesInitialDimensions={{width: 200}}
-          ignoreNodesFunction={node => {
+          ingnoreDomNode={node => {
             if (
               node &&
               node.attribs &&

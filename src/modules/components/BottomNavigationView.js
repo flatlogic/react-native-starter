@@ -4,7 +4,7 @@ import { StyleSheet, View, Text, ScrollView } from 'react-native';
 import Icon from 'react-native-vector-icons/AntDesign';
 import { colors, fonts } from '../../styles';
 
-import { Button, RadioGroup, Dropdown } from '../../components';
+import { RadioGroup } from '../../components';
 import Card from '../../components/Card';
 
 export default function ComponentsScreen(props) {
@@ -17,7 +17,7 @@ export default function ComponentsScreen(props) {
       style={styles.container}
       contentContainerStyle={{ paddingBottom: 20 }}
     >
-      <Card title={'Title'}>
+      <Card title="Title">
         <View style={styles.demoButtonGroupContainer}>
           <RadioGroup
             style={styles.demoItem}
@@ -28,14 +28,14 @@ export default function ComponentsScreen(props) {
           />
         </View>
       </Card>
-      <Card title={'Icon'} style={{ marginTop: 20 }}>
+      <Card title="Icon" style={{ marginTop: 20 }}>
         <View style={styles.demoButtonGroupContainer}>
           <RadioGroup
             style={styles.demoItem}
             items={[
-              <Icon name={'staro'} size={20} />,
-              <Icon name={'staro'} size={20} />,
-              <Icon name={'staro'} size={20} />,
+              <Icon name="staro" size={20} />,
+              <Icon name="staro" size={20} />,
+              <Icon name="staro" size={20} />,
             ]}
             selectedIndex={tab2State}
             onChange={index => setTab2State(index)}
@@ -43,7 +43,7 @@ export default function ComponentsScreen(props) {
           />
         </View>
       </Card>
-      <Card title={'Icon Title'} style={{ marginTop: 20 }}>
+      <Card title="Icon Title" style={{ marginTop: 20 }}>
         <View style={styles.demoButtonGroupContainer}>
           <RadioGroup
             style={styles.demoItem}
@@ -56,7 +56,7 @@ export default function ComponentsScreen(props) {
                 }}
               >
                 <Text style={{ color: 'inherit' }}>One</Text>
-                <Icon name={'staro'} size={20} style={{ marginLeft: 5 }} />
+                <Icon name="staro" size={20} style={{ marginLeft: 5 }} />
               </View>,
               <View
                 style={{
@@ -66,7 +66,7 @@ export default function ComponentsScreen(props) {
                 }}
               >
                 <Text>Two</Text>
-                <Icon name={'staro'} size={20} style={{ marginLeft: 5 }} />
+                <Icon name="staro" size={20} style={{ marginLeft: 5 }} />
               </View>,
               <View
                 style={{
@@ -76,7 +76,7 @@ export default function ComponentsScreen(props) {
                 }}
               >
                 <Text>Three</Text>
-                <Icon name={'staro'} size={20} style={{ marginLeft: 5 }} />
+                <Icon name="staro" size={20} style={{ marginLeft: 5 }} />
               </View>,
             ]}
             selectedIndex={tab3State}

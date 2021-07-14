@@ -7,7 +7,7 @@ import Button from '../../components/Button'
 
 import { colors, fonts } from '../../styles';
 
-export default function ComponentsScreen(props) {
+export default function ComponentsScreen() {
   const [isModalVisible, setModalVisible] = React.useState(false)
 
   const toggleModal = () => {
@@ -37,43 +37,41 @@ export default function ComponentsScreen(props) {
       style={styles.container}
       contentContainerStyle={{ paddingBottom: 20 }}
     >
-      <Card title={'Default Modal'}>
+      <Card title="Default Modal">
         <View>
           <Text style={[styles.componentSectionTitle, {marginBottom: 10}]}>Default</Text>
           <Button
             primary
-            caption="toggle modal"
+            caption="Toggle modal"
             onPress={toggleModal}
             style={{flex: 1}}
           />
 
-          <Modal isVisible={isModalVisible} backdropOpacity={0.5} backdropColor={"#666"}>
-            <Card title={"Hello"}>
+          <Modal isVisible={isModalVisible} backdropOpacity={0.5} backdropColor="#666">
+            <Card title="Hello">
               <Button
                 primary
-                caption="toggle modal"
+                caption="Close modal"
                 onPress={toggleModal}
-                style={{marginTop: 10}}
               />
             </Card>
           </Modal>
         </View>
       </Card>
-      <Card title={'Styling'} style={{marginTop: 20}}>
+      <Card title="Styling" style={{marginTop: 20}}>
         <View style={styles.demoInputContainer}>
           <Text style={styles.componentSectionTitle}>Styled Modal</Text>
           <Button
             secondary
-            caption="toggle modal"
+            caption="Toggle modal"
             onPress={toggleModal2}
           />
-          <Modal isVisible={isModalVisible2} backdropOpacity={0.5} backdropColor={"#666"}>
-           <Card title={"Hello"}>
+          <Modal isVisible={isModalVisible2} backdropOpacity={0.5} backdropColor="#666">
+            <Card title="Hello">
               <Button
                 secondary
-                caption="toggle modal"
+                caption="Close modal"
                 onPress={toggleModal2}
-                style={{marginTop: 10}}
               />
             </Card>
           </Modal>
@@ -86,15 +84,14 @@ export default function ComponentsScreen(props) {
             caption="toggle modal"
             onPress={toggleModal3}
           />
-          <Modal isVisible={isModalVisible3} backdropOpacity={0.5} backdropColor={"#666"}>
+          <Modal isVisible={isModalVisible3} backdropOpacity={0.5} backdropColor="#666">
             <Card title={<Text style={{color: '#fff'}}>Hello</Text>} style={{backgroundColor: colors.primary}}>
               <Button
                 primary
-                caption="toggle modal"
+                caption="Close modal"
                 onPress={toggleModal3}
-                style={{marginTop: 10}}
-                bgColor={'#fff'}
-                textColor={"#5759CB"}
+                bgColor="#fff"
+                textColor="#5759CB"
               />
             </Card>
           </Modal>
@@ -106,16 +103,15 @@ export default function ComponentsScreen(props) {
             caption="toggle modal"
             onPress={toggleModal4}
           />
-          <Modal isVisible={isModalVisible4} backdropOpacity={0.5} backdropColor={"#666"}>
+          <Modal isVisible={isModalVisible4} backdropOpacity={0.5} backdropColor="#666">
             <View style={{flex: 1, marginTop: 100, alignItems: 'center'}}>
-            <Card title={"Hello"}>
-              <Button
-                primary
-                caption="toggle modal"
-                onPress={toggleModal4}
-                style={{marginTop: 10}}
-              />
-            </Card>
+              <Card title="Hello">
+                <Button
+                  primary
+                  caption="Close modal"
+                  onPress={toggleModal4}
+                />
+              </Card>
             </View>
           </Modal>
         </View>

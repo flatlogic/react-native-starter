@@ -32,7 +32,7 @@
     "lodash": "^4.17.13",
     "moment": "^2.24.0",
     "react": "16.9.0",
-    "react-native": "0.63.1",
+    "react-native": "0.64.1",
     "react-native-calendars": "1.265.0",
     "react-native-gesture-handler": "^1.5.0",
     "react-native-gifted-chat": "^0.11.3",

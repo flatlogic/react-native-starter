@@ -30,7 +30,7 @@
     "i18n-js": "^3.2.1",
     "jetifier": "^1.6.5",
     "lodash": "^4.17.13",
-    "moment": "^2.24.0",
+    "moment": "^2.29.4",
     "react": "16.9.0",
     "react-native": "0.63.1",
     "react-native-calendars": "1.265.0",

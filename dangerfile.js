@@ -30,3 +30,4 @@ if (danger.github.pr.assignee === null) {
     'Please assign someone to merge this PR, and optionally include people who should review.'
   );
 }
+

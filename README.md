@@ -65,7 +65,7 @@ We have a premium version of this mobile application template that saves you eve
 - Premium support and updates included
 - Much, much more..
 
-Read more and purchase it at https://reactnativestarter.com
+Read more and purchase it at https://flatlogic.com/templates/react-native-starter
 
 ## How can I support developers?
 - Star our GitHub repo :star:

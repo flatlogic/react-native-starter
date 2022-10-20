@@ -43,7 +43,7 @@
     "react-native-modal-datetime-picker": "^6.0.0",
     "react-native-modal-dropdown": "0.7.0",
     "react-native-paper": "^3.1.1",
-    "react-native-reanimated": "^1.8.0",
+    "react-native-reanimated": "^2.10.0",
     "react-native-safe-area-context": "^0.7.3",
     "react-native-screens": "^2.5.0",
     "react-native-ui-lib": "^3.39.0",

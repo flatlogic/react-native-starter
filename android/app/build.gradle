@@ -173,7 +173,7 @@ android {
 }
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
-    implementation "com.facebook.react:react-native:+"  // From node_modules
+    implementation 'com.facebook.react:react-native:0.64.1'  // From node_modules
 
     implementation "com.android.support:appcompat-v7:${rootProject.ext.supportLibVersion}"
     implementation project(':react-native-art')

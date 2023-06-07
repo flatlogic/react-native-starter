@@ -1,5 +1,5 @@
 {
-  "extends": ["airbnb", "prettier"],
+  "extends": ["airbnb", "prettier", "@react-native"],
   "plugins": ["react", "jsx-a11y", "import"],
   "parser": "babel-eslint",
   "rules": {

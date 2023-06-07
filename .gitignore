@@ -14,6 +14,7 @@ build/
 *.perspectivev3
 !default.perspectivev3
 xcuserdata
+ios/.xcode.env.local
 *.xccheckout
 *.moved-aside
 DerivedData
@@ -29,6 +30,10 @@ build/
 .gradle
 local.properties
 *.iml
+*.hprof
+.cxx/
+*.keystore
+!debug.keystore
 !/android/app/debug.keystore
 
 # node.js
@@ -37,9 +42,6 @@ node_modules/
 npm-debug.log
 yarn-error.log
 
-# BUCK
-buck-out/
-\.buckd/
 
 # fastlane
 #
@@ -48,14 +50,20 @@ buck-out/
 # For more information about the recommended setup visit:
 # https://docs.fastlane.tools/best-practices/source-control/
 
-*/fastlane/report.xml
-*/fastlane/Preview.html
-*/fastlane/screenshots
+**/fastlane/report.xml
+**/fastlane/Preview.html
+**/fastlane/screenshots
+**/fastlane/test_output
 
 # Bundle artifact
 *.jsbundle
 
 jest_coverage
 
-# CocoaPods
+# Ruby / CocoaPods
 /ios/Pods/
+/vendor/bundle/
+# Temporary files created by Metro to check the health of the file watcher
+.metro-health-check*
+# testing
+/coverage

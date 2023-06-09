@@ -35,7 +35,7 @@
     "lodash": "^4.17.21",
     "moment": "^2.29.4",
     "react": "18.2.0",
-    "react-native": "0.72.0-rc.5",
+    "react-native": "0.71.10",
     "react-native-autocomplete-input": "^5.2.0",
     "react-native-calendars": "^1.1298.0",
     "react-native-elements": "^3.4.2",

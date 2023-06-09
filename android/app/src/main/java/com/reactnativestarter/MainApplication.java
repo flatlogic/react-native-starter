@@ -4,12 +4,10 @@ import android.app.Application;
 import com.facebook.react.PackageList;
 
 import com.facebook.react.ReactApplication;
-//import com.reactnativecommunity.art.ARTPackage;
 import com.horcrux.svg.SvgPackage;
 import com.oblador.vectoricons.VectorIconsPackage;
 import com.zoontek.rnlocalize.RNLocalizePackage;
 import com.BV.LinearGradient.LinearGradientPackage;
-import com.swmansion.gesturehandler.react.RNGestureHandlerPackage;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;

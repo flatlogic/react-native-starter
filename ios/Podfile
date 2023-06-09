@@ -1,5 +1,4 @@
-# Uncomment the next line to define a global platform for your project
-platform :ios, '10.0'
+
 # Resolve react_native_pods.rb with node to allow for hoisting
 require Pod::Executable.execute_command('node', ['-p',
   'require.resolve(
@@ -46,18 +45,27 @@ target 'ReactNativeStarter' do
   # An absolute path to your application root.
   :app_path => "#{Pod::Config.instance.installation_root}/.."
 
-  pod 'ReactNativeART', :path => '../node_modules/@react-native-community/art'
+  # pod 'ReactNativeART', :path => '../node_modules/@react-native-community/art'
 
-  target 'ReactNativeStarterTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-  use_native_modules!
+target 'RnDiffAppTests' do
+  # Pods for testing
 end
 
 target 'ReactNativeStarter-tvOS' do
   target 'ReactNativeStarter-tvOSTests' do
     inherit! :search_paths
     # Pods for testing
+  end
+end
+
+post_install do |installer|
+
+# https://github.com/facebook/react-native/blob/main/packages/react-native/scripts/react_native_pods.rb#L197-L202
+    react_native_post_install(
+      installer,
+      config[:reactNativePath],
+      :mac_catalyst_enabled => false
+    )
+    __apply_Xcode_12_5_M1_post_install_workaround(installer)
   end
 end

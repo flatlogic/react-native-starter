@@ -1,5 +1,11 @@
 # Changelog
 
+## [4.2.0]
+
+- Updated React Native to 0.71.10
+- Update core React Native libs
+- Update dependencies
+
 ## [4.1.0]
 
 - Updated React Native to 0.64.1

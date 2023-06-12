@@ -1,10 +1,6 @@
+require_relative '../node_modules/react-native/scripts/react_native_pods'
+require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
 
-# Resolve react_native_pods.rb with node to allow for hoisting
-require Pod::Executable.execute_command('node', ['-p',
-  'require.resolve(
-    "react-native/scripts/react_native_pods.rb",
-    {paths: [process.argv[1]]},
-  )', __dir__]).strip
 platform :ios, min_ios_version_supported
 prepare_react_native_project!
 # If you are using a `react-native-flipper` your iOS build will fail when `NO_FLIPPER=1` is set.
@@ -32,7 +28,8 @@ target 'ReactNativeStarter' do
   # Flags change depending on the env values.
   flags = get_default_flags()
 
-  use_react_native!(:path => config["reactNativePath"])
+  use_react_native!(
+  :path => config[:reactNativePath],
 
   # Hermes is now enabled by default. Disable by setting this flag to false.
   :hermes_enabled => flags[:hermes_enabled],
@@ -44,10 +41,9 @@ target 'ReactNativeStarter' do
   :flipper_configuration => flipper_config,
   # An absolute path to your application root.
   :app_path => "#{Pod::Config.instance.installation_root}/.."
+)
 
-  # pod 'ReactNativeART', :path => '../node_modules/@react-native-community/art'
-
-target 'RnDiffAppTests' do
+target 'ReactNativeStarterTests' do
   # Pods for testing
 end
 

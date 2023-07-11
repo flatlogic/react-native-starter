@@ -1,5 +1,9 @@
 # Changelog
 
+## [4.2.1]
+
+- Fix theme style
+
 ## [4.2.0]
 
 - Updated React Native to 0.71.10

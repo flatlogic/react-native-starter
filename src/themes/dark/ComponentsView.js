@@ -1,10 +1,10 @@
-import React from 'react';
-import { StyleSheet, View, Text, ScrollView } from 'react-native';
+import React from "react";
+import { StyleSheet, View, Text, ScrollView } from "react-native";
 
-import Icon from 'react-native-vector-icons/Entypo';
-import { colors, fonts } from '../../styles';
+import Icon from "react-native-vector-icons/Entypo";
+import { colors, fonts } from "../../styles";
 
-import { Button, RadioGroup, Dropdown } from '../../components';
+import { Button, RadioGroup, Dropdown } from "../../components";
 
 export default function ComponentsScreen(props) {
   return (
@@ -17,9 +17,9 @@ export default function ComponentsScreen(props) {
 
         <RadioGroup
           style={styles.demoItem}
-          items={['One', 'Two', 'Three']}
+          items={["One", "Two", "Three"]}
           selectedIndex={props.radioGroupsState[0]}
-          onChange={index =>
+          onChange={(index) =>
             props.setRadioGroupsState({ ...props.radioGroupsState, 0: index })
           }
         />
@@ -27,7 +27,7 @@ export default function ComponentsScreen(props) {
         <View
           style={{
             height: 1,
-            alignSelf: 'stretch',
+            alignSelf: "stretch",
             backgroundColor: colors.bluish,
           }}
         />
@@ -35,9 +35,9 @@ export default function ComponentsScreen(props) {
         <RadioGroup
           underline
           style={styles.demoItem}
-          items={['One', 'Two', 'Tree', 'Four']}
+          items={["One", "Two", "Tree", "Four"]}
           selectedIndex={props.radioGroupsState[1]}
-          onChange={index =>
+          onChange={(index) =>
             props.setRadioGroupsState({ ...props.radioGroupsState, 1: index })
           }
         />
@@ -110,62 +110,32 @@ export default function ComponentsScreen(props) {
         <Text style={styles.componentSectionHeader}>Action Buttons</Text>
 
         <View style={styles.demoButtonsContainer}>
-          <Button
-            style={styles.demoButton}
-            action
-            bgColor="#958FDA"
-            onPress={() => {}}
-          >
+          <Button action bgColor="#958FDA" onPress={() => {}}>
             <Text>
               <Icon name="chevron-thin-right" size={20} color="white" />
             </Text>
           </Button>
-          <Button
-            style={styles.demoActionButton}
-            action
-            bgColor="#4F44C1"
-            onPress={() => {}}
-          >
+          <Button action bgColor="#4F44C1" onPress={() => {}}>
             <Text>
               <Icon name="controller-paus" size={20} color="white" />
             </Text>
           </Button>
-          <Button
-            style={styles.demoActionButton}
-            action
-            bgColor="#3CD4A0"
-            onPress={() => {}}
-          >
+          <Button action bgColor="#3CD4A0" onPress={() => {}}>
             <Text>
               <Icon name="magnifying-glass" size={20} color="white" />
             </Text>
           </Button>
-          <Button
-            style={styles.demoActionButton}
-            action
-            bgColor="#EF1F78"
-            onPress={() => {}}
-          >
+          <Button action bgColor="#EF1F78" onPress={() => {}}>
             <Text>
               <Icon name="paper-plane" size={20} color="white" />
             </Text>
           </Button>
-          <Button
-            style={styles.demoActionButton}
-            action
-            bgColor="#52B1F4"
-            onPress={() => {}}
-          >
+          <Button action bgColor="#52B1F4" onPress={() => {}}>
             <Text>
               <Icon name="flash" size={20} color="white" />
             </Text>
           </Button>
-          <Button
-            style={styles.demoActionButton}
-            action
-            bgColor="#19D4E6"
-            onPress={() => {}}
-          >
+          <Button action bgColor="#19D4E6" onPress={() => {}}>
             <Text>
               <Icon name="reply-all" size={20} color="white" />
             </Text>
@@ -325,7 +295,7 @@ export default function ComponentsScreen(props) {
         </View>
 
         <Button
-          style={[styles.demoButton, { width: 200, alignSelf: 'center' }]}
+          style={[styles.demoButton, { width: 200, alignSelf: "center" }]}
           primary
           bordered
           caption="More Icons"
@@ -336,9 +306,9 @@ export default function ComponentsScreen(props) {
         <Text style={styles.componentSectionHeader}>Dropdown</Text>
 
         <Dropdown
-          style={{ width: 200, alignSelf: 'center' }}
+          style={{ width: 200, alignSelf: "center" }}
           onSelect={() => {}}
-          items={['option 1', 'option 2']}
+          items={["option 1", "option 2"]}
         />
       </View>
     </ScrollView>
@@ -360,28 +330,27 @@ const styles = StyleSheet.create({
   },
   componentSectionHeader: {
     fontFamily: fonts.primaryRegular,
-    color: '#686868',
+    color: "#686868",
     fontSize: 20,
     marginBottom: 20,
   },
   demoButtonsContainer: {
-    flex: 1,
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-  },
-  demoIconsContainer: {
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'space-around',
-    marginBottom: 20,
+    flexDirection: "row",
+    flexWrap: "wrap",
+    justifyContent: "space-between",
   },
   demoButton: {
     marginTop: 8,
     marginBottom: 8,
+    marginHorizontal: 8,
+  },
+  demoIconsContainer: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "space-around",
+    marginBottom: 20,
   },
   demoItem: {
     marginVertical: 15,

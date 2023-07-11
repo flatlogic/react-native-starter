@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   StyleSheet,
   View,
@@ -9,10 +9,10 @@ import {
   LayoutAnimation,
   TouchableOpacity,
   ImageBackground,
-} from 'react-native';
+} from "react-native";
 
-import { fonts, colors } from '../../styles';
-import { TextInput, Button } from '../../components';
+import { fonts, colors } from "../../styles";
+import { TextInput, Button } from "../../components";
 
 const FORM_STATES = {
   LOGIN: 0,
@@ -30,11 +30,11 @@ export default class AuthScreen extends React.Component {
 
   componentDidMount() {
     this.keyboardDidShowListener = Keyboard.addListener(
-      Platform.select({ android: 'keyboardDidShow', ios: 'keyboardWillShow' }),
+      Platform.select({ android: "keyboardDidShow", ios: "keyboardWillShow" }),
       this._keyboardDidShow.bind(this),
     );
     this.keyboardDidHideListener = Keyboard.addListener(
-      Platform.select({ android: 'keyboardDidHide', ios: 'keyboardWillHide' }),
+      Platform.select({ android: "keyboardDidHide", ios: "keyboardWillHide" }),
       this._keyboardDidHide.bind(this),
     );
 
@@ -62,14 +62,14 @@ export default class AuthScreen extends React.Component {
       opacity: anim.interpolate({
         inputRange: [delay, Math.min(delay + 500, 3000)],
         outputRange: [0, 1],
-        extrapolate: 'clamp',
+        extrapolate: "clamp",
       }),
       transform: [
         {
           translateY: anim.interpolate({
             inputRange: [delay, Math.min(delay + 500, 3000)],
             outputRange: [from, 0],
-            extrapolate: 'clamp',
+            extrapolate: "clamp",
           }),
         },
       ],
@@ -81,7 +81,7 @@ export default class AuthScreen extends React.Component {
 
     return (
       <ImageBackground
-        source={require('../../../assets/images/background.png')}
+        source={require("../../../assets/images/background.png")}
         style={styles.backgroundImage}
         resizeMode="cover"
       >
@@ -94,7 +94,7 @@ export default class AuthScreen extends React.Component {
                 this.state.isKeyboardVisible && { height: 90 },
                 this.fadeIn(0),
               ]}
-              source={require('../../../assets/images/white-logo.png')}
+              source={require("../../../assets/images/white-logo.png")}
             />
           </View>
 
@@ -106,6 +106,7 @@ export default class AuthScreen extends React.Component {
               style={styles.textInput}
               autoCapitalize="none"
               autoCorrect={false}
+              dark
             />
 
             {this.state.formState === FORM_STATES.REGISTER && (
@@ -115,6 +116,7 @@ export default class AuthScreen extends React.Component {
                 autoCapitalize="none"
                 autoCorrect={false}
                 keyboardType="email-address"
+                dark
               />
             )}
 
@@ -122,6 +124,7 @@ export default class AuthScreen extends React.Component {
               placeholder="Password"
               secureTextEntry
               style={styles.textInput}
+              dark
             />
 
             <Animated.View
@@ -131,11 +134,11 @@ export default class AuthScreen extends React.Component {
                 bgColor={colors.secondary}
                 textColor="white"
                 primary
-                style={{ alignSelf: 'stretch', marginBottom: 10 }}
+                style={{ alignSelf: "stretch", marginBottom: 10, height: 50 }}
                 caption={
                   this.state.formState === FORM_STATES.LOGIN
-                    ? 'Login'
-                    : 'Register'
+                    ? "Login"
+                    : "Register"
                 }
                 onPress={() => this.props.navigation.goBack()}
               />
@@ -146,7 +149,7 @@ export default class AuthScreen extends React.Component {
                     style={styles.socialButton}
                     bordered
                     bgColor={colors.primary}
-                    icon={require('../../../assets/images/google-plus.png')}
+                    icon={require("../../../assets/images/google-plus.png")}
                     iconColor={colors.primary}
                     onPress={() => this.props.navigation.goBack()}
                   />
@@ -154,7 +157,7 @@ export default class AuthScreen extends React.Component {
                     style={[styles.socialButton, styles.socialButtonCenter]}
                     bordered
                     bgColor={colors.primary}
-                    icon={require('../../../assets/images/twitter.png')}
+                    icon={require("../../../assets/images/twitter.png")}
                     iconColor={colors.primary}
                     onPress={() => this.props.navigation.goBack()}
                   />
@@ -162,7 +165,7 @@ export default class AuthScreen extends React.Component {
                     style={styles.socialButton}
                     bordered
                     bgColor={colors.primary}
-                    icon={require('../../../assets/images/facebook.png')}
+                    icon={require("../../../assets/images/facebook.png")}
                     iconColor={colors.primary}
                     onPress={() => this.props.navigation.goBack()}
                   />
@@ -179,7 +182,7 @@ export default class AuthScreen extends React.Component {
                         : FORM_STATES.REGISTER,
                     });
                   }}
-                  style={{ paddingTop: 30, flexDirection: 'row' }}
+                  style={{ paddingTop: 30, flexDirection: "row" }}
                 >
                   <Text
                     style={{
@@ -188,7 +191,7 @@ export default class AuthScreen extends React.Component {
                     }}
                   >
                     {isRegister
-                      ? 'Already have an account?'
+                      ? "Already have an account?"
                       : "Don't have an account?"}
                   </Text>
                   <Text
@@ -198,7 +201,7 @@ export default class AuthScreen extends React.Component {
                       marginLeft: 5,
                     }}
                   >
-                    {isRegister ? 'Login' : 'Register'}
+                    {isRegister ? "Login" : "Register"}
                   </Text>
                 </TouchableOpacity>
               )}
@@ -213,8 +216,8 @@ export default class AuthScreen extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'space-around',
+    alignItems: "center",
+    justifyContent: "space-around",
     paddingHorizontal: 30,
   },
   backgroundImage: {
@@ -222,35 +225,37 @@ const styles = StyleSheet.create({
   },
   section: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems: "center",
+    justifyContent: "center",
   },
   middle: {
     flex: 2,
-    justifyContent: 'center',
-    alignSelf: 'stretch',
+    justifyContent: "center",
+    alignSelf: "stretch",
     paddingTop: 20,
   },
   bottom: {
     flex: 1,
-    alignSelf: 'stretch',
-    paddingBottom: Platform.OS === 'android' ? 30 : 0,
+    alignSelf: "stretch",
+    paddingBottom: Platform.OS === "android" ? 30 : 0,
   },
   last: {
-    justifyContent: 'flex-end',
+    justifyContent: "flex-end",
   },
   textInput: {
-    alignSelf: 'stretch',
+    alignSelf: "stretch",
     marginTop: 20,
+    width: 350,
   },
   logo: {
     height: 150,
   },
   socialLoginContainer: {
-    flexDirection: 'row',
-    alignSelf: 'stretch',
+    flexDirection: "row",
+    alignSelf: "stretch",
     marginTop: 15,
-    justifyContent: 'space-between',
+    justifyContent: "space-between",
+    height: 40,
   },
   socialButton: {
     flex: 1,

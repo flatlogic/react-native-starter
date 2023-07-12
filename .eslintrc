@@ -1,7 +1,7 @@
 {
-  "extends": ["airbnb", "prettier"],
+  "extends": ["@react-native", "prettier"],
   "plugins": ["react", "jsx-a11y", "import"],
-  "parser": "babel-eslint",
+  "parser": "@babel/eslint-parser",
   "rules": {
     "react/jsx-filename-extension": "off",
     "react/destructuring-assignment": "off",

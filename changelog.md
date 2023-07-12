@@ -1,5 +1,33 @@
 # Changelog
 
+## [3.2.3]
+### Updated
+- deprecated-react-native-listview: 0.0.6 - 0.0.7
+- @react-native-community/toolbar-android: 0.1.0-rc.2 - 0.2.1
+- react: 16.9.0 - 18.2.0
+- react-native: 0.63.1 - 0.72.2
+- react-native-reanimated: 1.8.0 - 1.13.4
+- redux: 4.0.1 - 4.2.1
+- @babel/core: 7.5.0 - 7.20.0
+- @babel/runtime: 7.5.0 - 7.20.0
+- babel-jest: 24.1.0 - 29.2.1
+- eslint: 5.9.0 - 8.19.0
+- jest: 24.1.0 - 29.2.1
+- metro-react-native-babel-preset: 0.51.1 - 0.76.7
+- prettier: 1.16.1 - 2.4.1
+- react-native-modal-dropdown: 0.7.0 - 1.0.2
+- lodash: 4.17.13 - 4.17.21
+- moment: 2.24.0 - 2.29.4
+
+### Added
+- @react-native-async-storage/async-storage: 1.19.0
+- @babel/preset-env: 7.20.0
+- @react-native/eslint-config: 0.72.2
+- @react-native/metro-config: 0.72.9
+- @types/react: 18.0.24
+- @types/react-test-renderer: 18.0.0
+- eslint-plugin-import: 2.27.5.
+
 ## [3.2.2]
 
 ### Features

@@ -1,5 +1,20 @@
 # Changelog
 
+## [3.2.4]
+### Updated
+- react-native: 0.72.2 -> 0.73.1
+- react-native-vector-icons: 6.6.0 -> 10.0.3
+- "@react-native/eslint-config": 0.72.2 -> 0.73.1
+- "@react-native/metro-config": 0.72.9 -> 0.73.2
+- "babel-jest": 29.2.1 -> 29.6.3
+- "jest": 29.2.1 -> 29.6.3
+- "prettier": 2.4.1 -> 2.8.8
+- "@types/react": 18.0.24 -> 18.2.6
+
+### Added
+- "@react-native/babel-preset": 0.73.18
+- "@react-native/typescript-config": 0.73.1
+
 ## [3.2.3]
 ### Updated
 - deprecated-react-native-listview: 0.0.6 - 0.0.7

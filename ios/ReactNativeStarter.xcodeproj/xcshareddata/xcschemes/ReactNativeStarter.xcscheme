@@ -43,7 +43,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "ReactNativeStarterTests"
+               BuildableName = "ReactNativeStarterTests.xctest"
                BlueprintName = "ReactNativeStarterTests"
                ReferencedContainer = "container:ReactNativeStarter.xcodeproj">
             </BuildableReference>
@@ -70,7 +70,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "ReactNativeStarterTests"
+               BuildableName = "ReactNativeStarterTests.xctest"
                BlueprintName = "ReactNativeStarterTests"
                ReferencedContainer = "container:ReactNativeStarter.xcodeproj">
             </BuildableReference>

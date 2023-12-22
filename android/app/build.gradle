@@ -1,4 +1,5 @@
 apply plugin: "com.android.application"
+apply plugin: "org.jetbrains.kotlin.android"
 apply plugin: "com.facebook.react"
 
 /**
@@ -66,7 +67,8 @@ def jscFlavor = 'org.webkit:android-jsc:+'
 
 android {
     ndkVersion rootProject.ext.ndkVersion
-    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+    compileSdk rootProject.ext.compileSdkVersion
     namespace "com.reactnativestarter"
 //     compileOptions {
 //         sourceCompatibility JavaVersion.VERSION_1_8
@@ -81,9 +83,9 @@ android {
         versionName "1.0"
         multiDexEnabled true
     }
-    dexOptions {
-        javaMaxHeapSize "4g"
-    }
+//   dexOptions {
+//       javaMaxHeapSize "4g"
+//   }
     signingConfigs {
         debug {
             storeFile file('debug.keystore')
@@ -109,14 +111,8 @@ android {
 dependencies {
     // The version of react-native is set by the React Native Gradle Plugin
     implementation("com.facebook.react:react-android")
-//     compile 'com.android.support:multidex:1.0.0'
+    implementation("com.facebook.react:flipper-integration")
 
-    debugImplementation("com.facebook.flipper:flipper:${FLIPPER_VERSION}")
-    debugImplementation("com.facebook.flipper:flipper-network-plugin:${FLIPPER_VERSION}") {
-        exclude group:'com.squareup.okhttp3', module:'okhttp'
-    }
-
-    debugImplementation("com.facebook.flipper:flipper-fresco-plugin:${FLIPPER_VERSION}")
     if (hermesEnabled.toBoolean()) {
         implementation("com.facebook.react:hermes-android")
     } else {

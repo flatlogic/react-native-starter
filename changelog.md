@@ -1,5 +1,23 @@
 # Changelog
 
+## [4.2.2] 
+### Updated React Native to 0.73.1
+
+#### Updated packages
+- react-native: 0.71.10 -> 0.73.1
+- react-native-reanimated: 2.2.4 -> 1.13.4
+- react-native-screens: 3.20.0 -> 3.29.0
+- babel-jest: 29.2.1 -> 29.6.3
+- jest: 29.2.1 -> 29.6.3
+- prettier: 2.4.1 -> 2.8.8
+- @react-native/eslint-config: 0.72.2 -> 0.73.1
+- @react-native/metro-config: 0.72.6 -> 0.73.2
+
+#### Added packages
+- @react-native/babel-preset: 0.73.18
+- @react-native/typescript-config: 0.73.1
+- @types/react: 18.2.6
+
 ## [4.2.1]
 
 - Fix theme style

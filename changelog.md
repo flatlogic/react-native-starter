@@ -1,5 +1,9 @@
 # Changelog
 
+## [3.2.5]
+### Updated
+- Update dependency
+
 ## [3.2.4]
 ### Updated
 - react-native: 0.72.2 -> 0.73.1

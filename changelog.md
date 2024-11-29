@@ -1,5 +1,9 @@
 # Changelog
 
+## [4.2.3]
+
+- Update dependencies
+
 ## [4.2.2] 
 ### Updated React Native to 0.73.1
 

@@ -1,10 +1,8 @@
 # React Native Starter 🚀
 
-[View Demo](https://play.google.com/store/apps/details?id=com.reactnativestarter.upd) | [Download](https://github.com/flatlogic/react-native-starter.git) | [More templates](https://flatlogic.com/templates) | [Support forum](https://flatlogic.com/forum)
-
 *You're viewing the new and updated version of React Native Starter, previous version can be found under the [v1 branch](https://github.com/flatlogic/react-native-starter/tree/v1)*
 
-A powerful React Native starter template that bootstraps the development of your mobile application, handy for [business software](https://flatlogic.com/) projects.React Native Starter is a mobile application template with lots of built-in components like sidebar, navigation, form elements, etc - all you need to start building your mobile app faster.
+A powerful react native starter template that bootstraps development of your mobile application. React Native Starter is a mobile application template with lots of built-in components like sidebar, navigation, form elements, etc - all you need to start building your mobile app faster. Check out live demo on [App Store](https://play.google.com/store/apps/details?id=com.reactnativestarter.lite), [Google Play](https://play.google.com/store/apps/details?id=com.reactnativestarter.lite).
 
 ![React Native Starter](https://i.imgur.com/vcz4bU6.png)
 
@@ -29,10 +27,10 @@ A powerful React Native starter template that bootstraps the development of your
 # Clone the repo
 git clone https://github.com/flatlogic/react-native-starter.git
 
-# Navigate to clonned folder and Install dependencies
-cd react-native-starter && yarn install
+# Install dependencies
+yarn install
 
-# Install Pods
+# Install native ios modules
 cd ios && pod install
 ```
 
@@ -67,10 +65,7 @@ We have a premium version of this mobile application template that saves you eve
 - Premium support and updates included
 - Much, much more..
 
-Read more and purchase it at https://reactnativestarter.com
-
-## Support
-For any additional information please go to our [**support forum**](https://flatlogic.com/forum) and raise your questions or feedback provide there. We highly appreciate your participation!
+Read more and purchase it at https://flatlogic.com/templates/react-native-starter
 
 ## How can I support developers?
 - Star our GitHub repo :star:
@@ -86,4 +81,4 @@ For any additional information please go to our [**support forum**](https://flat
 
 ## License
 
-[Mozilla Public License 2.0](LICENSE)
+[MIT License](LICENSE)

@@ -1,12 +1,8 @@
-package com.reactnativestarter
+package com.reactnativestarter.upd
 
 import android.app.Application
 import com.facebook.react.PackageList
 import com.facebook.react.ReactApplication
-import com.oblador.vectoricons.VectorIconsPackage
-import com.reactcommunity.rnlocalize.RNLocalizePackage
-import com.BV.LinearGradient.LinearGradientPackage
-import com.swmansion.gesturehandler.react.RNGestureHandlerPackage
 import com.facebook.react.ReactHost
 import com.facebook.react.ReactNativeHost
 import com.facebook.react.ReactPackage
@@ -15,8 +11,6 @@ import com.facebook.react.defaults.DefaultReactHost.getDefaultReactHost
 import com.facebook.react.defaults.DefaultReactNativeHost
 import com.facebook.react.flipper.ReactNativeFlipper
 import com.facebook.soloader.SoLoader
-
-// import java.lang.reflect.InvocationTargetException;
 
 class MainApplication : Application(), ReactApplication {
 

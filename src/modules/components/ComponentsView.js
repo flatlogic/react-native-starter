@@ -1,347 +1,240 @@
 import React from 'react';
-import { StyleSheet, View, Text, ScrollView } from 'react-native';
-import { useRoute } from '@react-navigation/native';
+import { StyleSheet, View, Text, ScrollView, TouchableOpacity, Image } from 'react-native';
 
-import Icon from 'react-native-vector-icons/Entypo';
 import { colors, fonts } from '../../styles';
 
-import { Button, RadioGroup, Dropdown } from '../../components';
+const avatarImg = require('../../../assets/images/components/avatar.png')
+const bottomNavImg = require ('../../../assets/images/components/bottom-navigation.png')
+const btnImg = require('../../../assets/images/components/button.png')
+const btnGroupImg = require('../../../assets/images/components/button-group.png')
+const calendarImg = require('../../../assets/images/components/calendar.png')
+const cardImg = require('../../../assets/images/components/card.png')
+const checkboxImg = require('../../../assets/images/components/checkbox.png')
+const drawerImg = require('../../../assets/images/components/drawer.png')
+const iconImg = require('../../../assets/images/components/icon.png')
+const inputImg = require('../../../assets/images/components/input.png')
+const layoutImg = require('../../../assets/images/components/layout.png')
+const listImg = require('../../../assets/images/components/list.png')
+const menuImg = require('../../../assets/images/components/menu.png')
+const modalImg = require('../../../assets/images/components/modal.png')
+const overflowMenuImg = require('../../../assets/images/components/overflow-menu.png')
+const popoverImg = require('../../../assets/images/components/popover.png')
+const rangeCalendarImg = require('../../../assets/images/components/range-calendar.png')
+const selectImg = require('../../../assets/images/components/select.png')
+const spinnerImg = require('../../../assets/images/components/spinner.png')
+const tabViewImg = require('../../../assets/images/components/tabs.png')
+const textImg = require('../../../assets/images/components/text.png')
+const toggleImg = require('../../../assets/images/components/toggle.png')
+const tooltipImg = require('../../../assets/images/components/tooltip.png')
+const topNavImg = require('../../../assets/images/components/top-navigation.png')
+const badgesImg = require('../../../assets/images/components/badges.png')
+
 
 export default function ComponentsScreen(props) {
-  const route = useRoute();
   return (
-    <ScrollView
-      style={styles.container}
-      contentContainerStyle={{ paddingBottom: 20 }}
-    >
-      <View style={styles.componentsSection}>
-        <Text style={styles.componentSectionHeader}>Radio Group</Text>
-
-        <RadioGroup
-          style={styles.demoItem}
-          items={['One', 'Two', 'Three']}
-          selectedIndex={props.radioGroupsState[0]}
-          onChange={index =>
-            props.setRadioGroupsState({ ...props.radioGroupsState, 0: index })
-          }
-        />
-
-        <View
-          style={{
-            height: 1,
-            alignSelf: 'stretch',
-            backgroundColor: colors.bluish,
-          }}
-        />
-
-        <RadioGroup
-          underline
-          style={styles.demoItem}
-          items={['One', 'Two', 'Three', 'Four']}
-          selectedIndex={props.radioGroupsState[1]}
-          onChange={index =>
-            props.setRadioGroupsState({ ...props.radioGroupsState, 1: index })
-          }
-        />
-      </View>
-
-      <View style={styles.componentsSection}>
-        <Text style={styles.componentSectionHeader}>Buttons</Text>
-
-        <View style={styles.demoButtonsContainer}>
-          <Button
-            style={[styles.demoButton, {flexBasis: '47%'}]}
-            primary
-            caption="Button"
-            onPress={() => {}}
-          />
-          <Button
-            style={[styles.demoButton, {flexBasis: '47%'}]}
-            secondary
-            caption="Button"
-            onPress={() => {}}
-          />
-          <Button
-            style={[styles.demoButton, {flexBasis: '47%'}]}
-            primary
-            rounded
-            caption="Button"
-            onPress={() => {}}
-          />
-          <Button
-            style={[styles.demoButton, {flexBasis: '47%'}]}
-            secondary
-            rounded
-            caption="Button"
-            onPress={() => {}}
-          />
-          <Button
-            style={[styles.demoButton, {flexBasis: '47%'}]}
-            primary
-            bordered
-            caption="Button"
-            onPress={() => {}}
-          />
-          <Button
-            style={[styles.demoButton, {flexBasis: '47%'}]}
-            secondary
-            bordered
-            caption="Button"
-            onPress={() => {}}
-          />
-          <Button
-            style={[styles.demoButton, {flexBasis: '47%'}]}
-            primary
-            bordered
-            rounded
-            caption="Button"
-            onPress={() => {}}
-          />
-          <Button
-            style={[styles.demoButton, {flexBasis: '47%'}]}
-            secondary
-            bordered
-            rounded
-            caption="Button"
-            onPress={() => {}}
-          />
-        </View>
-      </View>
-
-      <View style={styles.componentsSection}>
-        <Text style={styles.componentSectionHeader}>Action Buttons</Text>
-
-        <View style={styles.demoButtonsContainer}>
-          <Button
-            style={styles.demoButton}
-            action
-            bgColor="#958FDA"
-            onPress={() => {}}
+    <ScrollView>
+      <View style={styles.container}>
+        <View style={styles.row}>
+          <TouchableOpacity
+            onPress={() => props.navigation.navigate('Bottom Navigation')}
+            style={styles.item}
           >
-            <Text>
-              <Icon name="chevron-thin-right" size={20} color="white" />
-            </Text>
-          </Button>
-          <Button
-            style={styles.demoActionButton}
-            action
-            bgColor="#4F44C1"
-            onPress={() => {}}
+            <Image source={bottomNavImg} style={styles.componentImage}/>
+            <Text style={styles.itemText}>Bottom Navigation</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => props.navigation.navigate('Avatar')}
+            style={styles.item}
           >
-            <Text>
-              <Icon name="controller-paus" size={20} color="white" />
-            </Text>
-          </Button>
-          <Button
-            style={styles.demoActionButton}
-            action
-            bgColor="#3CD4A0"
-            onPress={() => {}}
+            <Image source={avatarImg} style={styles.componentImage}/>
+            <Text style={styles.itemText}>Avatar</Text>
+          </TouchableOpacity>
+        </View>
+        <View style={styles.row}>
+          <TouchableOpacity
+            onPress={() => props.navigation.navigate('Button Group')}
+            style={styles.item}
           >
-            <Text>
-              <Icon name="magnifying-glass" size={20} color="white" />
-            </Text>
-          </Button>
-          <Button
-            style={styles.demoActionButton}
-            action
-            bgColor="#EF1F78"
-            onPress={() => {}}
+            <Image source={btnGroupImg} style={styles.componentImage}/>
+            <Text style={styles.itemText}>Button Group</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => props.navigation.navigate('Button')}
+            style={styles.item}
           >
-            <Text>
-              <Icon name="paper-plane" size={20} color="white" />
-            </Text>
-          </Button>
-          <Button
-            style={styles.demoActionButton}
-            action
-            bgColor="#52B1F4"
-            onPress={() => {}}
+            <Image source={btnImg} style={styles.componentImage}/>
+            <Text style={styles.itemText}>Button</Text>
+          </TouchableOpacity>
+        </View>
+        <View style={styles.row}>
+          <TouchableOpacity
+            onPress={() => props.navigation.navigate('Card')}
+            style={styles.item}
           >
-            <Text>
-              <Icon name="flash" size={20} color="white" />
-            </Text>
-          </Button>
-          <Button
-            style={styles.demoActionButton}
-            action
-            bgColor="#19D4E6"
-            onPress={() => {}}
+            <Image source={cardImg} style={styles.componentImage}/>
+            <Text style={styles.itemText}>Card</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => props.navigation.navigate('Calendar')}
+            style={styles.item}
           >
-            <Text>
-              <Icon name="reply-all" size={20} color="white" />
-            </Text>
-          </Button>
+            <Image source={calendarImg} style={styles.componentImage}/>
+            <Text style={styles.itemText}>Calendar</Text>
+          </TouchableOpacity>
         </View>
-      </View>
-
-      <View style={styles.componentsSection}>
-        <Text style={styles.componentSectionHeader}>Icons</Text>
-
-        <View style={styles.demoIconsContainer}>
-          <Icon
-            style={styles.demoIcon}
-            name="basecamp"
-            size={25}
-            color="#5759CB"
-          />
-          <Icon style={styles.demoIcon} name="note" size={25} color="#5759CB" />
-          <Icon
-            style={styles.demoIcon}
-            name="flashlight"
-            size={25}
-            color="#5759CB"
-          />
-          <Icon
-            style={styles.demoIcon}
-            name="app-store"
-            size={25}
-            color="#5759CB"
-          />
-          <Icon
-            style={styles.demoIcon}
-            name="baidu"
-            size={25}
-            color="#5759CB"
-          />
-          <Icon
-            style={styles.demoIcon}
-            name="facebook"
-            size={25}
-            color="#5759CB"
-          />
+        <View style={styles.row}>
+          <TouchableOpacity
+            onPress={() => props.navigation.navigate('Drawer')}
+            style={styles.item}
+          >
+            <Image source={drawerImg} style={styles.componentImage}/>
+            <Text style={styles.itemText}>Drawer</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => props.navigation.navigate('Checkbox')}
+            style={styles.item}
+          >
+            <Image source={checkboxImg} style={styles.componentImage}/>
+            <Text style={styles.itemText}>Checkbox</Text>
+          </TouchableOpacity>
         </View>
-        <View style={styles.demoIconsContainer}>
-          <Icon
-            style={[styles.demoIcon, { opacity: 0.5 }]}
-            name="bookmark"
-            size={25}
-            color="#5759CB"
-          />
-          <Icon
-            style={[styles.demoIcon, { opacity: 0.5 }]}
-            name="chat"
-            size={25}
-            color="#5759CB"
-          />
-          <Icon
-            style={[styles.demoIcon, { opacity: 0.5 }]}
-            name="behance"
-            size={25}
-            color="#5759CB"
-          />
-          <Icon
-            style={[styles.demoIcon, { opacity: 0.5 }]}
-            name="calendar"
-            size={25}
-            color="#5759CB"
-          />
-          <Icon
-            style={[styles.demoIcon, { opacity: 0.5 }]}
-            name="camera"
-            size={25}
-            color="#5759CB"
-          />
-          <Icon
-            style={[styles.demoIcon, { opacity: 0.5 }]}
-            name="flattr"
-            size={25}
-            color="#5759CB"
-          />
+        <View style={styles.row}>
+          <TouchableOpacity
+            onPress={() => props.navigation.navigate('Icon')}
+            style={styles.item}
+          >
+            <Image source={iconImg} style={styles.componentImage}/>
+            <Text style={styles.itemText}>Icon</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => props.navigation.navigate('Input')}
+            style={styles.item}
+          >
+            <Image source={inputImg} style={styles.componentImage}/>
+            <Text style={styles.itemText}>Input</Text>
+          </TouchableOpacity>
         </View>
-        <View style={styles.demoIconsContainer}>
-          <Icon
-            style={styles.demoIcon}
-            name="colours"
-            size={25}
-            color="#EF1F78"
-          />
-          <Icon
-            style={styles.demoIcon}
-            name="compass"
-            size={25}
-            color="#EF1F78"
-          />
-          <Icon
-            style={styles.demoIcon}
-            name="credit"
-            size={25}
-            color="#EF1F78"
-          />
-          <Icon
-            style={styles.demoIcon}
-            name="cycle"
-            size={25}
-            color="#EF1F78"
-          />
-          <Icon
-            style={styles.demoIcon}
-            name="database"
-            size={25}
-            color="#EF1F78"
-          />
-          <Icon
-            style={styles.demoIcon}
-            name="flickr"
-            size={25}
-            color="#EF1F78"
-          />
+        <View style={styles.row}>
+          <TouchableOpacity
+            onPress={() => props.navigation.navigate('Layout')}
+            style={styles.item}
+          >
+            <Image source={layoutImg} style={styles.componentImage}/>
+            <Text style={styles.itemText}>Layout</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => props.navigation.navigate('List')}
+            style={styles.item}
+          >
+            <Image source={listImg} style={styles.componentImage}/>
+            <Text style={styles.itemText}>List</Text>
+          </TouchableOpacity>
         </View>
-        <View style={styles.demoIconsContainer}>
-          <Icon
-            style={[styles.demoIcon, { opacity: 0.5 }]}
-            name="documents"
-            size={25}
-            color="#EF1F78"
-          />
-          <Icon
-            style={[styles.demoIcon, { opacity: 0.5 }]}
-            name="download"
-            size={25}
-            color="#EF1F78"
-          />
-          <Icon
-            style={[styles.demoIcon, { opacity: 0.5 }]}
-            name="dribbble"
-            size={25}
-            color="#EF1F78"
-          />
-          <Icon
-            style={[styles.demoIcon, { opacity: 0.5 }]}
-            name="drop"
-            size={25}
-            color="#EF1F78"
-          />
-          <Icon
-            style={[styles.demoIcon, { opacity: 0.5 }]}
-            name="erase"
-            size={25}
-            color="#EF1F78"
-          />
-          <Icon
-            style={[styles.demoIcon, { opacity: 0.5 }]}
-            name="foursquare"
-            size={25}
-            color="#EF1F78"
-          />
+        <View style={styles.row}>
+          <TouchableOpacity
+            onPress={() => props.navigation.navigate('Menu')}
+            style={styles.item}
+          >
+            <Image source={menuImg} style={styles.componentImage}/>
+            <Text style={styles.itemText}>Menu</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => props.navigation.navigate('Modal')}
+            style={styles.item}
+          >
+            <Image source={modalImg} style={styles.componentImage}/>
+            <Text style={styles.itemText}>Modal</Text>
+          </TouchableOpacity>
         </View>
-
-        <Button
-          style={[styles.demoButton, { flex: 1 }]}
-          primary
-          bordered
-          caption="More Icons"
-        />
-      </View>
-
-      <View style={styles.componentsSection}>
-        <Text style={styles.componentSectionHeader}>Dropdown</Text>
-
-        <Dropdown
-          style={{ width: '100%', alignSelf: 'center' }}
-          onSelect={() => {}}
-          items={['option 1', 'option 2']}
-        />
+        <View style={styles.row}>
+          <TouchableOpacity
+            onPress={() => props.navigation.navigate('Overflow Menu')}
+            style={styles.item}
+          >
+            <Image source={overflowMenuImg} style={styles.componentImage}/>
+            <Text style={styles.itemText}>Overflow Menu</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => props.navigation.navigate('Popover')}
+            style={styles.item}
+          >
+            <Image source={popoverImg} style={styles.componentImage}/>
+            <Text style={styles.itemText}>Popover</Text>
+          </TouchableOpacity>
+        </View>
+        <View style={styles.row}>
+          <TouchableOpacity
+            onPress={() => props.navigation.navigate('Range Calendar')}
+            style={styles.item}
+          >
+            <Image source={rangeCalendarImg} style={styles.componentImage}/>
+            <Text style={styles.itemText}>Range Calendar</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => props.navigation.navigate('Select')}
+            style={styles.item}
+          >
+            <Image source={selectImg} style={styles.componentImage}/>
+            <Text style={styles.itemText}>Select</Text>
+          </TouchableOpacity>
+        </View>
+        <View style={styles.row}>
+          <TouchableOpacity
+            onPress={() => props.navigation.navigate('Tab View')}
+            style={styles.item}
+          >
+            <Image source={tabViewImg} style={styles.componentImage}/>
+            <Text style={styles.itemText}>Tab View</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => props.navigation.navigate('Spinner')}
+            style={styles.item}
+          >
+            <Image source={spinnerImg} style={styles.componentImage}/>
+            <Text style={styles.itemText}>Spinner</Text>
+          </TouchableOpacity>
+        </View>
+        <View style={styles.row}>
+          <TouchableOpacity
+            onPress={() => props.navigation.navigate('Toggle')}
+            style={styles.item}
+          >
+            <Image source={toggleImg} style={styles.componentImage}/>
+            <Text style={styles.itemText}>Toggle</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => props.navigation.navigate('Text')}
+            style={styles.item}
+          >
+            <Image source={textImg} style={styles.componentImage}/>
+            <Text style={styles.itemText}>Text</Text>
+          </TouchableOpacity>
+        </View>
+        <View style={styles.row}>
+          <TouchableOpacity
+            onPress={() => props.navigation.navigate('Top Navigation')}
+            style={styles.item}
+          >
+            <Image source={topNavImg} style={styles.componentImage}/>
+            <Text style={styles.itemText}>Top Navigation</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => props.navigation.navigate('Tooltip')}
+            style={styles.item}
+          >
+            <Image source={tooltipImg} style={styles.componentImage}/>
+            <Text style={styles.itemText}>Tooltip</Text>
+          </TouchableOpacity>
+        </View>
+        <View style={styles.row}>
+          <TouchableOpacity
+            onPress={() => props.navigation.navigate('Badges')}
+            style={styles.item}
+          >
+            <Image source={badgesImg} style={styles.componentImage}/>
+            <Text style={styles.itemText}>Badges</Text>
+          </TouchableOpacity>
+        </View>
       </View>
     </ScrollView>
   );
@@ -350,44 +243,37 @@ export default function ComponentsScreen(props) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: colors.bluish,
-    paddingHorizontal: 15,
-    paddingTop: 20,
-  },
-  componentsSection: {
     backgroundColor: colors.white,
-    paddingHorizontal: 16,
-    paddingVertical: 24,
-    marginBottom: 20,
+    paddingVertical: 10,
+  },
+  row: {
+    flexDirection: 'row',
+    paddingHorizontal: 10,
+    marginTop: 10,
+    flexWrap: 'wrap'
+  },
+  item: {
+    flex: 1,
+    height: 120,
+    paddingVertical: 20,
+    borderColor: colors.primaryLight,
+    borderWidth: 1,
     borderRadius: 5,
-  },
-  componentSectionHeader: {
-    fontFamily: fonts.primaryRegular,
-    color: '#686868',
-    fontSize: 24,
-    marginBottom: 20,
-  },
-  demoButtonsContainer: {
-    flex: 1,
-    flexDirection: 'row',
-    flexWrap: 'wrap',
     alignItems: 'center',
-    justifyContent: 'space-between',
+    justifyContent: 'space-around',
+    marginHorizontal: 5,
   },
-  demoIconsContainer: {
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    paddingHorizontal: 3,
-    marginBottom: 20,
+  itemText: {
+    color: colors.primary,
+    fontFamily: fonts.primary,
   },
-  demoButton: {
-    marginTop: 8,
-    marginBottom: 8,
+  itemImage: {
+    height: 35,
+    tintColor: colors.primary,
   },
-  demoItem: {
-    marginVertical: 15,
-  },
+  componentImage: {
+    width: 36,
+    height: 36,
+    resizeMode: 'contain',
+  }
 });

@@ -1,66 +1,83 @@
 # Changelog
 
-## [3.2.5]
-### Updated
-- Update dependency
+## [4.2.3]
 
-## [3.2.4]
-### Updated
-- react-native: 0.72.2 -> 0.73.1
-- react-native-vector-icons: 6.6.0 -> 10.0.3
-- "@react-native/eslint-config": 0.72.2 -> 0.73.1
-- "@react-native/metro-config": 0.72.9 -> 0.73.2
-- "babel-jest": 29.2.1 -> 29.6.3
-- "jest": 29.2.1 -> 29.6.3
-- "prettier": 2.4.1 -> 2.8.8
-- "@types/react": 18.0.24 -> 18.2.6
+- Update dependencies
 
-### Added
-- "@react-native/babel-preset": 0.73.18
-- "@react-native/typescript-config": 0.73.1
+## [4.2.2] 
+### Updated React Native to 0.73.1
 
-## [3.2.3]
-### Updated
-- deprecated-react-native-listview: 0.0.6 - 0.0.7
-- @react-native-community/toolbar-android: 0.1.0-rc.2 - 0.2.1
-- react: 16.9.0 - 18.2.0
-- react-native: 0.63.1 - 0.72.2
-- react-native-reanimated: 1.8.0 - 1.13.4
-- redux: 4.0.1 - 4.2.1
-- @babel/core: 7.5.0 - 7.20.0
-- @babel/runtime: 7.5.0 - 7.20.0
-- babel-jest: 24.1.0 - 29.2.1
-- eslint: 5.9.0 - 8.19.0
-- jest: 24.1.0 - 29.2.1
-- metro-react-native-babel-preset: 0.51.1 - 0.76.7
-- prettier: 1.16.1 - 2.4.1
-- react-native-modal-dropdown: 0.7.0 - 1.0.2
-- lodash: 4.17.13 - 4.17.21
-- moment: 2.24.0 - 2.29.4
+#### Updated packages
+- react-native: 0.71.10 -> 0.73.1
+- react-native-reanimated: 2.2.4 -> 1.13.4
+- react-native-screens: 3.20.0 -> 3.29.0
+- babel-jest: 29.2.1 -> 29.6.3
+- jest: 29.2.1 -> 29.6.3
+- prettier: 2.4.1 -> 2.8.8
+- @react-native/eslint-config: 0.72.2 -> 0.73.1
+- @react-native/metro-config: 0.72.6 -> 0.73.2
 
-### Added
-- @react-native-async-storage/async-storage: 1.19.0
-- @babel/preset-env: 7.20.0
-- @react-native/eslint-config: 0.72.2
-- @react-native/metro-config: 0.72.9
-- @types/react: 18.0.24
-- @types/react-test-renderer: 18.0.0
-- eslint-plugin-import: 2.27.5.
+#### Added packages
+- @react-native/babel-preset: 0.73.18
+- @react-native/typescript-config: 0.73.1
+- @types/react: 18.2.6
 
-## [3.2.2]
+## [4.2.1]
 
-### Features
-- Add blog link to the drawer.
-- Add Blog/Login images to Pages.
+- Fix theme style
+
+## [4.2.0]
+
+- Updated React Native to 0.71.10
+- Update core React Native libs
+- Update dependencies
+
+## [4.1.0]
+
+- Updated React Native to 0.64.1
+- Update core React Native libs
 
 ### Fixed
-- Fixed indents of Components page.
-- Fixed bottom nav bar on IOS devices.
-- Fixed touchable spacing of top nav Arrow/Burger button.
 
-## [3.2.1]
+- Assets appearance on IOS.
+- Pods/Grandle installing. 
 
-Update some libs
+## [4.0.0]
+
+### New Features
+ - Bottom Navigation component
+ - Avatar component
+ - Bottom Group component
+ - Button component
+ - Card component
+ - Calendar component
+ - Drawer component
+ - Checkbox component
+ - Icon component
+ - Input component
+ - Layout component
+ - List component
+ - Menu component
+ - Modal component
+ - Overflow Menu component
+ - Popover component
+ - Range Calendar component
+ - Select component
+ - Tab View component
+ - Spinner component
+ - Toggle component
+ - Text component
+ - Top Navigation component
+ - Tooltip component
+ - Badges component 
+ - Implement Blog
+ 
+ ### Updated
+ - Update core React Native libs
+
+## [3.3.0]
+
+Updated React-Native version
 
 ## [3.2.0]
 

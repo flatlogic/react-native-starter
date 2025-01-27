@@ -14,6 +14,7 @@ build/
 *.perspectivev3
 !default.perspectivev3
 xcuserdata
+ios/.xcode.env.local
 *.xccheckout
 *.moved-aside
 DerivedData
@@ -21,7 +22,6 @@ DerivedData
 *.ipa
 *.xcuserstate
 project.xcworkspace
-ios/.xcode.env.local
 
 # Android/IntelliJ
 #
@@ -34,12 +34,14 @@ local.properties
 .cxx/
 *.keystore
 !debug.keystore
+!/android/app/debug.keystore
 
 # node.js
 #
 node_modules/
 npm-debug.log
 yarn-error.log
+
 
 # fastlane
 #

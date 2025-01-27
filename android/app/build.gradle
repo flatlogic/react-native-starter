@@ -47,13 +47,13 @@ react {
     //   The list of flags to pass to the Hermes compiler. By default is "-O", "-output-source-map"
     // hermesFlags = ["-O", "-output-source-map"]
 }
+
 /**
  * Set this to true to Run Proguard on Release builds to minify the Java bytecode.
  */
 def enableProguardInReleaseBuilds = false
-
 /**
- * The preferred build flavor of JavaScriptCore  (JSC)
+ * The preferred build flavor of JavaScriptCore (JSC)
  *
  * For example, to use the international variant, you can use:
  * `def jscFlavor = 'org.webkit:android-jsc-intl:+'`
@@ -69,23 +69,12 @@ android {
     ndkVersion rootProject.ext.ndkVersion
     buildToolsVersion rootProject.ext.buildToolsVersion
     compileSdk rootProject.ext.compileSdkVersion
-    namespace "com.reactnativestarter"
+    namespace "com.reactnativestarter.upd"
+
 //     compileOptions {
 //         sourceCompatibility JavaVersion.VERSION_1_8
 //         targetCompatibility JavaVersion.VERSION_1_8
 //     }
-
-    defaultConfig {
-        applicationId "com.reactnativestarter"
-        minSdkVersion rootProject.ext.minSdkVersion
-        targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 1
-        versionName "1.0"
-        multiDexEnabled true
-    }
-//   dexOptions {
-//       javaMaxHeapSize "4g"
-//   }
     signingConfigs {
         debug {
             storeFile file('debug.keystore')
@@ -93,7 +82,21 @@ android {
             keyAlias 'androiddebugkey'
             keyPassword 'android'
         }
+        release {
+            storeFile file('my-upload-key.keystore')
+            storePassword 'vlad_keystore321'
+            keyAlias 'my-key-alias'
+            keyPassword 'vlad_keystore321'
+        }
     }
+    defaultConfig {
+        applicationId "com.reactnativestarter.upd"
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode 6
+        versionName "4.0.1"
+    }
+
     buildTypes {
         debug {
             signingConfig signingConfigs.debug
@@ -101,13 +104,12 @@ android {
         release {
             // Caution! In production, you need to generate your own keystore file.
             // see https://facebook.github.io/react-native/docs/signed-apk-android.
-            signingConfig signingConfigs.debug
+            signingConfig signingConfigs.release
             minifyEnabled enableProguardInReleaseBuilds
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
         }
     }
 }
-
 dependencies {
     // The version of react-native is set by the React Native Gradle Plugin
     implementation("com.facebook.react:react-android")
@@ -121,3 +123,4 @@ dependencies {
 }
 
 apply from: file("../../node_modules/@react-native-community/cli-platform-android/native_modules.gradle"); applyNativeModulesAppBuildGradle(project)
+apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"

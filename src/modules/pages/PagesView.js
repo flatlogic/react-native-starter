@@ -22,6 +22,7 @@ export default function PagesScreen(props) {
           <Image
             resizeMode="contain"
             source={chartIcon}
+            tintColor={colors.primary}
             style={styles.itemImage}
           />
           <Text style={styles.itemText}>Charts</Text>
@@ -33,6 +34,7 @@ export default function PagesScreen(props) {
           <Image
             resizeMode="contain"
             source={galleryIcon}
+            tintColor={colors.primary}
             style={styles.itemImage}
           />
           <Text style={styles.itemText}>Gallery</Text>
@@ -44,6 +46,7 @@ export default function PagesScreen(props) {
           <Image
             resizeMode="contain"
             source={profileIcon}
+            tintColor={colors.primary}
             style={styles.itemImage}
           />
           <Text style={styles.itemText}>Profile</Text>
@@ -57,6 +60,7 @@ export default function PagesScreen(props) {
           <Image
             resizeMode="contain"
             source={chatIcon}
+            tintColor={colors.primary}
             style={styles.itemImage}
           />
           <Text style={styles.itemText}>Chats</Text>
@@ -68,6 +72,7 @@ export default function PagesScreen(props) {
           <Image
             resizeMode="contain"
             source={calendarIcon}
+            tintColor={colors.primary}
             style={styles.itemImage}
           />
           <Text style={styles.itemText}>Calendar</Text>
@@ -142,5 +147,6 @@ const styles = StyleSheet.create({
   },
   itemImage: {
     height: 35,
+    tintColor: colors.primary,
   },
 });

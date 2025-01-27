@@ -1,5 +1,5 @@
 {
-  "extends": ["@react-native", "prettier"],
+  "extends": ["prettier"],
   "plugins": ["react", "jsx-a11y", "import"],
   "parser": "@babel/eslint-parser",
   "rules": {
@@ -11,6 +11,7 @@
     "global-require": "off",
     "no-underscore-dangle": "off",
     "react/jsx-one-expression-per-line": "off",
-    "react/require-default-props": "off"
+    "react/require-default-props": "off",
+    "react/no-unstable-nested-components": "off"
   }
 }

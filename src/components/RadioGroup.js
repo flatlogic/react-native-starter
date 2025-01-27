@@ -10,10 +10,30 @@ export default function RNSRadioGroup({
   onChange,
   style,
   underline,
+  topUnderline,
+  mainColor,
+  lg,
+  sm,
 }) {
+  let itemStyle = [styles.item];
+
+  if (lg) {
+    itemStyle = styles.itemLarge;
+  } else if (sm) {
+    itemStyle = styles.itemSmall;
+  }
+
   return (
     <View
-      style={[styles.container, underline && styles.underline, style && style]}
+      style={[
+        styles.container,
+        topUnderline && styles.underline,
+        underline && styles.underline,
+        style && style,
+        mainColor && {
+          borderColor: mainColor,
+        },
+      ]}
     >
       {items &&
         items.map((item, index) => {
@@ -22,17 +42,27 @@ export default function RNSRadioGroup({
             isActive = true;
 
           let activeStyle = styles.itemActive;
-          if (underline) activeStyle = styles.itemActiveUnderline;
+          if (underline)
+            activeStyle = [
+              styles.itemActiveUnderline,
+              mainColor && { borderBottomColor: mainColor },
+            ];
+
+          if (topUnderline)
+            activeStyle = [
+              styles.itemActiveTopUnderline,
+              mainColor && { borderTopColor: mainColor },
+            ];
 
           let activeTextStyle = styles.textActive;
-          if (underline) activeTextStyle = styles.textActiveUnderline;
+          if (underline || topUnderline) activeTextStyle = styles.textActiveUnderline;
 
           return (
             <TouchableOpacity
               onPress={() => onChange(index)}
               key={item.id || item}
               style={[
-                styles.item,
+                itemStyle,
                 underline && styles.itemUnderline,
                 isActive && activeStyle,
               ]}
@@ -40,8 +70,10 @@ export default function RNSRadioGroup({
               <Text
                 style={[
                   styles.text,
+                  topUnderline && styles.textUnderline,
                   underline && styles.textUnderline,
                   isActive && activeTextStyle,
+                  isActive && mainColor && { color: mainColor },
                 ]}
               >
                 {item.value || item}
@@ -80,12 +112,32 @@ const styles = {
     justifyContent: 'center',
     paddingVertical: 10,
   },
+  itemLarge: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingVertical: 20,
+  },
+  itemSmall: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingVertical: 5,
+  },
+  itemTopUnderline: {
+    borderTopWidth: 0.5,
+    borderTopColor: '#e3e3e3',
+  },
   itemUnderline: {
     borderBottomWidth: 0.5,
     borderBottomColor: '#e3e3e3',
   },
   itemActive: {
     backgroundColor: colors.primary,
+  },
+  itemActiveTopUnderline: {
+    borderTopWidth: 2,
+    borderTopColor: colors.primary,
   },
   itemActiveUnderline: {
     borderBottomWidth: 2,

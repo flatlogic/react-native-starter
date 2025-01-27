@@ -1,0 +1,28 @@
+const colors = {
+  drawer: '#E31823',
+  primary: '#fc2335',
+  primaryLight: '#fc5d4f',
+  primaryGradientStart: '#fc2335',
+  primaryGradientEnd: '#fc2335',
+  secondaryGradientStart: '#2c76ff',
+  secondaryGradientEnd: '#2c76ff',
+  profileGradientStart: '#E57539',
+  profileGradientEnd: '#ED5C3C',
+  secondary: '#2c76ff',
+  secondaryButtonText: '#ffffff',
+  primaryButtonText: '#ffffff',
+  grey: '#acacac',
+  introText: '#ffffff',
+  gray: '#5f5f5f',
+  darkGray: '#4d4d4d',
+  lightGray: '#9b9b9b',
+  white: '#ffffff',
+  blue: '#5A81F7',
+  bluish: '#f8f8f1',
+  black: '#000000',
+  green: '#6DD0A3',
+  yellow: '#ffc247',
+  textInputColor: '#ffffff',
+};
+
+export default colors;

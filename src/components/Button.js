@@ -18,7 +18,11 @@ export default function RNSButton(props) {
   let icon;
   if (props.icon) {
     icon = (
-      <Image resizeMode="contain" source={props.icon} style={styles.icon} />
+      <Image
+        resizeMode="contain"
+        source={props.icon}
+        style={[styles.icon, props.iconColor && { tintColor: props.iconColor }]}
+      />
     );
   }
 
@@ -26,6 +30,10 @@ export default function RNSButton(props) {
 
   if (props.bordered) {
     const borderedStyle = [
+      props.style,
+      styles.container,
+      props.small && styles.containerSmall,
+      props.large && styles.containerLarge,
       styles.button,
       props.small && styles.buttonSmall,
       styles.border,
@@ -37,6 +45,9 @@ export default function RNSButton(props) {
       },
       props.bgColor && {
         borderColor: props.bgColor,
+      },
+      props.disabled && {
+        borderColor: colors.grey,
       },
       props.rounded && styles.rounded,
     ];
@@ -57,6 +68,9 @@ export default function RNSButton(props) {
       props.textColor && {
         color: props.textColor,
       },
+      props.disabled && {
+        color: colors.grey
+      }
     ];
 
     content = (
@@ -86,13 +100,21 @@ export default function RNSButton(props) {
       gradientArray = [props.bgColor, props.bgColor];
     }
 
+    if (props.disabled) {
+      gradientArray = ["#BBB", "#BBB"]
+    }
+
     content = (
       <LinearGradient
         start={{ x: 0.5, y: 1 }}
         end={{ x: 1, y: 1 }}
         colors={gradientArray}
         style={[
+          styles.container,
+          props.style,
           styles.button,
+          props.small && styles.containerSmall,
+          props.large && styles.containerLarge,
           props.small && styles.buttonSmall,
           styles.primaryButton,
           props.rounded && { borderRadius },
@@ -108,6 +130,18 @@ export default function RNSButton(props) {
               props.small && styles.captionSmall,
               icon && styles.captionWithIcon,
               styles.primaryCaption,
+              props.primary && {
+                color: colors.primaryButtonText,
+              },
+              props.secondary && {
+                color: colors.secondaryButtonText,
+              },
+              props.bgColor && {
+                color: props.bgColor,
+              },
+              props.textColor && {
+                color: props.textColor,
+              },
             ]}
           >
             {caption}
@@ -122,13 +156,14 @@ export default function RNSButton(props) {
     <TouchableOpacity
       accessibilityTraits="button"
       onPress={props.onPress}
-      activeOpacity={0.8}
+      activeOpacity={props.disabled ? 1 : 0.8}
       style={[
         styles.container,
         props.small && styles.containerSmall,
         props.large && styles.containerLarge,
         props.style,
       ]}
+      {...props}
     >
       {content}
     </TouchableOpacity>

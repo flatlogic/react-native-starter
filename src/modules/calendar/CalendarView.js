@@ -59,6 +59,7 @@ class CalendarScreen extends React.Component {
 
   render() {
     const { items, loadItems } = this.props;
+
     return (
       <Agenda
         items={items}

@@ -3,8 +3,9 @@ source 'https://rubygems.org'
 ruby '>= 3.3.0', '< 4.0'
 
 gem 'cocoapods', '~> 1.17.0'
-# CocoaPods Core requires ActiveSupport < 8.
-gem 'activesupport', '~> 7.2.4'
+# Official Core runtime is unchanged; prepare verifies its archive and widens only this metadata bound.
+gem 'cocoapods-core', '1.17.0', path: '.build/cocoapods-core-1.17.0'
+gem 'activesupport', '8.0.5.2'
 gem 'xcodeproj', '~> 1.28.1'
 gem 'bundler-audit', '~> 0.9.3'
 

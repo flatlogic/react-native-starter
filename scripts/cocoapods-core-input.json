@@ -1,0 +1,8 @@
+{
+  "name": "cocoapods-core",
+  "version": "1.17.0",
+  "url": "https://rubygems.org/gems/cocoapods-core-1.17.0.gem",
+  "sha256": "a9e3d0dd36ab1b48935236d77a15cad9171217f13c6010c8e2ae3c0f455daf5b",
+  "source": "https://github.com/CocoaPods/Core/tree/1.17.0",
+  "license": "MIT"
+}

@@ -29,7 +29,8 @@ jobs:
           java-version: '17'
       - run: npm ci
       - name: Install the official RN 0.86.3 Android toolchain
-        run: sdkmanager 'platforms;android-36' 'build-tools;36.0.0' 'ndk;27.1.12297006'
+        run: |
+          "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" 'platforms;android-36' 'build-tools;36.0.0' 'ndk;27.1.12297006'
       - name: Compile debug APK without release credentials
         working-directory: android
         run: ./gradlew :app:assembleDebug --no-daemon --max-workers=2 -PreactNativeArchitectures=x86_64
@@ -50,10 +51,14 @@ jobs:
         with:
           ruby-version: '3.3'
       - run: npm ci
+      - name: Prepare the verified CocoaPods Core compatibility constraint
+        run: ruby scripts/prepare-cocoapods-core.rb
       - name: Resolve CocoaPods tooling
         run: bundle install --jobs 4 --retry 3
       - name: Audit Ruby dependencies
         run: bundle exec bundler-audit check --update
+      - name: Verify real CocoaPods Core and ActiveSupport compatibility
+        run: bundle exec ruby tests/cocoapods-core.test.rb
       - name: Install native pods
         working-directory: ios
         run: bundle exec pod install
@@ -62,9 +67,13 @@ jobs:
         uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:
           name: native-lockfiles
+          include-hidden-files: true
           path: |
             Gemfile.lock
             ios/Podfile.lock
+            .build/cocoapods-core-provenance.json
+            .build/cocoapods-core-upstream.gemspec
+            .build/cocoapods-core-1.17.0/cocoapods-core.gemspec
           if-no-files-found: error
           retention-days: 7
       - name: Select an available iPhone simulator

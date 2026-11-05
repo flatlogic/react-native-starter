@@ -19,7 +19,7 @@ export default (props) => {
     const currentAuthor = post._links.author[0].href;
     fetch(currentAuthor)
       .then(res => res.json())
-      .then(author => setAvatarUrl(author['yoast_head'].match(/https:\/\/secure.gravatar.com\/avatar\/[A-Za-z0-9-!$%^&*()_+|~=`{}\[\]:";'<>?,.\/]+/)[0]))
+      .then(author => setAvatarUrl(author['yoast_head'].match(/https:\/\/secure.gravatar.com\/avatar\/[A-Za-z0-9-!$%^&*()_+|~=`{}[\]:";'<>?,./]+/)[0]))
     console.log('kek', avatarUrl)
   }, [avatarUrl])
 

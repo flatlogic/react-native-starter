@@ -1,15 +1,4 @@
-/* eslint-disable no-undef,import/no-extraneous-dependencies */
-import { NativeModules } from 'react-native';
-import Enzyme from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
-
-Enzyme.configure({ adapter: new Adapter() });
-
-NativeModules.StatusBarManager = { getHeight: jest.fn() };
-
-// jest.mock('react-native-languages', () => ({
-//   RNLanguages: {
-//     language: 'en',
-//     languages: ['en']
-//   }
-// }));
+// Native gesture/animation host support recommended by the installed libraries.
+require('react-native-gesture-handler/jestSetup');
+jest.mock('react-native-worklets', () => require('react-native-worklets/src/mock'));
+require('react-native-reanimated').setUpTests();

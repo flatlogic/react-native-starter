@@ -1,4 +1,6 @@
 import { Provider } from 'react-redux';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 import React from 'react';
 import { View, ActivityIndicator, StyleSheet } from 'react-native';
 import { PersistGate } from 'redux-persist/integration/react';
@@ -11,20 +13,24 @@ import AppView from './src/modules/AppViewContainer';
 
 export default function App() {
   return (
-    <Provider store={store}>
-      <NavigationContainer>
-        <PersistGate
-          loading={
-            <View style={styles.container}>
-              <ActivityIndicator color={colors.red} />
-            </View>
-          }
-          persistor={persistor}
-        >
-          <AppView />
-        </PersistGate>
-      </NavigationContainer>
-    </Provider>
+    <GestureHandlerRootView style={{ flex: 1 }}>
+      <SafeAreaProvider>
+        <Provider store={store}>
+          <NavigationContainer>
+            <PersistGate
+              loading={
+                <View style={styles.container}>
+                  <ActivityIndicator color={colors.red} />
+                </View>
+              }
+              persistor={persistor}
+            >
+              <AppView />
+            </PersistGate>
+          </NavigationContainer>
+        </Provider>
+      </SafeAreaProvider>
+    </GestureHandlerRootView>
   );
 }
 

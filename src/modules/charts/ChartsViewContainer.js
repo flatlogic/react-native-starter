@@ -1,23 +1,16 @@
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
-import { compose, lifecycle } from 'recompose';
-
 import { loadChartsData } from './ChartsState';
-
 import ChartsScreen from './ChartsView';
 
-export default compose(
-  connect(
-    state => ({
-      data: state.charts.data,
-      isLoading: state.charts.isLoading,
-    }),
-    dispatch => ({
-      loadChartsData: () => dispatch(loadChartsData()),
-    }),
-  ),
-  lifecycle({
-    componentDidMount() {
-      this.props.loadChartsData();
-    },
-  }),
-)(ChartsScreen);
+function ChartsViewContainer(props) {
+  useEffect(() => {
+    props.loadChartsData();
+  }, [props.loadChartsData]);
+  return <ChartsScreen {...props} />;
+}
+
+export default connect(
+  state => ({ data: state.charts.data, isLoading: state.charts.isLoading }),
+  { loadChartsData },
+)(ChartsViewContainer);

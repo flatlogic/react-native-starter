@@ -15,7 +15,7 @@ import facebookIcon from '../../../assets/images/icons/facebook.png';
 
 const getPostImg = (post) => {
   const postImg = post['yoast_head'];
-  return postImg.match(/https:\/\/\w+.\w+\/blog\/wp-content\/uploads\/[A-Za-z0-9-!$%^&*()_+|~=`{}\[\]:";'<>?,.\/]+.\w+/)[0];
+  return postImg.match(/https:\/\/\w+.\w+\/blog\/wp-content\/uploads\/[A-Za-z0-9-!$%^&*()_+|~=`{}[\]:";'<>?,./]+.\w+/)[0];
 }
 
 

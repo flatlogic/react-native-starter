@@ -1,4 +1,5 @@
-import { compose, withState } from 'recompose';
+import { compose } from 'redux';
+import withState from '../../utils/withState';
 
 import BottomNavigationScreen from './BottomNavigationView';
 

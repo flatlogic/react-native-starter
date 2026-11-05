@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { compose } from 'recompose';
+import { compose } from 'redux';
 
 import MessagesScreen from './messages/MessagesScreen';
 import { loadMessages, sendMessage } from './ChatState';

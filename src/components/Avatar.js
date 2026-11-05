@@ -61,9 +61,6 @@ export default function RNSAvatar ({src, lg, sm, rounded, square, children, prim
 
     if (primary) {
       letterAvatarColor.splice(1, 1, styles.letterAvatarPrimary)
-      if (bordered) {
-
-      }
     } else if (secondary) letterAvatarColor.splice(1, 1, styles.letterAvatarSecondary)
 
     if (lg) {

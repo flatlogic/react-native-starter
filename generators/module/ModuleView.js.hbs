@@ -1,14 +1,13 @@
 // @flow
 import React from 'react';
-import {
-  View,
-  Text,
-} from 'react-native-ui-lib';
+import { View, Text } from 'react-native';
 
 type Props = {};
 
-export default (props: Props) => (
-  <View flex centerV centerH>
-    <Text>{{properCase name }} View</Text>
-  </View>
-);
+export default function {{properCase name}}View(props: Props) {
+  return (
+    <View style={ { flex: 1, justifyContent: 'center', alignItems: 'center' } }>
+      <Text>{{properCase name}} View</Text>
+    </View>
+  );
+}

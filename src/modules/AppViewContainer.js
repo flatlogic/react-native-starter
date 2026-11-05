@@ -1,17 +1,12 @@
-import { compose, lifecycle } from 'recompose';
-import { Platform, UIManager, StatusBar } from 'react-native';
+import React, { useEffect } from 'react';
+import { StatusBar } from 'react-native';
 
 import AppView from './AppView';
 
-export default compose(
-  lifecycle({
-    componentDidMount() {
-      StatusBar.setBarStyle('light-content');
-      if (Platform.OS === 'android') {
-        // eslint-disable-next-line no-unused-expressions
-        UIManager.setLayoutAnimationEnabledExperimental &&
-          UIManager.setLayoutAnimationEnabledExperimental(true);
-      }
-    },
-  }),
-)(AppView);
+export default function AppViewContainer(props) {
+  useEffect(() => {
+    StatusBar.setBarStyle('light-content');
+  }, []);
+
+  return <AppView {...props} />;
+}

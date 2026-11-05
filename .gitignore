@@ -67,3 +67,6 @@ jest_coverage
 .metro-health-check*
 # testing
 /coverage
+
+/.build/
+/coverage/

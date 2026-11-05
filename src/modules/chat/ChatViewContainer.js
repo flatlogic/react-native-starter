@@ -1,24 +1,22 @@
-// @flow
-import { compose, lifecycle, withState } from 'recompose';
+import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 
 import ChatView from './ChatView';
 import { loadMessagesList } from './ChatState';
 
-export default compose(
-  connect(
-    state => ({
-      messagesList: state.chat.messagesList,
-      messagesListLoading: state.chat.messagesListLoading,
-    }),
-    {
-      loadMessagesList,
-    },
-  ),
-  lifecycle({
-    componentDidMount() {
-      this.props.loadMessagesList();
-    },
+function ChatViewContainer(props) {
+  const [searchText, setSearchText] = useState('');
+  useEffect(() => {
+    props.loadMessagesList();
+  }, [props.loadMessagesList]);
+
+  return <ChatView {...props} searchText={searchText} setSearchText={setSearchText} />;
+}
+
+export default connect(
+  state => ({
+    messagesList: state.chat.messagesList,
+    messagesListLoading: state.chat.messagesListLoading,
   }),
-  withState('searchText', 'setSearchText', ''),
-)(ChatView);
+  { loadMessagesList },
+)(ChatViewContainer);

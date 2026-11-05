@@ -24,7 +24,8 @@ target 'ReactNativeStarter' do
   )
 
   target 'ReactNativeStarterTests' do
-    inherit! :complete
+    # Hosted tests access the app Pods through TEST_HOST, without linking them twice.
+    inherit! :search_paths
   end
 
   post_install do |installer|

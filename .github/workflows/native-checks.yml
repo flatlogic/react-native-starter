@@ -94,6 +94,17 @@ jobs:
           -parallel-testing-enabled NO
           CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY=
 
+      - name: Collect bounded iOS failure diagnostics
+        if: always()
+        run: python3 scripts/collect-ios-diagnostics.py
+      - name: Retain iOS diagnostic evidence
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: native-ios-diagnostics
+          path: ${{ runner.temp }}/native-diagnostics
+          if-no-files-found: error
+          retention-days: 7
       - name: Export Home screenshot attachments
         run: >-
           xcrun xcresulttool export attachments

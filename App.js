@@ -1,4 +1,6 @@
 import { Provider } from 'react-redux';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 import React from 'react';
 import { View, ActivityIndicator, StyleSheet } from 'react-native';
 import { PersistGate } from 'redux-persist/integration/react';
@@ -11,6 +13,8 @@ import AppView from './src/modules/AppViewContainer';
 
 export default function App() {
   return (
+    <GestureHandlerRootView style={{ flex: 1 }}>
+    <SafeAreaProvider>
     <Provider store={store}>
       <NavigationContainer>
         <PersistGate
@@ -25,6 +29,8 @@ export default function App() {
         </PersistGate>
       </NavigationContainer>
     </Provider>
+    </SafeAreaProvider>
+    </GestureHandlerRootView>
   );
 }
 

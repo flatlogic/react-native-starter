@@ -1,0 +1,11 @@
+{
+  "3.3.0": {
+    "index.js": "51f83a6f9d61137697ec59beed04b6b10df1fc9d9e2d756971597051bde22075",
+    "dist/umd.js": "408bd04852c53149b0e85a6889079a0f4d7451eb34f515249eaa14dc421458b9"
+  },
+  "4.3.1": {
+    "dist/cjs.js": "2e5160f84a1141bd927264afe4d15766f1e6cf07daef182b37ff53fea121de7d",
+    "index.js": "12440c84957c1990ea2d5e33dc0091722dc1dc1585c6d20e0c780e568ffa9d30",
+    "dist/umd.js": "f33e6596482d1fb5c7c427f8ef92f2aa849eea9223acd974176b2fb27ddbf73a"
+  }
+}

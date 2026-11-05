@@ -1,5 +1,5 @@
 // @flow
-import { compose } from 'recompose';
+import { compose } from 'redux';
 
 import PagesView from './PagesView';
 

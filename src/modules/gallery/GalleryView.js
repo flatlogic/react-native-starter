@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, View, Image, FlatList } from 'react-native';
-import Lightbox from 'react-native-lightbox';
+import Lightbox from '../../components/ImageLightbox';
 
 import { colors } from '../../styles';
 import { GridRow } from '../../components';

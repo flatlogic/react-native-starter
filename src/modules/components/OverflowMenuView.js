@@ -1,7 +1,6 @@
 import React from 'react';
 import { StyleSheet, View, Text, ScrollView } from 'react-native';
 import { Menu, Divider, Provider } from 'react-native-paper';
-import ModalDropdown from 'react-native-modal-dropdown';
 
 import Card from '../../components/Card';
 import Button from '../../components/Button'

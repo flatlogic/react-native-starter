@@ -1,5 +1,5 @@
 import React from 'react';
-import ModalDropdown from 'react-native-modal-dropdown';
+import SelectDropdown from 'react-native-select-dropdown';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 import { View, Text } from 'react-native';
@@ -40,26 +40,19 @@ class RNSDropDown extends React.Component {
       ...restProps
     } = this.props;
     return this.props.multiselect ? (
-      <ModalDropdown
-        options={items}
-        onDropdownWillShow={this._openModal}
-        onDropdownWillHide={this._closeModal}
-        adjustFrame={params => {
-          // eslint-disable-next-line no-param-reassign
-          params.left = 35;
-          // eslint-disable-next-line no-param-reassign
-          params.right = 35;
-          return params;
-        }}
-        renderRow={text => (
+      <SelectDropdown
+        data={items}
+        onFocus={this._openModal}
+        onBlur={this._closeModal}
+        renderItem={text => (
           <View style={{ paddingHorizontal: 20, paddingVertical: 10, flexDirection: 'row' }}>
-            <Checkbox.Android status={"unchecked"} />
+            <Checkbox status={"unchecked"} />
             <Text style={{ color: '#686868' }}>{text}</Text>
           </View>
         )}
-        onSelect={onSelect}
+        onSelect={(item, index) => onSelect(index, item)}
         {...restProps}
-      >
+        renderButton={() => (
         <View style={[styles.container, style && style, { borderColor }, restProps.disabled && styles.disabled]}>
           <Text style={restProps.disabled ? {color: '#686868'} : {color}}>
             {selectedIndex > -1 && items[selectedIndex]
@@ -68,32 +61,26 @@ class RNSDropDown extends React.Component {
           </Text>
           <Icon
             name={this.state.isOpened ? 'angle-up' : 'angle-down'}
-            color={restProps.disabled ? {color: '#686868'} : color}
+            color={restProps.disabled ? '#686868' : color}
             size={20}
             style={styles.icon}
           />
         </View>
-      </ModalDropdown>
+        )}
+      />
       ) : (
-      <ModalDropdown
-        options={items}
-        onDropdownWillShow={this._openModal}
-        onDropdownWillHide={this._closeModal}
-        adjustFrame={params => {
-          // eslint-disable-next-line no-param-reassign
-          params.left = 35;
-          // eslint-disable-next-line no-param-reassign
-          params.right = 35;
-          return params;
-        }}
-        renderRow={text => (
+      <SelectDropdown
+        data={items}
+        onFocus={this._openModal}
+        onBlur={this._closeModal}
+        renderItem={text => (
           <View style={{ paddingHorizontal: 20, paddingVertical: 10 }}>
             <Text style={{ color: '#686868' }}>{text}</Text>
           </View>
         )}
-        onSelect={onSelect}
+        onSelect={(item, index) => onSelect(index, item)}
         {...restProps}
-      >
+        renderButton={() => (
         <View style={[styles.container, style && style, { borderColor }, restProps.disabled && styles.disabled]}>
           <Text style={restProps.disabled ? {color: '#686868'} : {color}}>
             {selectedIndex > -1 && items[selectedIndex]
@@ -102,12 +89,13 @@ class RNSDropDown extends React.Component {
           </Text>
           <Icon
             name={this.state.isOpened ? 'angle-up' : 'angle-down'}
-            color={restProps.disabled ? {color: '#686868'} : color}
+            color={restProps.disabled ? '#686868' : color}
             size={20}
             style={styles.icon}
           />
         </View>
-      </ModalDropdown>
+        )}
+      />
     );
   }
 }

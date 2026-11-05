@@ -8,7 +8,7 @@ import {
   FlatList,
   Dimensions,
 } from 'react-native';
-import Carousel from 'react-native-snap-carousel';
+import Carousel from 'react-native-reanimated-carousel';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 import { colors } from '../../styles';
@@ -128,9 +128,9 @@ export default function ArticleScreen(props) {
       </View>
       <View style={styles.carouselContainer}>
         <Carousel
-          autoplay
-          sliderWidth={Dimensions.get('window').width - 30}
-          itemWidth={Dimensions.get('window').width}
+          autoPlay
+          height={250}
+          width={Dimensions.get('window').width - 30}
           renderItem={({ item }) => (
             <Image
               resizeMode="contain"

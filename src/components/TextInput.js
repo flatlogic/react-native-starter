@@ -51,7 +51,7 @@ const RNSTextInput = ({
             (dark ? colors.primary : colors.white)
           }
           {...restProps}
-          editable={!disabled}
+          editable={!disabled && restProps.editable !== false}
           style={{flexDirection: 'row', flex: 1}}
         />
         {iconRight && (

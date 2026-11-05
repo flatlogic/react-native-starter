@@ -1,5 +1,5 @@
 // @flow
-import { compose } from 'recompose';
+import { compose } from 'redux';
 import { connect } from 'react-redux';
 
 import ProfileView from './ProfileView';

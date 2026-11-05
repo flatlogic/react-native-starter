@@ -11,8 +11,8 @@
 #import <React/RCTLog.h>
 #import <React/RCTRootView.h>
 
-#define TIMEOUT_SECONDS 600
-#define TEXT_TO_LOOK_FOR @"Welcome to React!"
+#define TIMEOUT_SECONDS 60
+#define TEXT_TO_LOOK_FOR @"React Native Starter"
 
 @interface ReactNativeStarterTests : XCTestCase
 
@@ -33,7 +33,7 @@
   return NO;
 }
 
-- (void)testRendersWelcomeScreen
+- (void)testRendersHomeScreen
 {
   UIViewController *vc = [[[RCTSharedApplication() delegate] window] rootViewController];
   NSDate *date = [NSDate dateWithTimeIntervalSinceNow:TIMEOUT_SECONDS];
@@ -65,6 +65,15 @@
 
   XCTAssertNil(redboxError, @"RedBox error: %@", redboxError);
   XCTAssertTrue(foundElement, @"Couldn't find element with text '%@' in %d seconds", TEXT_TO_LOOK_FOR, TIMEOUT_SECONDS);
+
+  UIGraphicsImageRenderer *renderer = [[UIGraphicsImageRenderer alloc] initWithBounds:vc.view.bounds];
+  UIImage *image = [renderer imageWithActions:^(UIGraphicsImageRendererContext *context) {
+    [vc.view drawViewHierarchyInRect:vc.view.bounds afterScreenUpdates:YES];
+  }];
+  XCTAttachment *screenshot = [XCTAttachment attachmentWithImage:image];
+  screenshot.name = @"Home screen";
+  screenshot.lifetime = XCTAttachmentLifetimeKeepAlways;
+  [self addAttachment:screenshot];
 }
 
 

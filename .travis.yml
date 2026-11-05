@@ -1,10 +1,11 @@
 language: node_js
 node_js:
-  - "11.10.1"
-cache:
-  directories:
-    - node_modules
+  - '22.23.0'
+cache: npm
+install:
+  - npm ci
 script:
-  - yarn test
-  - yarn lint
-  - yarn flow
+  - npm test
+  - npm run lint
+  - npm run test:coverage -- --runInBand
+  - npm audit --audit-level=moderate

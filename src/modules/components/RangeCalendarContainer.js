@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { compose } from 'recompose';
+import { compose } from 'redux';
 
 import { loadItems } from './RangeCalendarState';
 

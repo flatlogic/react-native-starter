@@ -14,22 +14,22 @@ import AppView from './src/modules/AppViewContainer';
 export default function App() {
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
-    <SafeAreaProvider>
-    <Provider store={store}>
-      <NavigationContainer>
-        <PersistGate
-          loading={
-            <View style={styles.container}>
-              <ActivityIndicator color={colors.red} />
-            </View>
-          }
-          persistor={persistor}
-        >
-          <AppView />
-        </PersistGate>
-      </NavigationContainer>
-    </Provider>
-    </SafeAreaProvider>
+      <SafeAreaProvider>
+        <Provider store={store}>
+          <NavigationContainer>
+            <PersistGate
+              loading={
+                <View style={styles.container}>
+                  <ActivityIndicator color={colors.red} />
+                </View>
+              }
+              persistor={persistor}
+            >
+              <AppView />
+            </PersistGate>
+          </NavigationContainer>
+        </Provider>
+      </SafeAreaProvider>
     </GestureHandlerRootView>
   );
 }

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Modal, Pressable, View, Text, StyleSheet } from 'react-native';
+import { Modal, Pressable, Text, StyleSheet } from 'react-native';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { ImageZoom } from '@likashefqet/react-native-image-zoom';
 
 export default function ImageLightbox({ children }) {
@@ -8,10 +9,10 @@ export default function ImageLightbox({ children }) {
     <>
       <Pressable accessibilityLabel="Open image" onPress={() => setVisible(true)}>{children}</Pressable>
       <Modal visible={visible} onRequestClose={() => setVisible(false)} transparent={false}>
-        <View style={styles.viewer}>
+        <GestureHandlerRootView style={styles.viewer}>
           <ImageZoom uri={children.props.source.uri} minScale={1} maxScale={5} isDoubleTapEnabled />
           <Pressable style={styles.close} accessibilityRole="button" accessibilityLabel="Close image" onPress={() => setVisible(false)}><Text style={styles.label}>Close</Text></Pressable>
-        </View>
+        </GestureHandlerRootView>
       </Modal>
     </>
   );

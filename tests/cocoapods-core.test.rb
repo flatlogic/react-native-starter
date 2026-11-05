@@ -17,7 +17,8 @@ class CocoaPodsCoreCompatibilityTest < Minitest::Test
       spec.description = "  First\n  Second\n"
       spec.license = { type: 'MIT', text: "  First\n  Second\n" }
       spec.prepare_command = "  echo prepare\n"
-      spec.source_file = 'Sources/**/*.{h,m}'
+      spec.source_files = 'Sources/**/*.{h,m}'
+      spec.screenshot = 'https://example.test/demo.png'
       spec.authors = ['Ada', 'Grace', 'Linus']
       spec.prefix_header_contents = "  #define ONE 1\n  #define TWO 2\n"
     end
@@ -54,6 +55,7 @@ class CocoaPodsCoreCompatibilityTest < Minitest::Test
     assert_equal 'echo prepare', spec.prepare_command
     assert_equal "#define ONE 1\n#define TWO 2", spec.consumer(:ios).prefix_header_contents
     assert_equal ['Sources/**/*.{h,m}'], spec.consumer(:ios).source_files
+    assert_equal ['https://example.test/demo.png'], spec.screenshots
     assert_equal spec.to_hash, Pod::Specification.from_json(spec.to_json).to_hash
   end
 
@@ -78,7 +80,7 @@ class CocoaPodsCoreCompatibilityTest < Minitest::Test
           spec.subspec('Other') { |part| part.dependency 'OtherOnly' }
         end
       SPEC
-      podfile = Pod::Podfile.from_ruby(Pathname.new(directory).join('Podfile'), <<~PODFILE)
+      podfile = Pod::Podfile.from_ruby(Pathname.new(directory).join('Podfile'), +<<~PODFILE)
         platform :ios, '15.1'
         plugin 'compat-plugin', nested: { enabled: true, list: [{ key: 'value' }] }
         plugin 'compat-plugin', additional: true

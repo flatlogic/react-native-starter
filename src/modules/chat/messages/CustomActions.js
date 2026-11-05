@@ -1,9 +1,10 @@
 /* eslint-disable react/sort-comp */
 import React from 'react';
-import { Modal, StyleSheet, TouchableOpacity, View, Text } from 'react-native';
+import { Modal, StatusBar, StyleSheet, TouchableOpacity, View, Text } from 'react-native';
+
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 // import CameraRollPicker from 'react-native-camera-roll-picker';
-import NavBar, { NavButton, NavButtonText, NavTitle } from 'react-native-nav';
 
 export default class CustomActions extends React.Component {
   constructor(props) {
@@ -69,56 +70,26 @@ export default class CustomActions extends React.Component {
 
   renderNavBar() {
     return (
-      <NavBar
-        style={{
-          statusBar: {
-            backgroundColor: '#FFF',
-          },
-          navBar: {
-            backgroundColor: '#FFF',
-          },
-        }}
-      >
-        <NavButton
-          onPress={() => {
-            this.setModalVisible(false);
-          }}
-        >
-          <NavButtonText
-            style={{
-              color: '#000',
+      <SafeAreaView edges={['top']} style={{ backgroundColor: '#FFF' }}>
+        <StatusBar barStyle="dark-content" />
+        <View style={styles.navBar}>
+          <TouchableOpacity accessibilityRole="button" onPress={() => this.setModalVisible(false)}>
+            <Text style={styles.navText}>Cancel</Text>
+          </TouchableOpacity>
+          <Text style={[styles.navText, { fontWeight: '600' }]}>Camera Roll</Text>
+          <TouchableOpacity
+            accessibilityRole="button"
+            onPress={() => {
+              this.setModalVisible(false);
+              const images = this.getImages().map(image => ({ image: image.uri }));
+              this.props.onSend(images);
+              this.setImages([]);
             }}
           >
-            {'Cancel'}
-          </NavButtonText>
-        </NavButton>
-        <NavTitle
-          style={{
-            color: '#000',
-          }}
-        >
-          {'Camera Roll'}
-        </NavTitle>
-        <NavButton
-          onPress={() => {
-            this.setModalVisible(false);
-
-            const images = this.getImages().map(image => ({
-              image: image.uri,
-            }));
-            this.props.onSend(images);
-            this.setImages([]);
-          }}
-        >
-          <NavButtonText
-            style={{
-              color: '#000',
-            }}
-          >
-            {'Send'}
-          </NavButtonText>
-        </NavButton>
-      </NavBar>
+            <Text style={styles.navText}>Send</Text>
+          </TouchableOpacity>
+        </View>
+      </SafeAreaView>
     );
   }
 
@@ -163,6 +134,8 @@ export default class CustomActions extends React.Component {
 }
 
 const styles = StyleSheet.create({
+  navBar: { height: 44, paddingHorizontal: 10, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' },
+  navText: { color: '#000', fontSize: 17 },
   container: {
     width: 26,
     height: 26,

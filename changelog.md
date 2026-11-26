@@ -1,5 +1,9 @@
 # Changelog
 
+## [4.2.4]
+
+- Switched the Android Gradle Wrapper from 9.3.1 to the patched 8.14.8 maintenance release to address GHSA-3cfg-jpcr-gfp3 and preserve compatibility with the Kotlin version used by React Native. The distribution is pinned by SHA-256.
+
 ## [4.2.3]
 
 - Update dependencies

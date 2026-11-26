@@ -40,6 +40,10 @@ Use Node.js 22.23 or newer and npm. `package-lock.json` is the canonical JavaScr
 
 For native development, follow the [React Native environment setup](https://reactnative.dev/docs/set-up-your-environment). iOS uses Ruby 3.3+: run `ruby scripts/prepare-cocoapods-core.rb`, `bundle install`, then `cd ios && bundle exec pod install`. Native CI uses standard GitHub runners to build an Android debug APK and build/test an unsigned iOS simulator app. Its native Home-screen test captures a screenshot and exposes the resolved Gemfile/Podfile locks as review artifacts. No signing credentials or deployment are required.
 
+### Android build tools
+
+Use the checked-in Gradle Wrapper to build Android. Version 4.2.4 uses Gradle 8.14.8, a patched maintenance release compatible with the React Native Gradle plugin, and validates the distribution against its official SHA-256 checksum. From the `android/` directory, run `./gradlew :app:assembleDebug` to produce a local debug APK.
+
 ### Dependency security
 
 The raw npm audit currently reports **9 low-severity findings** from deepmerge 3.3.0 and 4.3.1; no fixed upstream versions exist for these ranges. `npm ci` applies the narrow local security backport in `scripts/patch-deepmerge.cjs`. It replaces unsafe dynamic assignments with `Object.defineProperty`, preserving each package's original merge API and versions. The script verifies the exact upstream SHA-256 of all five runtime entry points (index/CommonJS/UMD as applicable), verifies the patched bytes on subsequent installs, and fails loudly if the published source changes. Regression tests verify prototype safety and ordinary merge behavior.

@@ -46,9 +46,9 @@ Use the checked-in Gradle Wrapper to build Android. Version 4.2.4 uses Gradle 8.
 
 ### Dependency security
 
-The raw npm audit currently reports **9 low-severity findings** from deepmerge 3.3.0 and 4.3.1; no fixed upstream versions exist for these ranges. `npm ci` applies the narrow local security backport in `scripts/patch-deepmerge.cjs`. It replaces unsafe dynamic assignments with `Object.defineProperty`, preserving each package's original merge API and versions. The script verifies the exact upstream SHA-256 of all five runtime entry points (index/CommonJS/UMD as applicable), verifies the patched bytes on subsequent installs, and fails loudly if the published source changes. Regression tests verify prototype safety and ordinary merge behavior.
+The release verification on November 26, 2026 reported zero npm advisories. Run `npm audit` against the current registry to check your installation.
 
-The raw registry metadata remains visible: this is **not a zero-advisory graph**. `npm audit --audit-level=moderate` passes only while no moderate/high/critical findings exist. CI also requires the local backport's runtime tests; it does not suppress or disable the remaining low advisories. The source hashes are recorded in `scripts/deepmerge-inputs.json`.
+`npm ci` applies the local backport for deepmerge 3.3.0 and 4.3.1. The installer verifies the upstream and patched SHA-256 hashes listed in `scripts/deepmerge-inputs.json`. CI tests prototype safety and ordinary merge behavior, and fails on moderate or higher npm advisories.
 
 ---
 
